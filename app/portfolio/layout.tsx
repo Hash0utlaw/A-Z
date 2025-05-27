@@ -1,0 +1,24 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { MainNavigation } from "@/components/main-navigation"
+import { Footer } from "@/components/footer"
+
+export const metadata: Metadata = {
+  title: "Portfolio | A-Z Landscaping",
+  description:
+    "Browse our portfolio of completed landscaping and hardscaping projects. See examples of patios, retaining walls, gardens, and more.",
+}
+
+export default function PortfolioLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center px-4 sm:px-8">
+          <MainNavigation />
+        </div>
+      </header>
+      <main>{children}</main>
+      <Footer />
+    </>
+  )
+}
