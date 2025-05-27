@@ -104,6 +104,11 @@ export default function ServicesLayout({
                     Seasonal Services
                   </Link>
                 </li>
+                <li>
+                  <Link href="/services/turf-installation" className="hover:text-white transition-colors">
+                    Turf Installation
+                  </Link>
+                </li>
               </ul>
             </div>
 
