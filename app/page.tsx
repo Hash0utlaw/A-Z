@@ -94,10 +94,11 @@ export default function LandscapingWebsite() {
             <div className="relative">
               <Image
                 src="/hero-landscape.png"
-                alt="Beautiful landscaped garden"
+                alt="Professional landscaping showcasing lush lawn, stone patio, and beautiful garden design"
                 width={800}
                 height={600}
                 className="rounded-2xl shadow-2xl"
+                priority
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-4">
@@ -340,32 +341,32 @@ export default function LandscapingWebsite() {
               {
                 title: "Modern Backyard Oasis",
                 category: "Complete Landscape Design",
-                image: "/modern-backyard.png",
+                image: "/projects/modern-backyard-oasis.png",
               },
               {
                 title: "Front Yard Transformation",
                 category: "Curb Appeal Enhancement",
-                image: "/front-yard.png",
+                image: "/projects/front-yard-transformation.png",
               },
               {
                 title: "Outdoor Living Space",
                 category: "Hardscaping & Patio",
-                image: "/outdoor-living.png",
+                image: "/projects/outdoor-living-space.png",
               },
               {
                 title: "Garden Paradise",
                 category: "Garden Design & Planting",
-                image: "/garden-paradise.png",
+                image: "/projects/garden-paradise.png",
               },
               {
                 title: "Commercial Landscaping",
                 category: "Business Property",
-                image: "/commercial-landscape.png",
+                image: "/projects/commercial-landscaping.png",
               },
               {
                 title: "Sustainable Landscape",
                 category: "Eco-Friendly Design",
-                image: "/sustainable-landscape.png",
+                image: "/projects/sustainable-landscape.png",
               },
             ].map((project, index) => (
               <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
