@@ -34,6 +34,9 @@ import {
   ImageIcon,
   ArrowRightLeft,
   Grid,
+  HelpCircle,
+  Briefcase,
+  Mail,
 } from "lucide-react"
 
 export function MainNavigation() {
@@ -155,6 +158,14 @@ export function MainNavigation() {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link
+                    href="/services/turf-installation"
+                    className="flex items-center gap-2 cursor-pointer hover:bg-navy-50"
+                  >
+                    <Sprout className="h-4 w-4 text-navy-600" /> Turf Installation
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
                     href="/services/irrigation-systems"
                     className="flex items-center gap-2 cursor-pointer hover:bg-navy-50"
                   >
@@ -228,12 +239,35 @@ export function MainNavigation() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link
-            href="/contact"
-            className={`text-gray-700 hover:text-navy-700 transition-colors ${isActive("/contact") && "text-navy-900 font-medium"}`}
-          >
-            Contact
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                className={`flex items-center gap-1 text-gray-700 hover:text-navy-700 transition-colors ${(isActive("/contact") || isActive("/faq") || isActive("/careers")) && "text-navy-900 font-medium"}`}
+              >
+                Contact <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 border-navy-100">
+              <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                  <Link href="/contact" className="flex items-center gap-2 cursor-pointer hover:bg-navy-50">
+                    <Mail className="h-4 w-4 text-navy-600" /> Contact Us
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/faq" className="flex items-center gap-2 cursor-pointer hover:bg-navy-50">
+                    <HelpCircle className="h-4 w-4 text-navy-600" /> FAQ
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/careers" className="flex items-center gap-2 cursor-pointer hover:bg-navy-50">
+                    <Briefcase className="h-4 w-4 text-navy-600" /> Careers
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         <div className="flex items-center space-x-4">
@@ -354,6 +388,13 @@ export function MainNavigation() {
                   Tree Services
                 </Link>
                 <Link
+                  href="/services/turf-installation"
+                  className="block text-gray-700 py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Turf Installation
+                </Link>
+                <Link
                   href="/services/irrigation-systems"
                   className="block text-gray-700 py-1"
                   onClick={() => setMobileMenuOpen(false)}
@@ -415,13 +456,23 @@ export function MainNavigation() {
               </div>
             </div>
 
-            <Link
-              href="/contact"
-              className="text-lg py-2 border-b border-navy-100"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            <div className="py-2 border-b border-navy-100">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-lg font-medium">Contact</span>
+              </div>
+
+              <div className="ml-4 mt-2 space-y-2">
+                <Link href="/contact" className="block text-gray-700 py-1" onClick={() => setMobileMenuOpen(false)}>
+                  Contact Us
+                </Link>
+                <Link href="/faq" className="block text-gray-700 py-1" onClick={() => setMobileMenuOpen(false)}>
+                  FAQ
+                </Link>
+                <Link href="/careers" className="block text-gray-700 py-1" onClick={() => setMobileMenuOpen(false)}>
+                  Careers
+                </Link>
+              </div>
+            </div>
 
             <div className="pt-4">
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
