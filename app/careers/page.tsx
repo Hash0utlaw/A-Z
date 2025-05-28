@@ -1,12 +1,29 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Users, GraduationCap, Clock, Heart, Briefcase, Calendar, DollarSign, Award, Mail, Phone } from "lucide-react"
+import {
+  Users,
+  GraduationCap,
+  Clock,
+  Heart,
+  Briefcase,
+  Calendar,
+  DollarSign,
+  Award,
+  Mail,
+  Phone,
+  CheckCircle,
+  Loader2,
+} from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 // Job categories data
 const jobCategories = [
@@ -61,6 +78,70 @@ const benefits = [
 ]
 
 export default function CareersPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    position: "",
+    experience: "",
+    message: "",
+    resume: null,
+  })
+
+  const handleChange = (e) => {
+    const { id, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [id.replace("-", "")]: value,
+    }))
+  }
+
+  const handleFileChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      resume: e.target.files[0],
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    // Simulate API call with timeout
+    await new Promise((resolve) => setTimeout(resolve, 1500))
+
+    // Form submission would go here in a real implementation
+    console.log("Form submitted:", formData)
+
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+
+    // Scroll to the success message
+    setTimeout(() => {
+      document.getElementById("success-message")?.scrollIntoView({ behavior: "smooth" })
+    }, 100)
+  }
+
+  const resetForm = () => {
+    setIsSubmitted(false)
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      position: "",
+      experience: "",
+      message: "",
+      resume: null,
+    })
+
+    // Scroll back to the form
+    document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -169,84 +250,156 @@ export default function CareersPage() {
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto">
-            <Card className="border-navy-100">
-              <CardContent className="p-6 md:p-8">
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="first-name">First Name</Label>
-                      <Input id="first-name" placeholder="Enter your first name" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="last-name">Last Name</Label>
-                      <Input id="last-name" placeholder="Enter your last name" required />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="Enter your email address" required />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" type="tel" placeholder="Enter your phone number" required />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="position">Position Interested In</Label>
-                    <select
-                      id="position"
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      required
+          {isSubmitted ? (
+            <div id="success-message" className="max-w-2xl mx-auto">
+              <Alert className="bg-kelly-50 border-kelly-200">
+                <CheckCircle className="h-5 w-5 text-kelly-500" />
+                <AlertTitle className="text-kelly-700 text-xl font-bold mb-2">
+                  Application Submitted Successfully!
+                </AlertTitle>
+                <AlertDescription className="text-kelly-700">
+                  <p className="mb-4">
+                    Thank you for your interest in joining the A-Z Landscaping team. We've received your application and
+                    will review it shortly.
+                  </p>
+                  <p className="mb-6">
+                    Our hiring team will contact you within 3-5 business days if your qualifications match our current
+                    openings.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      onClick={resetForm}
+                      variant="outline"
+                      className="border-navy-500 text-navy-700 hover:bg-navy-50"
                     >
-                      <option value="">Select a position category</option>
-                      <option value="landscape-maintenance">Landscape Maintenance</option>
-                      <option value="landscape-installation">Landscape Installation</option>
-                      <option value="hardscape-construction">Hardscape Construction</option>
-                      <option value="design-management">Design & Management</option>
-                      <option value="other">Other</option>
-                    </select>
+                      Submit Another Application
+                    </Button>
+                    <Link href="/">
+                      <Button className="bg-kelly-500 hover:bg-kelly-600">Return to Homepage</Button>
+                    </Link>
                   </div>
+                </AlertDescription>
+              </Alert>
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto">
+              <Card className="border-navy-100">
+                <CardContent className="p-6 md:p-8">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="first-name">First Name</Label>
+                        <Input
+                          id="first-name"
+                          placeholder="Enter your first name"
+                          required
+                          value={formData.firstName}
+                          onChange={handleChange}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="last-name">Last Name</Label>
+                        <Input
+                          id="last-name"
+                          placeholder="Enter your last name"
+                          required
+                          value={formData.lastName}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="experience">Years of Experience</Label>
-                    <select
-                      id="experience"
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      required
-                    >
-                      <option value="">Select experience level</option>
-                      <option value="entry">Entry Level (0-1 years)</option>
-                      <option value="junior">1-3 years</option>
-                      <option value="mid">3-5 years</option>
-                      <option value="senior">5+ years</option>
-                    </select>
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email address"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Tell us about yourself</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Share your relevant experience, skills, and why you're interested in joining our team"
-                      rows={5}
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="Enter your phone number"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="resume">Resume (Optional)</Label>
-                    <Input id="resume" type="file" className="cursor-pointer" />
-                    <p className="text-sm text-gray-500 mt-1">PDF, DOC, or DOCX files only. Max 5MB.</p>
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="position">Position Interested In</Label>
+                      <select
+                        id="position"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        required
+                        value={formData.position}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select a position category</option>
+                        <option value="landscape-maintenance">Landscape Maintenance</option>
+                        <option value="landscape-installation">Landscape Installation</option>
+                        <option value="hardscape-construction">Hardscape Construction</option>
+                        <option value="design-management">Design & Management</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
 
-                  <Button type="submit" className="w-full bg-kelly-500 hover:bg-kelly-600">
-                    Submit Application
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="experience">Years of Experience</Label>
+                      <select
+                        id="experience"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        required
+                        value={formData.experience}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select experience level</option>
+                        <option value="entry">Entry Level (0-1 years)</option>
+                        <option value="junior">1-3 years</option>
+                        <option value="mid">3-5 years</option>
+                        <option value="senior">5+ years</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Tell us about yourself</Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Share your relevant experience, skills, and why you're interested in joining our team"
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="resume">Resume (Optional)</Label>
+                      <Input id="resume" type="file" className="cursor-pointer" onChange={handleFileChange} />
+                      <p className="text-sm text-gray-500 mt-1">PDF, DOC, or DOCX files only. Max 5MB.</p>
+                    </div>
+
+                    <Button type="submit" className="w-full bg-kelly-500 hover:bg-kelly-600" disabled={isSubmitting}>
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Submitting...
+                        </>
+                      ) : (
+                        "Submit Application"
+                      )}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          )}
         </div>
       </section>
 
