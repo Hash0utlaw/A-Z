@@ -60,6 +60,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services/turf-installation" className="hover:text-white transition-colors">
+                  Turf Installation
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/garden-design-planting" className="hover:text-white transition-colors">
                   Garden Design & Planting
                 </Link>
