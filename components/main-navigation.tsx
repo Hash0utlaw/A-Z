@@ -203,8 +203,8 @@ export function MainNavigation() {
           </DropdownMenu>
 
           <Link
-            href="/#about"
-            className={`text-gray-700 hover:text-navy-700 transition-colors ${isActive("/#about") && "text-navy-900 font-medium"}`}
+            href="/about"
+            className={`text-gray-700 hover:text-navy-700 transition-colors ${isActive("/about") && "text-navy-900 font-medium"}`}
           >
             About
           </Link>
@@ -427,7 +427,7 @@ export function MainNavigation() {
             </div>
 
             <Link
-              href="/#about"
+              href="/about"
               className="text-lg py-2 border-b border-navy-100"
               onClick={() => setMobileMenuOpen(false)}
             >
