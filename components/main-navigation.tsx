@@ -53,7 +53,7 @@ export function MainNavigation() {
       <div className="hidden md:flex items-center justify-between w-full">
         <Link href="/" className="flex items-center space-x-2">
           <Leaf className="h-8 w-8 text-kelly-500" />
-          <span className="text-2xl font-bold text-navy-900">A-Z Landscaping</span>
+          <span className="text-2xl font-bold text-navy-900">A-Z Landscapes</span>
         </Link>
 
         <nav className="flex items-center space-x-8">
@@ -285,7 +285,7 @@ export function MainNavigation() {
       <div className="md:hidden flex items-center justify-between w-full">
         <Link href="/" className="flex items-center space-x-2">
           <Leaf className="h-7 w-7 text-kelly-500" />
-          <span className="text-xl font-bold text-navy-900">A-Z Landscaping</span>
+          <span className="text-xl font-bold text-navy-900">A-Z Landscapes</span>
         </Link>
 
         <div className="flex items-center space-x-4">

@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Leaf className="h-6 w-6 text-kelly-500" />
-              <span className="text-xl font-bold text-white">A-Z Landscaping</span>
+              <span className="text-xl font-bold text-white">A-Z Landscapes</span>
             </div>
             <p className="mb-4">
               Transforming outdoor spaces with professional landscaping and hardscaping services since 2008.
@@ -146,7 +146,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-navy-800 mt-12 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} A-Z Landscaping. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} A-Z Landscapes. All rights reserved.</p>
         </div>
       </div>
     </footer>

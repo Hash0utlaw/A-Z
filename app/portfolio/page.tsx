@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export const metadata: Metadata = {
-  title: "Portfolio | A-Z Landscaping",
+  title: "Portfolio | A-Z Landscapes",
   description: "View our completed landscaping and hardscaping projects across residential and commercial properties.",
 }
 

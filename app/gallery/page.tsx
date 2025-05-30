@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export const metadata: Metadata = {
-  title: "Photo Gallery | A-Z Landscaping",
+  title: "Photo Gallery | A-Z Landscapes",
   description: "Browse our extensive photo gallery showcasing our landscaping and hardscaping work.",
 }
 

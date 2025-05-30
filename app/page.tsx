@@ -257,7 +257,7 @@ export default function LandscapingWebsite() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200">About A-Z Landscaping</Badge>
+                <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200">About A-Z Landscapes</Badge>
                 <h2 className="text-4xl font-bold text-gray-900">Your Trusted Landscaping Partner Since 2008</h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   For over 15 years, A-Z Landscaping has been transforming outdoor spaces across the region. Our team of

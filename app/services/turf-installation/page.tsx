@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Professional Turf Installation Services | A-Z Landscaping",
+  title: "Professional Turf Installation Services | A-Z Landscapes",
   description:
     "Transform your lawn with our professional turf installation services. We offer high-quality sod, artificial turf, and hydroseeding solutions for residential and commercial properties.",
 }

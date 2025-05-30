@@ -79,19 +79,19 @@ export default function PatiosWalkwaysPage() {
           name: "The Johnsons",
           location: "Residential Clients",
           rating: 5,
-          text: "A-Z Landscaping transformed our backyard with a beautiful paver patio and stone walkways. The attention to detail was impressive, and the space has become our favorite place to entertain.",
+          text: "A-Z Landscapes transformed our backyard with a beautiful paver patio and stone walkways. The attention to detail was impressive, and the space has become our favorite place to entertain.",
         },
         {
           name: "Riverfront Restaurant",
           location: "Commercial Client",
           rating: 5,
-          text: "The outdoor dining patio A-Z created for our restaurant has significantly increased our seating capacity and customer satisfaction. The design perfectly complements our riverfront location.",
+          text: "The outdoor dining patio A-Z Landscapes created for our restaurant has significantly increased our seating capacity and customer satisfaction. The design perfectly complements our riverfront location.",
         },
         {
           name: "David & Sarah",
           location: "Residential Clients",
           rating: 5,
-          text: "We couldn't be happier with our new flagstone patio and walkways. The A-Z team was professional, punctual, and the craftsmanship is outstanding. Worth every penny!",
+          text: "We couldn't be happier with our new flagstone patio and walkways. The A-Z Landscapes team was professional, punctual, and the craftsmanship is outstanding. Worth every penny!",
         },
       ]}
       faqs={[

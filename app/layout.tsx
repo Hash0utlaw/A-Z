@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "A-Z Landscaping | Professional Landscaping & Hardscaping Services",
+  title: "A-Z Landscapes | Professional Landscaping & Hardscaping Services",
   description: "Transforming outdoor spaces with professional landscaping and hardscaping services since 2008.",
     generator: 'v0.dev'
 }

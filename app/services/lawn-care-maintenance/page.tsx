@@ -84,19 +84,19 @@ export default function LawnCareMaintenancePage() {
           name: "David & Lisa Thompson",
           location: "Residential Clients",
           rating: 5,
-          text: "We've been using A-Z Landscaping for our lawn care for three years now, and our yard has never looked better. Their team is reliable, thorough, and always professional.",
+          text: "We've been using A-Z Landscapes for our lawn care for three years now, and our yard has never looked better. Their team is reliable, thorough, and always professional.",
         },
         {
           name: "Amanda Rodriguez",
           location: "Homeowners Association Manager",
           rating: 5,
-          text: "A-Z maintains all the common areas in our community, and they do an outstanding job. The lawns are always immaculate, and they're very responsive to any special requests.",
+          text: "A-Z Landscapes maintains all the common areas in our community, and they do an outstanding job. The lawns are always immaculate, and they're very responsive to any special requests.",
         },
         {
           name: "James Wilson",
           location: "Residential Client",
           rating: 5,
-          text: "My lawn was in terrible shape when I bought my home. A-Z developed a restoration plan, and within one season, it was transformed into the best-looking lawn on the block!",
+          text: "My lawn was in terrible shape when I bought my home. A-Z Landscapes developed a restoration plan, and within one season, it was transformed into the best-looking lawn on the block!",
         },
       ]}
       faqs={[

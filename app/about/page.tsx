@@ -15,7 +15,7 @@ export default function AboutPage() {
                 Transforming Outdoor Spaces Since 2008
               </h1>
               <p className="text-lg text-gray-700 mb-8">
-                A-Z Landscaping has been creating beautiful, functional outdoor environments for residential and
+                A-Z Landscapes has been creating beautiful, functional outdoor environments for residential and
                 commercial clients for over 15 years. Our dedicated team combines artistic vision with technical
                 expertise to deliver exceptional landscaping solutions tailored to each client's unique needs.
               </p>
@@ -55,10 +55,10 @@ export default function AboutPage() {
               </p>
             </div>
             <p className="mt-8 text-gray-700">
-              At A-Z Landscaping, we believe that thoughtfully designed and expertly crafted outdoor spaces can
-              transform not just properties, but lives. We approach each project with creativity, precision, and a
-              commitment to excellence, ensuring that every landscape we create exceeds our clients' expectations and
-              stands the test of time.
+              At A-Z Landscapes, we believe that thoughtfully designed and expertly crafted outdoor spaces can transform
+              not just properties, but lives. We approach each project with creativity, precision, and a commitment to
+              excellence, ensuring that every landscape we create exceeds our clients' expectations and stands the test
+              of time.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-navy-800 mb-4">Michael Anderson</h3>
               <p className="text-gray-600 mb-2">Founder & CEO</p>
               <p className="text-gray-700 mb-6">
-                Michael founded A-Z Landscaping in 2008 with a passion for creating beautiful outdoor spaces and a
+                Michael founded A-Z Landscapes in 2008 with a passion for creating beautiful outdoor spaces and a
                 commitment to exceptional craftsmanship. With over 20 years of experience in the landscaping industry,
                 Michael began his career as a landscape laborer while studying Horticulture and Landscape Design at
                 State University.
@@ -84,7 +84,7 @@ export default function AboutPage() {
               <p className="text-gray-700 mb-6">
                 After working for several established landscaping companies and gaining expertise in all aspects of the
                 industry, Michael decided to start his own company with a focus on quality, creativity, and customer
-                satisfaction. Under his leadership, A-Z Landscaping has grown from a small operation to a full-service
+                satisfaction. Under his leadership, A-Z Landscapes has grown from a small operation to a full-service
                 landscaping company with a reputation for excellence.
               </p>
               <div className="p-4 bg-white border-l-4 border-kelly-500 rounded shadow-sm">
@@ -115,7 +115,7 @@ export default function AboutPage() {
               <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-navy-800 mb-2">Company Founded</h3>
                 <p className="text-gray-700">
-                  Michael Anderson establishes A-Z Landscaping with a small team focusing on residential landscape
+                  Michael Anderson establishes A-Z Landscapes with a small team focusing on residential landscape
                   maintenance and basic installation services.
                 </p>
               </div>
@@ -143,7 +143,7 @@ export default function AboutPage() {
               <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-navy-800 mb-2">Commercial Division Launch</h3>
                 <p className="text-gray-700">
-                  A-Z Landscaping launches a dedicated commercial division, serving businesses, HOAs, and municipal
+                  A-Z Landscapes launches a dedicated commercial division, serving businesses, HOAs, and municipal
                   clients with comprehensive landscape management services.
                 </p>
               </div>
@@ -171,8 +171,8 @@ export default function AboutPage() {
               <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-navy-800 mb-2">Design Studio Opening</h3>
                 <p className="text-gray-700">
-                  A-Z Landscaping opens a dedicated design studio with 3D visualization capabilities, allowing clients
-                  to see their projects come to life before installation begins.
+                  A-Z Landscapes opens a dedicated design studio with 3D visualization capabilities, allowing clients to
+                  see their projects come to life before installation begins.
                 </p>
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-navy-800 mb-2">Industry Association Member</h3>
               <p className="text-gray-700">
-                A-Z Landscaping is a proud member of the National Association of Landscape Professionals and our local
+                A-Z Landscapes is a proud member of the National Association of Landscape Professionals and our local
                 landscape contractors association.
               </p>
             </div>
@@ -292,7 +292,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold text-navy-900 mb-6">Our Team</h2>
               <p className="text-gray-700 mb-6">
-                The heart of A-Z Landscaping is our dedicated team of professionals who bring expertise, creativity, and
+                The heart of A-Z Landscapes is our dedicated team of professionals who bring expertise, creativity, and
                 passion to every project. From our designers and horticulturists to our installation crews and
                 maintenance specialists, each team member plays a vital role in delivering exceptional results.
               </p>
