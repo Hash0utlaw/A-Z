@@ -20,16 +20,19 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="flex min-h-screen flex-col">
-            <header className="bg-white shadow-sm border-b border-kelly-100 sticky top-0 z-50">
+            <header className="bg-primary text-primary-foreground shadow-md sticky top-0 z-50">
+              {" "}
+              {/* Header bg navy, text white */}
               <div className="container mx-auto px-4 py-4">
                 <MainNavigation />
               </div>
             </header>
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 bg-background text-foreground">{children}</main>{" "}
+            {/* Main content bg white, text navy */}
             <Footer />
           </div>
         </ThemeProvider>

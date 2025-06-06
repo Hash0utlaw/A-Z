@@ -9,14 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-accent text-accent-foreground hover:bg-accent/90", // Kelly Green
+        primary: "bg-primary text-primary-foreground hover:bg-primary/90", // Navy Blue
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        outline: "border border-input bg-background hover:bg-muted hover:text-muted-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        navy: "bg-navy-700 text-white hover:bg-navy-800",
-        navyOutline: "border border-navy-500 text-navy-700 bg-transparent hover:bg-navy-50",
+        ghost: "hover:bg-muted hover:text-muted-foreground",
+        link: "text-accent underline-offset-4 hover:underline", // Kelly Green for links
+        // Updated navy variants to use new primary (navy) and accent (kelly green)
+        navy: "bg-primary text-primary-foreground hover:bg-primary/90", // Use primary variant instead
+        navyOutline: "border border-primary text-primary bg-transparent hover:bg-primary/10", // Outline with primary color
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -26,7 +28,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "default", // Default buttons are Kelly Green
       size: "default",
     },
   },
