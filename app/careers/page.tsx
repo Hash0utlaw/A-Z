@@ -1,8 +1,10 @@
 import Image from "next/image"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Careers | A-Z Landscapes",
-  description: "Join the A-Z Landscapes team and build your career in landscaping.",
+export const metadata: Metadata = {
+  title: "Careers at A-Z Landscapes | Join Our Team",
+  description:
+    "Explore career opportunities at A-Z Landscapes. We're looking for passionate individuals to join our landscaping and hardscaping team. Apply today!",
 }
 
 const CareersPage = () => {

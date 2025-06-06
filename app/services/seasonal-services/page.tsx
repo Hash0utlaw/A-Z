@@ -1,4 +1,11 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Seasonal Landscape Services & Cleanups | A-Z Landscapes",
+  description:
+    "A-Z Landscapes offers spring/fall cleanups, leaf removal, snow management, and grading services to keep your property pristine year-round.",
+}
 
 export default function SeasonalServicesPage() {
   return (

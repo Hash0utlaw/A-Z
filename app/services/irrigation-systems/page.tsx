@@ -1,144 +1,140 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Irrigation & Drainage Solutions | A-Z Landscapes",
+  description:
+    "A-Z Landscapes offers expert irrigation system installation, maintenance, and drainage solutions (French drains, culverts) for healthy landscapes.",
+}
 
 export default function IrrigationSystemsPage() {
   return (
     <ServicePageTemplate
       category="landscaping"
-      title="Irrigation Systems"
-      description="Efficient sprinkler and drip irrigation systems designed to keep your landscape properly watered while conserving water and saving you time."
+      title="Irrigation & Drainage Solutions"
+      description="A-Z Landscapes provides expert irrigation system installation and maintenance, alongside comprehensive drainage solutions like French drains and culverts, to ensure a healthy landscape and protect your property from water damage."
       heroImage="/irrigation-systems/hero.png"
       benefits={[
-        "Save time with automated watering of your lawn and garden",
-        "Reduce water usage with efficient, targeted irrigation",
-        "Maintain healthier plants with consistent, proper watering",
-        "Prevent over or under-watering that can damage your landscape",
-        "Add value to your property with a professional irrigation system",
-        "Customize zones based on different plant water requirements",
+        "Maintain a lush, healthy lawn and garden with efficient, automated watering.",
+        "Conserve water and reduce utility bills with smart irrigation technology.",
+        "Prevent plant loss due to over or under-watering.",
+        "Protect your home's foundation and landscape from water damage with effective drainage.",
+        "Customized solutions for city water, lake water sources (well systems facilitated via partners).",
+        "Expert installation of French drains, culverts, and other drainage systems.",
       ]}
       process={[
         {
-          title: "Site Assessment",
+          title: "Site Assessment & Water Source Evaluation",
           description:
-            "We evaluate your property's layout, soil conditions, plant types, sun exposure, and water pressure to design an optimal system.",
+            "We analyze your property's layout, soil, plant types, sun exposure, and water source (city, lake, well) to design an optimal irrigation and/or drainage plan. For wells, we coordinate with specialized companies.",
         },
         {
-          title: "Custom Design",
+          title: "Custom Irrigation System Design",
           description:
-            "Our irrigation specialists create a tailored design with appropriate zones, head types, and coverage for your specific landscape needs.",
+            "Our specialists create a tailored irrigation plan with appropriate zones, sprinkler heads (for lawns) or drip lines (for beds), and smart controllers for efficiency.",
         },
         {
-          title: "System Proposal",
+          title: "Drainage System Design & Planning",
           description:
-            "We provide a detailed proposal outlining the recommended system, components, installation process, and cost.",
+            "If drainage issues are present or anticipated (especially with new construction), we design solutions like French drains, tying in downspouts, and proper grading to manage water flow effectively.",
         },
         {
           title: "Professional Installation",
           description:
-            "Our experienced team installs your irrigation system with minimal disruption to your existing landscape.",
+            "Our experienced team installs your irrigation and/or drainage systems with minimal disruption, using quality materials like corrugated pipe, PVC, or double-wall pipes for durability.",
         },
         {
-          title: "Programming & Adjustment",
+          title: "System Programming, Testing & Adjustments",
           description:
-            "We program your controller for optimal watering schedules and fine-tune all components for proper coverage and efficiency.",
+            "We program irrigation controllers for optimal schedules, test all components, and make fine-tune adjustments for coverage and efficiency. Drainage systems are tested for proper flow.",
         },
         {
-          title: "System Demonstration",
+          title: "Client Demonstration & Maintenance Guidance",
           description:
-            "We show you how to operate your new system and provide maintenance recommendations to ensure long-term performance.",
+            "We show you how to operate your new system(s) and provide recommendations for ongoing maintenance to ensure long-term performance. We also offer full-service irrigation maintenance.",
         },
       ]}
+      galleryTitle="Irrigation & Drainage Examples"
       gallery={[
         {
           image: "/irrigation-systems/lawn-sprinklers.png",
-          title: "Lawn Sprinkler System",
-          description: "Properly spaced sprinkler heads providing even coverage",
+          title: "Efficient Lawn Sprinklers",
+          description: "Evenly spaced sprinklers ensuring complete lawn coverage.",
         },
         {
           image: "/irrigation-systems/drip-irrigation.png",
-          title: "Drip Irrigation",
-          description: "Water-efficient drip irrigation for garden beds and plantings",
+          title: "Targeted Drip Irrigation",
+          description: "Water-wise drip systems for garden beds and specific plantings.",
         },
         {
           image: "/irrigation-systems/smart-controller.png",
-          title: "Smart Controller Installation",
-          description: "Weather-based smart controller for automated adjustments",
+          title: "Smart Irrigation Controller",
+          description: "Weather-based controllers for automated water savings.",
         },
         {
-          image: "/irrigation-systems/commercial-irrigation.png",
-          title: "Commercial Irrigation",
-          description: "Large-scale commercial property irrigation system",
+          image: "/french-drain-installation.png",
+          title: "French Drain System",
+          description: "Installation of a French drain to manage excess groundwater.",
+        },
+        {
+          image: "/downspout-drainage-tie-in.png",
+          title: "Downspout Drainage Solution",
+          description: "Gutter downspouts tied into an underground drainage system.",
         },
         {
           image: "/irrigation-systems/system-maintenance.png",
-          title: "System Maintenance",
-          description: "Professional seasonal maintenance and adjustments",
-        },
-        {
-          image: "/irrigation-systems/irrigation-retrofit.png",
-          title: "Irrigation Retrofit",
-          description: "Upgrading existing systems with water-saving technology",
+          title: "Irrigation System Maintenance",
+          description: "Professional seasonal checks and adjustments for optimal performance.",
         },
       ]}
       testimonials={[
         {
-          name: "Jason & Emily Wilson",
-          location: "Residential Clients",
+          name: "Jason & Emily W.",
           rating: 5,
-          text: "A-Z installed our irrigation system three years ago, and it's been flawless. Our lawn stays green with minimal water usage, and the seasonal maintenance keeps everything running perfectly.",
+          text: "A-Z Landscapes installed our irrigation, and it's been flawless. Our lawn is green, and we're using less water!",
         },
         {
-          name: "Westside Community HOA",
-          location: "Commercial Client",
+          name: "Westside HOA",
           rating: 5,
-          text: "The smart irrigation system A-Z designed for our community common areas has reduced our water bills by 30% while keeping the landscaping looking better than ever.",
+          text: "The smart irrigation system has significantly cut our water bills while keeping our community landscaping beautiful.",
         },
         {
-          name: "Sandra Phillips",
-          location: "Residential Client",
+          name: "Sandra P.",
           rating: 5,
-          text: "The drip irrigation system for my garden beds has been a game-changer. My plants are thriving, I'm using less water, and I love not having to drag hoses around anymore!",
+          text: "The French drain they installed solved our soggy backyard problem completely. Very professional and effective.",
         },
       ]}
       faqs={[
         {
-          question: "How much water can an irrigation system save?",
+          question: "What types of drainage solutions do you offer?",
           answer:
-            "A properly designed and maintained irrigation system can reduce water usage by 30-50% compared to manual watering. Smart controllers that adjust based on weather conditions, rain sensors that prevent watering during rainfall, and efficient head design all contribute to significant water savings while maintaining a healthy landscape.",
+            "We offer various drainage solutions including French drains, surface drains, catch basins, and tying in gutter downspouts to underground piping to carry water away from your home and landscape. The best solution depends on your specific issue.",
         },
         {
-          question: "What's the difference between sprinkler and drip irrigation?",
+          question: "Why is proper drainage important?",
           answer:
-            "Sprinkler systems distribute water over a larger area and are ideal for lawns and large planting beds. Drip irrigation delivers water directly to plant roots at a slow rate, minimizing evaporation and runoff. It's perfect for gardens, shrubs, trees, and container plants. Many properties benefit from a combination of both systems for different areas.",
+            "Proper drainage prevents water from pooling around your home's foundation, which can cause structural damage. It also prevents soil erosion, soggy lawns, and unhealthy plant conditions. As we say, 'water is not your friend' when it's uncontrolled.",
         },
         {
-          question: "How long does an irrigation system installation take?",
+          question: "Do you install irrigation for well water systems?",
           answer:
-            "Installation time varies based on property size and system complexity. A typical residential installation takes 1-3 days. Larger properties or more complex systems may take longer. We work efficiently to minimize disruption to your landscape and daily activities.",
+            "While we can design and install the irrigation system itself, for connecting to a well, we typically partner with a specialized well company as it can be complex. We manage the overall project for you.",
         },
         {
-          question: "What maintenance does an irrigation system require?",
+          question: "Can you maintain my existing irrigation system?",
           answer:
-            "Regular maintenance includes seasonal start-ups in spring, mid-season checks, and winterization in colder climates. We recommend professional inspections 2-3 times per year to check for leaks, adjust heads, clean filters, and optimize programming. Proper maintenance extends system life and ensures efficient operation.",
+            "Yes, we offer full-service irrigation maintenance, including spring start-ups, mid-season checks, adjustments, repairs, and winterization to keep your system running efficiently.",
         },
         {
-          question: "Can you upgrade my existing irrigation system?",
+          question: "What is the difference between sprinkler and drip irrigation?",
           answer:
-            "Yes, we specialize in irrigation system upgrades and retrofits. Common upgrades include adding smart controllers, installing rain sensors, replacing inefficient heads with water-saving models, converting spray zones to drip irrigation, and fixing coverage issues. We can assess your current system and recommend targeted improvements.",
+            "Sprinkler systems are best for covering larger areas like lawns. Drip irrigation delivers water slowly and directly to the roots of individual plants, ideal for garden beds, shrubs, and trees, and is very water-efficient.",
         },
       ]}
       relatedServices={[
-        {
-          title: "Lawn Care & Maintenance",
-          slug: "lawn-care-maintenance",
-        },
-        {
-          title: "Garden Design & Planting",
-          slug: "garden-design-planting",
-        },
-        {
-          title: "Seasonal Services",
-          slug: "seasonal-services",
-        },
+        { title: "Lawn Care & Maintenance", slug: "lawn-care-maintenance" },
+        { title: "Landscape Design & Planting", slug: "garden-design-planting" },
+        { title: "Grading & Site Preparation", slug: "seasonal-services" }, // Assuming grading is part of seasonal
       ]}
     />
   )

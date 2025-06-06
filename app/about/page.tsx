@@ -1,7 +1,15 @@
+import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Award, Leaf, Recycle, Star, ThumbsUp, Trophy, Users } from "lucide-react"
+import { Award, Leaf, Recycle, Star, Trophy, Users, Heart, MessageSquare, Eye } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About A-Z Landscapes | Our Story & Values",
+  description:
+    "Learn about A-Z Landscapes, our founder Zach Wardell, our mission, and our 20+ years of experience in creating beautiful outdoor spaces.",
+}
 
 export default function AboutPage() {
   return (
@@ -12,12 +20,16 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
-                Transforming Outdoor Spaces Since 2008
+                Crafting Beautiful Outdoors for Over 20 Years
               </h1>
               <p className="text-lg text-gray-700 mb-8">
-                A-Z Landscapes has been creating beautiful, functional outdoor environments for residential and
-                commercial clients for over 15 years. Our dedicated team combines artistic vision with technical
-                expertise to deliver exceptional landscaping solutions tailored to each client's unique needs.
+                A-Z Landscapes, founded by Zach Wardell, has been turning outdoor visions into reality since 2008. With
+                over two decades in the landscaping industry, Zach's journey began with a summer job that blossomed into
+                a lifelong passion for transforming ordinary spaces into something to be proud of.
+              </p>
+              <p className="text-lg text-gray-700 mb-8">
+                Our dedicated team combines artistic vision with technical expertise to deliver exceptional landscaping
+                and hardscaping solutions, tailored to each client's unique needs and dreams.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/services">
@@ -33,7 +45,7 @@ export default function AboutPage() {
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/about/team-landscape.png"
-                alt="A-Z Landscaping Team"
+                alt="A-Z Landscapes Team creating a beautiful landscape"
                 fill
                 className="object-cover"
                 priority
@@ -51,14 +63,15 @@ export default function AboutPage() {
             <div className="relative p-8 border-l-4 border-r-4 border-kelly-500">
               <p className="text-xl italic text-navy-800 mb-0">
                 "To create exceptional outdoor spaces that enhance the beauty, functionality, and value of our clients'
-                properties while providing unmatched customer service and sustainable landscaping practices."
+                properties by making people happy, producing something at the end of the day to be proud of, and
+                ensuring our team feels that same pride in their hard work."
               </p>
             </div>
             <p className="mt-8 text-gray-700">
               At A-Z Landscapes, we believe that thoughtfully designed and expertly crafted outdoor spaces can transform
               not just properties, but lives. We approach each project with creativity, precision, and a commitment to
               excellence, ensuring that every landscape we create exceeds our clients' expectations and stands the test
-              of time.
+              of time. We're not just about aesthetics; we're about creating lasting enjoyment and value.
             </p>
           </div>
         </div>
@@ -67,31 +80,34 @@ export default function AboutPage() {
       {/* Meet the Founder */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Meet Our Founder</h2>
+          <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Meet Our Founder: Zach Wardell</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl order-2 lg:order-1">
-              <Image src="/about/founder.png" alt="Michael Anderson, Founder" fill className="object-cover" />
+              <Image
+                src="/about/founder.png"
+                alt="Zach Wardell, Founder of A-Z Landscapes"
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="order-1 lg:order-2">
-              <h3 className="text-2xl font-bold text-navy-800 mb-4">Michael Anderson</h3>
+              <h3 className="text-2xl font-bold text-navy-800 mb-4">Zach Wardell</h3>
               <p className="text-gray-600 mb-2">Founder & CEO</p>
               <p className="text-gray-700 mb-6">
-                Michael founded A-Z Landscapes in 2008 with a passion for creating beautiful outdoor spaces and a
-                commitment to exceptional craftsmanship. With over 20 years of experience in the landscaping industry,
-                Michael began his career as a landscape laborer while studying Horticulture and Landscape Design at
-                State University.
+                Zach's passion for landscaping started as a summer job. He quickly realized the joy in being outdoors
+                and "making something out of nothing, turning something that was really bad into something to be proud
+                of." After eight years honing his skills in the industry, Zach founded A-Z Landscapes in 2008.
               </p>
               <p className="text-gray-700 mb-6">
-                After working for several established landscaping companies and gaining expertise in all aspects of the
-                industry, Michael decided to start his own company with a focus on quality, creativity, and customer
-                satisfaction. Under his leadership, A-Z Landscapes has grown from a small operation to a full-service
-                landscaping company with a reputation for excellence.
+                His motivation was clear: "I found out the good ways and bad ways to treat people and try to use that as
+                best as I can to benefit me and to help customers along the way." This principle, combined with over 20
+                years of hands-on experience, has shaped A-Z Landscapes into a company renowned for quality, creativity,
+                and genuine customer care.
               </p>
               <div className="p-4 bg-white border-l-4 border-kelly-500 rounded shadow-sm">
                 <p className="italic text-navy-700">
-                  "I believe that every outdoor space has the potential to be both beautiful and functional. Our goal is
-                  to help our clients realize that potential through thoughtful design, quality materials, and expert
-                  craftsmanship."
+                  "I enjoy making people happy and producing something at the end of the day to be proud of, and that
+                  your guys can be proud of... that feels good to me and makes me feel better than just anything."
                 </p>
               </div>
             </div>
@@ -99,82 +115,54 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company History */}
+      {/* Company Evolution & Philosophy */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Our Journey</h2>
-          <div className="relative max-w-4xl mx-auto">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-navy-100"></div>
-
-            {/* 2008 */}
-            <div className="relative mb-16">
-              <div className="flex items-center justify-center mb-4">
-                <div className="bg-kelly-500 text-white font-bold py-2 px-6 rounded-full z-10">2008</div>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-navy-800 mb-2">Company Founded</h3>
-                <p className="text-gray-700">
-                  Michael Anderson establishes A-Z Landscapes with a small team focusing on residential landscape
-                  maintenance and basic installation services.
-                </p>
-              </div>
+          <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Our Journey & Approach</h2>
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div>
+              <h3 className="text-2xl font-bold text-navy-800 mb-3">
+                From Maintenance Roots to Design-Build Excellence
+              </h3>
+              <p className="text-gray-700 mb-4">
+                A-Z Landscapes initially focused on maintenance – mowing, pruning, and general property care. This was
+                Zach's early experience. However, a growing interest in more transformative work led to a pivotal shift:
+                "After doing that for a couple of years, I got kind of bored with it... and did a couple of hardscape
+                jobs, a couple of retainer walls and realized how much fun they were. So that kind of really developed
+                me into wanting to grow the business into more of a landscape design and hardscape company with a
+                maintenance side."
+              </p>
+              <p className="text-gray-700">
+                Today, while "mowing grass is fun," the real passion lies in starting from scratch and building
+                something truly special – a space clients and our team can be proud of.
+              </p>
             </div>
-
-            {/* 2012 */}
-            <div className="relative mb-16">
-              <div className="flex items-center justify-center mb-4">
-                <div className="bg-kelly-500 text-white font-bold py-2 px-6 rounded-full z-10">2012</div>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-navy-800 mb-2">Expansion into Hardscaping</h3>
-                <p className="text-gray-700">
-                  The company expands services to include patios, retaining walls, and other hardscape elements,
-                  doubling the size of the team and acquiring specialized equipment.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-2xl font-bold text-navy-800 mb-3">
+                More Than Just "Yard Maids" – Your Landscape Partners
+              </h3>
+              <p className="text-gray-700 mb-4">
+                We strive to be more than just a service provider; we aim to be your trusted landscape contractors and
+                consultants. Zach explains, "I want them to feel that we're more of contractors... you communicate with
+                them, you try to help them benefit their property more, give them ideas." This means a collaborative
+                approach, where we listen to your needs, offer expert advice, and work together to find the best
+                solutions for your property.
+              </p>
+              <p className="text-gray-700">
+                It's about "going from reactive to proactive." We believe in putting in the extra effort – like pulling
+                up a client's trash can or noticing potential issues before they're pointed out – because "it shows the
+                customer that we care. And we're not there just to do a job and hurry up and leave."
+              </p>
             </div>
-
-            {/* 2015 */}
-            <div className="relative mb-16">
-              <div className="flex items-center justify-center mb-4">
-                <div className="bg-kelly-500 text-white font-bold py-2 px-6 rounded-full z-10">2015</div>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-navy-800 mb-2">Commercial Division Launch</h3>
-                <p className="text-gray-700">
-                  A-Z Landscapes launches a dedicated commercial division, serving businesses, HOAs, and municipal
-                  clients with comprehensive landscape management services.
-                </p>
-              </div>
-            </div>
-
-            {/* 2018 */}
-            <div className="relative mb-16">
-              <div className="flex items-center justify-center mb-4">
-                <div className="bg-kelly-500 text-white font-bold py-2 px-6 rounded-full z-10">2018</div>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-navy-800 mb-2">Sustainable Practices Initiative</h3>
-                <p className="text-gray-700">
-                  The company implements a comprehensive sustainability program, incorporating eco-friendly practices,
-                  materials, and equipment across all services.
-                </p>
-              </div>
-            </div>
-
-            {/* 2021 */}
-            <div className="relative">
-              <div className="flex items-center justify-center mb-4">
-                <div className="bg-kelly-500 text-white font-bold py-2 px-6 rounded-full z-10">2021</div>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-navy-800 mb-2">Design Studio Opening</h3>
-                <p className="text-gray-700">
-                  A-Z Landscapes opens a dedicated design studio with 3D visualization capabilities, allowing clients to
-                  see their projects come to life before installation begins.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-2xl font-bold text-navy-800 mb-3">Our Team: The Heart of A-Z Landscapes</h3>
+              <p className="text-gray-700 mb-4">
+                Zach deeply values his team: "I got all these guys that rely on me to support their families. So I've
+                got to make sure that this train keeps moving forward." This sense of responsibility translates into
+                fostering a supportive environment and ensuring the team has what they need to succeed and take pride in
+                their work. "I think I've weeded those people out [who just skate by], and they all got a really, really
+                good group of guys so thankful that I got the guys I got."
+              </p>
             </div>
           </div>
         </div>
@@ -184,134 +172,75 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="bg-navy-100 p-3 rounded-full mr-4">
-                  <Star className="h-6 w-6 text-navy-600" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-800">Quality & Craftsmanship</h3>
-              </div>
-              <p className="text-gray-700">
-                We take pride in our work and are committed to delivering the highest quality in every project, no
-                matter the size. Our attention to detail and dedication to craftsmanship ensure that each landscape we
-                create is built to last and exceed expectations.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="bg-navy-100 p-3 rounded-full mr-4">
-                  <ThumbsUp className="h-6 w-6 text-navy-600" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-800">Customer Satisfaction</h3>
-              </div>
-              <p className="text-gray-700">
-                Our clients are at the heart of everything we do. We listen carefully to their needs, communicate
-                clearly throughout the process, and work tirelessly to ensure their complete satisfaction. We measure
-                our success by the happiness of our clients.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="bg-navy-100 p-3 rounded-full mr-4">
-                  <Recycle className="h-6 w-6 text-navy-600" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-800">Environmental Responsibility</h3>
-              </div>
-              <p className="text-gray-700">
-                We are committed to sustainable landscaping practices that protect and enhance the environment. From
-                water conservation and native plantings to eco-friendly materials and methods, we strive to create
-                landscapes that are as kind to the earth as they are beautiful.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="bg-navy-100 p-3 rounded-full mr-4">
-                  <Users className="h-6 w-6 text-navy-600" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-800">Professional Development</h3>
-              </div>
-              <p className="text-gray-700">
-                We invest in our team through ongoing training, education, and certification programs. By fostering a
-                culture of continuous learning and growth, we ensure that our staff remains at the forefront of industry
-                knowledge and techniques.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ValueCard
+              icon={Star}
+              title="Quality & Craftsmanship"
+              description="We take immense pride in our work, delivering the highest quality in every project. Our attention to detail ensures landscapes that are built to last and exceed expectations."
+            />
+            <ValueCard
+              icon={Heart}
+              title="Customer Happiness"
+              description="Our clients are at the heart of everything. We listen, communicate clearly, and work tirelessly to ensure complete satisfaction and a positive experience."
+            />
+            <ValueCard
+              icon={MessageSquare}
+              title="Collaborative Partnership"
+              description="We believe in working with you, offering expert advice and tailored solutions. We aim to be proactive partners in enhancing your property."
+            />
+            <ValueCard
+              icon={Recycle}
+              title="Environmental Responsibility"
+              description="We're committed to sustainable practices, from water-wise designs to eco-friendly materials, creating beautiful landscapes that are kind to the earth."
+            />
+            <ValueCard
+              icon={Eye}
+              title="Attention to Detail"
+              description="It's the little things that make a big difference. From proactive care to meticulous installation, we focus on every detail to ensure excellence."
+            />
+            <ValueCard
+              icon={Users}
+              title="Valued Team"
+              description="We invest in our team through training and support, fostering a culture where everyone can take pride in their work and contribute to our collective success."
+            />
           </div>
         </div>
       </section>
 
-      {/* Certifications & Affiliations */}
+      {/* Certifications & Affiliations - Placeholder, can be updated if specific info is available */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Certifications & Affiliations</h2>
+          <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Our Commitment to Excellence</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <Award className="h-12 w-12 text-navy-600" />
               </div>
-              <h3 className="text-xl font-bold text-navy-800 mb-2">Certified Landscape Professional</h3>
+              <h3 className="text-xl font-bold text-navy-800 mb-2">Industry Expertise</h3>
               <p className="text-gray-700">
-                Our team includes multiple certified landscape professionals with extensive training and expertise in
-                design, installation, and maintenance.
+                With decades of combined experience, our team brings deep knowledge to every aspect of landscape design,
+                construction, and maintenance.
               </p>
             </div>
-
             <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <Leaf className="h-12 w-12 text-navy-600" />
               </div>
-              <h3 className="text-xl font-bold text-navy-800 mb-2">Sustainable Landscape Certification</h3>
+              <h3 className="text-xl font-bold text-navy-800 mb-2">Sustainable Practices</h3>
               <p className="text-gray-700">
-                We hold certification in sustainable landscaping practices, demonstrating our commitment to
-                environmentally responsible methods and materials.
+                We are dedicated to using sustainable methods and materials, ensuring your landscape is not only
+                beautiful but also environmentally conscious.
               </p>
             </div>
-
             <div className="bg-gray-50 p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <Trophy className="h-12 w-12 text-navy-600" />
               </div>
-              <h3 className="text-xl font-bold text-navy-800 mb-2">Industry Association Member</h3>
+              <h3 className="text-xl font-bold text-navy-800 mb-2">Licensed & Insured</h3>
               <p className="text-gray-700">
-                A-Z Landscapes is a proud member of the National Association of Landscape Professionals and our local
-                landscape contractors association.
+                A-Z Landscapes is fully licensed and insured, providing peace of mind and professional assurance for all
+                our clients.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Overview */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-navy-900 mb-6">Our Team</h2>
-              <p className="text-gray-700 mb-6">
-                The heart of A-Z Landscapes is our dedicated team of professionals who bring expertise, creativity, and
-                passion to every project. From our designers and horticulturists to our installation crews and
-                maintenance specialists, each team member plays a vital role in delivering exceptional results.
-              </p>
-              <p className="text-gray-700 mb-8">
-                We invest in our people through ongoing training, competitive compensation, and a positive work
-                environment that values safety, collaboration, and growth. Many of our team members have been with us
-                for years, contributing to the consistency and quality that defines our work.
-              </p>
-              <Link href="/careers">
-                <Button className="bg-navy-700 hover:bg-navy-800 text-white">Join Our Team</Button>
-              </Link>
-            </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/about/company-history.png"
-                alt="A-Z Landscaping Team at Work"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
@@ -320,10 +249,10 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-16 bg-navy-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Outdoor Space?</h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Begin Your Landscape Transformation?</h2>
           <p className="text-lg text-navy-100 max-w-2xl mx-auto mb-8">
-            Contact us today to schedule a consultation with our design team. We'll work with you to create a landscape
-            that reflects your style, meets your needs, and exceeds your expectations.
+            Let's discuss your vision. Contact A-Z Landscapes today to schedule a consultation with Zach and our design
+            team.
           </p>
           <Link href="/contact">
             <Button className="bg-kelly-500 hover:bg-kelly-600 text-white">Get in Touch</Button>
@@ -331,5 +260,23 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+  )
+}
+
+function ValueCard({
+  icon: Icon,
+  title,
+  description,
+}: { icon: React.ElementType; title: string; description: string }) {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="flex items-center mb-4">
+        <div className="bg-navy-100 p-3 rounded-full mr-4">
+          <Icon className="h-6 w-6 text-navy-600" />
+        </div>
+        <h3 className="text-xl font-bold text-navy-800">{title}</h3>
+      </div>
+      <p className="text-gray-700">{description}</p>
+    </div>
   )
 }

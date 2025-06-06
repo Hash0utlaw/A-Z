@@ -1,144 +1,125 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Landscape Lighting Design & Installation | A-Z Landscapes",
+  description:
+    "Custom LED landscape lighting by A-Z Landscapes. Enhance beauty, safety, and ambiance with uplighting, path lights, and more. Energy-efficient.",
+}
 
 export default function LandscapeLightingPage() {
   return (
     <ServicePageTemplate
       category="landscaping"
-      title="Landscape Lighting"
-      description="Enhance your property's beauty, safety, and security with custom landscape lighting designs that highlight architectural features and create ambiance."
+      title="Custom Landscape Lighting"
+      description="Illuminate your property's beauty, enhance safety, and extend outdoor enjoyment with A-Z Landscapes' custom low-voltage LED lighting designs. We offer a wide array of fixtures and techniques to create the perfect ambiance."
       heroImage="/landscape-lighting/hero.png"
       benefits={[
-        "Extend your outdoor living hours into the evening",
-        "Highlight architectural features and landscape elements",
-        "Improve safety along walkways, steps, and entrances",
-        "Enhance security around your property",
-        "Create ambiance and drama with professional lighting design",
-        "Increase property value with energy-efficient LED lighting systems",
+        "Extend your outdoor living hours well into the evening.",
+        "Highlight architectural features, trees, and garden elements beautifully.",
+        "Improve safety and security along walkways, steps, and around your property.",
+        "Create captivating ambiance and drama with professional lighting design.",
+        "Energy-efficient LED systems for lower operating costs and longevity.",
+        "Options for color-changing LEDs for seasonal or festive displays (e.g., Halloween, Christmas).",
       ]}
       process={[
         {
-          title: "Lighting Consultation",
+          title: "Lighting Consultation & Goal Setting",
           description:
-            "We discuss your goals, preferences, and areas you want to highlight or illuminate for safety and security.",
+            "We discuss your objectives: Do you want to highlight specific features, improve safety, create a mood, or all of the above? We also consider your budget.",
         },
         {
-          title: "Nighttime Demonstration",
+          title: "Fixture Selection & Design Plan",
           description:
-            "We conduct an optional nighttime demonstration with portable lights to show the effect of different lighting techniques.",
+            "We select from a range of high-quality, low-voltage LED fixtures (uplights, downlights, path lights, well lights, wash lights, bullet lights, pergola, cap, and ledge lights) based on your needs and budget (fixtures can range from $75 to $250+ for advanced color-changing options).",
         },
         {
-          title: "Custom Design",
+          title: "Nighttime Demonstration (Optional)",
           description:
-            "Our lighting designers create a tailored plan selecting fixture types, placement, and lighting techniques for your property.",
-        },
-        {
-          title: "Proposal Review",
-          description:
-            "We present a detailed proposal with fixture selections, installation plan, and investment required for your approval.",
+            "For some projects, we can conduct a nighttime demonstration with temporary lights to help you visualize the effects and make informed decisions.",
         },
         {
           title: "Professional Installation",
           description:
-            "Our technicians install your lighting system with minimal disruption to your landscape, using proper wiring and connection methods.",
+            "Our technicians expertly install your lighting system with minimal disruption, ensuring proper wiring, connections, and fixture placement for optimal effect and durability.",
         },
         {
-          title: "Final Adjustments",
+          title: "Final Adjustments & System Programming",
           description:
-            "We make final adjustments at night to ensure perfect positioning and illumination levels for each fixture.",
+            "We make precise adjustments at night to perfect the illumination. If applicable, we program timers or smart controls, including any color-changing scenes.",
         },
       ]}
+      galleryTitle="Landscape Lighting Showcase"
       gallery={[
         {
           image: "/landscape-lighting/architectural-lighting.png",
-          title: "Architectural Lighting",
-          description: "Highlighting home architecture with well-placed uplighting",
+          title: "Architectural Uplighting",
+          description: "Highlighting home architecture with strategically placed uplights.",
         },
         {
           image: "/landscape-lighting/path-lighting.png",
-          title: "Path Lighting",
-          description: "Elegant path lighting for safety and ambiance",
+          title: "Elegant Path Lighting",
+          description: "Guiding the way safely while adding a touch of elegance.",
         },
         {
           image: "/landscape-lighting/tree-lighting.png",
-          title: "Tree & Garden Lighting",
-          description: "Dramatic tree lighting and garden illumination",
+          title: "Dramatic Tree & Garden Illumination",
+          description: "Creating depth and highlighting specimen trees and plants.",
         },
         {
           image: "/landscape-lighting/water-lighting.png",
-          title: "Water Feature Lighting",
-          description: "Submersible lighting for ponds and water features",
+          title: "Enchanting Water Feature Lighting",
+          description: "Bringing ponds and waterfalls to life after dark.",
         },
         {
           image: "/landscape-lighting/deck-lighting.png",
-          title: "Deck & Patio Lighting",
-          description: "Subtle lighting for outdoor living spaces",
+          title: "Subtle Deck & Patio Lighting",
+          description: "Creating a warm and inviting atmosphere for outdoor living spaces.",
         },
         {
           image: "/landscape-lighting/security-lighting.png",
-          title: "Security Lighting",
-          description: "Strategic lighting for enhanced property security",
+          title: "Effective Security Lighting",
+          description: "Strategically placed lights to deter intruders and enhance visibility.",
         },
       ]}
       testimonials={[
         {
-          name: "Michael & Laura Bennett",
-          location: "Residential Clients",
+          name: "The Bennetts",
           rating: 5,
-          text: "The landscape lighting A-Z designed for our home has transformed how we use our outdoor space. We can now enjoy our patio well into the evening, and the lighting makes our home look spectacular at night.",
+          text: "A-Z Landscapes' lighting design transformed our home! We enjoy our patio so much more in the evenings, and it looks spectacular.",
         },
         {
           name: "Riverside Restaurant",
-          location: "Commercial Client",
           rating: 5,
-          text: "A-Z installed lighting throughout our outdoor dining area and garden. Our customers love the ambiance, and it's significantly increased our evening business.",
-        },
-        {
-          name: "The Jacksons",
-          location: "Residential Clients",
-          rating: 5,
-          text: "We were concerned about dark areas around our property for security reasons. A-Z created a lighting plan that addressed all our concerns while still being beautiful and energy-efficient.",
+          text: "The lighting in our outdoor dining area is perfect. Customers love the ambiance, and it's boosted our evening business.",
         },
       ]}
       faqs={[
         {
-          question: "What types of landscape lighting fixtures do you offer?",
+          question: "What types of landscape lighting fixtures do you use?",
           answer:
-            "We offer a complete range of fixtures including path lights, uplights, downlights, wall washes, step lights, underwater lights, and specialty fixtures. We select from high-quality, durable fixtures in various styles, finishes, and light outputs to achieve the desired effect while complementing your landscape and architecture.",
+            "We use a wide variety of low-voltage LED fixtures, including uplights, downlights, path lights, well lights, wash lights, bullet lights, pergola lights, cap lights, and ledge lights. We select fixtures based on the desired effect, durability, and your budget.",
         },
         {
-          question: "Do you use LED lighting?",
+          question: "Can I get color-changing lights for holidays?",
           answer:
-            "Yes, we exclusively use LED lighting for our landscape lighting systems. LED technology offers numerous advantages including energy efficiency (using up to 80% less energy than halogen), longer bulb life (typically 15-20 years), reduced maintenance, and better control over light color and intensity. This results in lower operating costs and reduced environmental impact.",
+            "Yes! We offer advanced LED systems that are color-changing and can be programmed for holidays like Christmas or Halloween, or any other mood you want to create. These are typically higher-end fixtures.",
         },
         {
-          question: "How is landscape lighting controlled?",
+          question: "How much does landscape lighting cost?",
           answer:
-            "Modern landscape lighting systems can be controlled in several ways. Basic systems use astronomical timers that automatically adjust to seasonal daylight changes. More advanced options include smart controllers that allow operation from your smartphone, integration with home automation systems, and programmable scenes for different occasions or areas of your property.",
+            "The cost varies significantly based on the number and type of fixtures, complexity of installation, and control systems. Basic fixtures might be $75-$100 each, while advanced color-changing ones can be $250 or more. We provide a detailed quote after the design consultation.",
         },
         {
-          question: "What maintenance does landscape lighting require?",
+          question: "Is LED lighting energy-efficient?",
           answer:
-            "LED landscape lighting requires minimal maintenance compared to older systems. We recommend an annual check to clean fixtures, trim any encroaching vegetation, check connections, and make any needed adjustments. With proper installation and quality components, most systems operate reliably for many years with only occasional attention.",
-        },
-        {
-          question: "Can you add lighting to my existing landscape?",
-          answer:
-            "Landscape lighting can be added to established landscapes with minimal disruption. Our installation techniques protect existing plants and hardscapes. We can work around mature trees, established gardens, and existing structures to enhance your current landscape with beautiful lighting effects.",
+            "Absolutely. LED lighting uses significantly less energy than traditional halogen systems and has a much longer lifespan, resulting in lower operating costs and less maintenance.",
         },
       ]}
       relatedServices={[
-        {
-          title: "Patios & Walkways",
-          slug: "patios-walkways",
-        },
-        {
-          title: "Garden Design & Planting",
-          slug: "garden-design-planting",
-        },
-        {
-          title: "Outdoor Kitchens & Fire Features",
-          slug: "outdoor-kitchens-fire-features",
-        },
+        { title: "Garden Design & Planting", slug: "garden-design-planting" },
+        { title: "Patios & Walkways", slug: "patios-walkways" },
+        { title: "Outdoor Kitchens & Fire Features", slug: "outdoor-kitchens-fire-features" },
       ]}
     />
   )

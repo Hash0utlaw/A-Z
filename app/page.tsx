@@ -1,16 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import {
-  Phone,
-  Mail,
-  MapPin,
   Star,
   Leaf,
   TreePine,
@@ -21,7 +17,6 @@ import {
   CheckCircle,
   Users,
   Award,
-  Clock,
   Building,
   Car,
   Flame,
@@ -29,12 +24,12 @@ import {
   Sprout,
   Lightbulb,
   SunSnow,
-  ChevronRight,
+  Heart,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function LandscapingWebsite() {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -43,14 +38,15 @@ export default function LandscapingWebsite() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200">Professional Landscaping Services</Badge>
+                <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200">A-Z Landscapes: Since 2008</Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Transform Your
-                  <span className="text-kelly-500"> Outdoor Space</span>
+                  Transforming Your
+                  <span className="text-kelly-500"> Outdoor Dreams</span> Into Reality
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  From concept to completion, we create beautiful, sustainable landscapes that enhance your property
-                  value and bring your vision to life.
+                  With over 20 years of passion and expertise, we turn ordinary spaces into something to be proud of.
+                  From concept to completion, A-Z Landscapes creates beautiful, sustainable landscapes that enhance your
+                  property and bring your vision to life.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -59,7 +55,7 @@ export default function LandscapingWebsite() {
                     Get Free Estimate
                   </Button>
                 </Link>
-                <Link href="/#portfolio">
+                <Link href="/portfolio">
                   <Button
                     size="lg"
                     variant="outline"
@@ -76,14 +72,18 @@ export default function LandscapingWebsite() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Award className="h-5 w-5 text-navy-600" />
-                  <span className="text-gray-700">15+ Years Experience</span>
+                  <span className="text-gray-700">20+ Years Experience</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Heart className="h-5 w-5 text-navy-600" />
+                  <span className="text-gray-700">Passion-Driven Work</span>
                 </div>
               </div>
             </div>
             <div className="relative">
               <Image
                 src="/hero-landscape.png"
-                alt="Professional landscaping showcasing lush lawn, stone patio, and beautiful garden design"
+                alt="Beautifully landscaped property by A-Z Landscapes"
                 width={800}
                 height={600}
                 className="rounded-2xl shadow-2xl"
@@ -110,10 +110,10 @@ export default function LandscapingWebsite() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-kelly-100 text-kelly-700 hover:bg-kelly-200 mb-4">Our Services</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete Landscaping Solutions</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive Landscape & Hardscape Solutions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From design to maintenance, we offer comprehensive landscaping services to keep your outdoor space
-              beautiful year-round.
+              From meticulous maintenance to stunning design-build projects, we offer a full spectrum of services to
+              create and maintain your perfect outdoor environment.
             </p>
           </div>
 
@@ -123,58 +123,37 @@ export default function LandscapingWebsite() {
                 <div className="bg-navy-100 p-2 rounded-lg">
                   <Hammer className="h-6 w-6 text-navy-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Hardscape Services</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Hardscape Design & Construction</h3>
               </div>
               <p className="text-gray-600 mb-6">
-                Create beautiful and functional outdoor living spaces with our premium hardscaping services.
+                Crafting durable and beautiful outdoor living areas, from patios and retaining walls to outdoor kitchens
+                and fire features. We love working with natural stone and boulders!
               </p>
               <div className="grid grid-cols-2 gap-3">
-                <Link
-                  href="/services/patios-walkways"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Footprints className="h-5 w-5 text-navy-600" />
-                  <span>Patios & Walkways</span>
-                </Link>
-                <Link
-                  href="/services/retaining-walls"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Building className="h-5 w-5 text-navy-600" />
-                  <span>Retaining Walls</span>
-                </Link>
-                <Link
-                  href="/services/driveways"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Car className="h-5 w-5 text-navy-600" />
-                  <span>Driveways</span>
-                </Link>
-                <Link
-                  href="/services/outdoor-kitchens-fire-features"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Flame className="h-5 w-5 text-navy-600" />
-                  <span>Outdoor Kitchens</span>
-                </Link>
-                <Link
-                  href="/services/water-features"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Droplet className="h-5 w-5 text-navy-600" />
-                  <span>Water Features</span>
-                </Link>
-                <Link
-                  href="/services/pergolas-gazebos"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Tent className="h-5 w-5 text-navy-600" />
-                  <span>Pergolas & Gazebos</span>
-                </Link>
+                {[
+                  { name: "Patios & Walkways", slug: "patios-walkways", icon: Footprints },
+                  { name: "Retaining Walls", slug: "retaining-walls", icon: Building },
+                  { name: "Driveways", slug: "driveways", icon: Car },
+                  { name: "Outdoor Kitchens", slug: "outdoor-kitchens-fire-features", icon: Flame },
+                  { name: "Water Features", slug: "water-features", icon: Droplet },
+                  { name: "Pergolas & Gazebos", slug: "pergolas-gazebos", icon: Tent },
+                ].map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
+                  >
+                    <service.icon className="h-5 w-5 text-navy-600 flex-shrink-0" />
+                    <span>{service.name}</span>
+                  </Link>
+                ))}
               </div>
               <div className="mt-6">
-                <Link href="/services" className="text-navy-700 font-medium hover:text-navy-700 transition-colors">
-                  View All Hardscape Services →
+                <Link
+                  href="/services#hardscape"
+                  className="text-navy-700 font-medium hover:text-navy-700 transition-colors"
+                >
+                  Explore Hardscape Services →
                 </Link>
               </div>
             </div>
@@ -184,269 +163,175 @@ export default function LandscapingWebsite() {
                 <div className="bg-navy-100 p-2 rounded-lg">
                   <Leaf className="h-6 w-6 text-navy-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Landscaping Services</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Landscape Design & Maintenance</h3>
               </div>
               <p className="text-gray-600 mb-6">
-                Keep your outdoor space healthy, beautiful, and thriving with our expert landscaping services.
+                Bringing your vision to life with thoughtful garden designs, expert plant selection, lighting,
+                irrigation, and comprehensive maintenance programs.
               </p>
               <div className="grid grid-cols-2 gap-3">
-                <Link
-                  href="/services/lawn-care-maintenance"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Scissors className="h-5 w-5 text-navy-600" />
-                  <span>Lawn Care</span>
-                </Link>
-                <Link
-                  href="/services/garden-design-planting"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Sprout className="h-5 w-5 text-navy-600" />
-                  <span>Garden Design</span>
-                </Link>
-                <Link
-                  href="/services/tree-services"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <TreePine className="h-5 w-5 text-navy-600" />
-                  <span>Tree Services</span>
-                </Link>
-                <Link
-                  href="/services/irrigation-systems"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Droplet className="h-5 w-5 text-navy-600" />
-                  <span>Irrigation Systems</span>
-                </Link>
-                <Link
-                  href="/services/landscape-lighting"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <Lightbulb className="h-5 w-5 text-navy-600" />
-                  <span>Landscape Lighting</span>
-                </Link>
-                <Link
-                  href="/services/seasonal-services"
-                  className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
-                >
-                  <SunSnow className="h-5 w-5 text-navy-600" />
-                  <span>Seasonal Services</span>
-                </Link>
+                {[
+                  { name: "Landscape Design", slug: "garden-design-planting", icon: Sprout },
+                  { name: "Lawn Care & Maintenance", slug: "lawn-care-maintenance", icon: Scissors },
+                  { name: "Tree Services", slug: "tree-services", icon: TreePine },
+                  { name: "Irrigation & Drainage", slug: "irrigation-systems", icon: Droplet },
+                  { name: "Landscape Lighting", slug: "landscape-lighting", icon: Lightbulb },
+                  { name: "Artificial Turf", slug: "turf-installation", icon: Leaf }, // Changed icon for variety
+                  { name: "Seasonal Services", slug: "seasonal-services", icon: SunSnow },
+                ].map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
+                  >
+                    <service.icon className="h-5 w-5 text-navy-600 flex-shrink-0" />
+                    <span>{service.name}</span>
+                  </Link>
+                ))}
               </div>
               <div className="mt-6">
-                <Link href="/services" className="text-navy-700 font-medium hover:text-navy-700 transition-colors">
-                  View All Landscaping Services →
+                <Link
+                  href="/services#landscaping"
+                  className="text-navy-700 font-medium hover:text-navy-700 transition-colors"
+                >
+                  Explore Landscaping Services →
                 </Link>
               </div>
             </div>
           </div>
 
           <div className="text-center">
-            <Link href="/contact">
+            <Link href="/services">
               <Button size="lg" className="bg-kelly-500 hover:bg-kelly-600">
-                Explore All Our Services
+                Discover All Our Services
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-kelly-50">
+      {/* About Section Snippet */}
+      <section id="about-snippet" className="py-20 bg-kelly-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200">About A-Z Landscapes</Badge>
-                <h2 className="text-4xl font-bold text-gray-900">Your Trusted Landscaping Partner Since 2008</h2>
+                <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200">Why Choose A-Z Landscapes?</Badge>
+                <h2 className="text-4xl font-bold text-gray-900">Your Passionate & Experienced Landscape Partner</h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  For over 15 years, A-Z Landscaping has been transforming outdoor spaces across the region. Our team of
-                  certified professionals combines creativity with expertise to deliver exceptional results that exceed
-                  expectations.
+                  Founded on a love for transforming spaces and a commitment to quality, A-Z Landscapes brings over 20
+                  years of industry experience to your project. We started with a simple goal: to do great work and
+                  treat people right.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  We believe that every property has unique potential. Whether you're looking for a complete landscape
-                  makeover or ongoing maintenance, we're committed to bringing your vision to life with quality
-                  craftsmanship and sustainable practices.
+                  Today, we've grown into a full-service design, build, and maintenance company, but our core values
+                  remain. We're dedicated to creating outdoor environments you'll love, built with craftsmanship and a
+                  personal touch.
                 </p>
               </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                  <div className="text-3xl font-bold text-navy-700 mb-2">15+</div>
-                  <div className="text-gray-700">Years Experience</div>
-                </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                  <div className="text-3xl font-bold text-navy-700 mb-2">500+</div>
-                  <div className="text-gray-700">Projects Completed</div>
-                </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                  <div className="text-3xl font-bold text-navy-700 mb-2">100%</div>
-                  <div className="text-gray-700">Satisfaction Rate</div>
-                </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-                  <div className="text-3xl font-bold text-navy-700 mb-2">24/7</div>
-                  <div className="text-gray-700">Emergency Service</div>
-                </div>
-              </div>
+              <Link href="/about">
+                <Button size="lg" variant="outline" className="border-navy-500 text-navy-700 hover:bg-navy-50">
+                  Learn More About Us
+                </Button>
+              </Link>
             </div>
-
             <div className="relative">
               <Image
                 src="/team-at-work.png"
-                alt="A-Z Landscaping team at work"
+                alt="A-Z Landscapes team collaborating on a project"
                 width={600}
                 height={600}
                 className="rounded-2xl shadow-xl"
               />
-              <div className="absolute -top-6 -right-6 bg-navy-900 text-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-3">
-                  <Award className="h-8 w-8" />
-                  <div>
-                    <div className="font-bold">Licensed</div>
-                    <div className="text-kelly-100">& Insured</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-white">
+      {/* Portfolio Snippet Section */}
+      <section id="portfolio-snippet" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Our Work</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Recent Projects</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Transformations We're Proud Of</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Take a look at some of our recent landscaping transformations. Each project showcases our commitment to
-              quality and attention to detail.
+              Seeing is believing. Explore a selection of our recent projects and imagine the possibilities for your own
+              outdoor space.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: "Modern Backyard Oasis",
-                category: "Complete Landscape Design",
-                image: "/projects/modern-backyard-oasis.png",
-              },
-              {
-                title: "Front Yard Transformation",
-                category: "Curb Appeal Enhancement",
-                image: "/projects/front-yard-transformation.png",
-              },
-              {
-                title: "Outdoor Living Space",
-                category: "Hardscaping & Patio",
-                image: "/projects/outdoor-living-space.png",
-              },
-              {
-                title: "Garden Paradise",
-                category: "Garden Design & Planting",
-                image: "/projects/garden-paradise.png",
-              },
-              {
-                title: "Commercial Landscaping",
-                category: "Business Property",
-                image: "/projects/commercial-landscaping.png",
-              },
-              {
-                title: "Sustainable Landscape",
-                category: "Eco-Friendly Design",
-                image: "/projects/sustainable-landscape.png",
-              },
+              { title: "Modern Backyard Oasis", image: "/projects/modern-backyard-oasis.png" },
+              { title: "Front Yard Transformation", image: "/projects/front-yard-transformation.png" },
+              { title: "Outdoor Living Space", image: "/projects/outdoor-living-space.png" },
             ].map((project, index) => (
               <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="relative overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Badge className="bg-navy-700 text-white mb-2">{project.category}</Badge>
-                    <h3 className="text-lg font-semibold">{project.title}</h3>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 text-white text-lg font-semibold">{project.title}</h3>
                 </div>
               </Card>
             ))}
           </div>
-
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="border-navy-500 text-navy-700 hover:bg-kelly-50">
-              View All Projects
-            </Button>
-          </div>
-
-          {/* Transformations Link */}
-          <div className="text-center mt-8 pt-8 border-t border-gray-100">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Before & After Transformations</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-4">
-              See the dramatic difference our landscaping services can make. Explore our before and after gallery to
-              witness stunning property transformations.
-            </p>
-            <Link href="/transformations">
-              <Button variant="outline" className="border-kelly-500 text-kelly-500 hover:bg-kelly-50">
-                View Transformations <ChevronRight className="h-4 w-4 ml-1" />
+            <Link href="/portfolio">
+              <Button size="lg" className="bg-kelly-500 hover:bg-kelly-600">
+                View Full Portfolio
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Snippet Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Testimonials</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied customers have to say about our landscaping
-              services.
-            </p>
+            <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Client Love</Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Hear From Our Happy Customers</h2>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Sarah Johnson",
-                location: "Residential Customer",
-                rating: 5,
-                text: "A-Z Landscaping transformed our backyard into a beautiful oasis. The team was professional, punctual, and exceeded our expectations. Highly recommended!",
+                name: "Sarah J.",
+                text: "A-Z Landscapes turned our backyard vision into a stunning reality. Professional, creative, and a joy to work with!",
               },
               {
-                name: "Mike Chen",
-                location: "Commercial Property",
-                rating: 5,
-                text: "Outstanding service! They maintain our office complex grounds perfectly. Always reliable and the quality of work is consistently excellent.",
+                name: "Mike C.",
+                text: "The best landscaping company we've ever hired. Their attention to detail is unmatched.",
               },
               {
-                name: "Emily Rodriguez",
-                location: "Residential Customer",
-                rating: 5,
-                text: "From design to installation, the entire process was smooth. Our new garden is absolutely stunning and has increased our property value significantly.",
+                name: "Emily R.",
+                text: "Our new patio and garden are incredible. Thank you, A-Z Landscapes, for your amazing work!",
               },
             ].map((testimonial, index) => (
               <Card key={index} className="bg-white border-navy-100">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
+                    {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                   <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
-                  </div>
+                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            {/* Placeholder for a link to a full testimonials page if created */}
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="border-navy-500 text-navy-700 hover:bg-kelly-50">
+                Share Your Experience
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -456,131 +341,45 @@ export default function LandscapingWebsite() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Get In Touch</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Transform Your Landscape?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Contact us today for a free consultation and estimate. We're here to bring your outdoor vision to life.
+              Let's discuss how A-Z Landscapes can bring your outdoor vision to life. Contact us today for a free,
+              no-obligation consultation and estimate.
             </p>
           </div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <Card className="border-navy-100">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">Get Your Free Estimate</CardTitle>
-                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="John" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Doe" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="john@example.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" type="tel" placeholder="(555) 123-4567" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="service">Service Type</Label>
-                    <Select>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="patios-walkways">Patios & Walkways</SelectItem>
-                        <SelectItem value="retaining-walls">Retaining Walls</SelectItem>
-                        <SelectItem value="driveways">Driveways</SelectItem>
-                        <SelectItem value="outdoor-kitchens">Outdoor Kitchens & Fire Features</SelectItem>
-                        <SelectItem value="water-features">Water Features</SelectItem>
-                        <SelectItem value="pergolas-gazebos">Pergolas & Gazebos</SelectItem>
-                        <SelectItem value="lawn-care">Lawn Care & Maintenance</SelectItem>
-                        <SelectItem value="garden-design">Garden Design & Planting</SelectItem>
-                        <SelectItem value="tree-services">Tree Services</SelectItem>
-                        <SelectItem value="irrigation">Irrigation Systems</SelectItem>
-                        <SelectItem value="landscape-lighting">Landscape Lighting</SelectItem>
-                        <SelectItem value="seasonal-services">Seasonal Services</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Tell us about your project..." className="min-h-[120px]" />
-                  </div>
-                  <Button className="w-full bg-kelly-500 hover:bg-kelly-600">
-                    <Link href="/contact">Send Message</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Contact Information</h3>
-
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-navy-100 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-navy-600" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Phone</div>
-                      <div className="text-gray-600">(555) 123-4567</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-navy-100 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-navy-600" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Email</div>
-                      <div className="text-gray-600">info@azlandscaping.com</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-navy-100 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-navy-600" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Service Area</div>
-                      <div className="text-gray-600">Greater Metro Area & Surrounding Counties</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-navy-100 p-3 rounded-full">
-                      <Clock className="h-6 w-6 text-navy-600" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Business Hours</div>
-                      <div className="text-gray-600">Mon-Fri: 7AM-6PM, Sat: 8AM-4PM</div>
-                    </div>
-                  </div>
+          <div className="max-w-lg mx-auto">
+            <Card className="border-navy-100">
+              <CardHeader>
+                <CardTitle className="text-2xl text-gray-900">Request a Free Consultation</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* Simplified form, actual form on /contact page */}
+                <div className="space-y-2">
+                  <Label htmlFor="name">Full Name</Label>
+                  <Input id="name" placeholder="Your Name" />
                 </div>
-              </div>
-
-              <Card className="bg-navy-900 text-white border-kelly-500">
-                <CardContent className="p-6">
-                  <h4 className="text-xl font-bold mb-4">Emergency Services Available</h4>
-                  <p className="mb-4">
-                    Storm damage? Tree emergency? We offer 24/7 emergency services for urgent landscaping needs.
-                  </p>
-                  <Button variant="secondary" className="bg-white text-kelly-500 hover:bg-kelly-50">
-                    Call Emergency Line
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="your@email.com" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone (Optional)</Label>
+                  <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Briefly describe your project</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="e.g., New patio, garden redesign, lawn maintenance..."
+                    className="min-h-[100px]"
+                  />
+                </div>
+                <Link href="/contact" className="w-full">
+                  <Button className="w-full bg-kelly-500 hover:bg-kelly-600">Go to Full Contact Form</Button>
+                </Link>
+                <p className="text-xs text-gray-500 text-center pt-2">Or call us at (555) 123-4567</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

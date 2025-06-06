@@ -1,144 +1,145 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Landscape Design & Planting Services | A-Z Landscapes",
+  description:
+    "Creative landscape design and expert planting services from A-Z Landscapes. Personalized garden designs, plant selection, and installation for beautiful results.",
+}
 
 export default function GardenDesignPlantingPage() {
   return (
     <ServicePageTemplate
       category="landscaping"
-      title="Garden Design & Planting"
-      description="Transform your outdoor space with custom garden designs featuring beautiful flower beds, shrubs, and perennial gardens tailored to your property and preferences."
+      title="Creative Landscape Design & Planting"
+      description="Transform your property with bespoke landscape designs from A-Z Landscapes. We specialize in creating personalized outdoor environments, from vibrant flower beds and ornamental shrubs to complete property master plans, always tailored to your style and site."
       heroImage="/garden-design-planting/hero.png"
       benefits={[
-        "Create beautiful, colorful outdoor spaces that enhance your property's appeal",
-        "Design gardens that provide interest and beauty throughout all seasons",
-        "Select plants that thrive in your specific soil conditions and climate",
-        "Reduce maintenance with proper plant selection and garden design",
-        "Increase biodiversity and support local pollinators with native plant options",
-        "Improve your property value with professional landscape design",
+        "Personalized designs reflecting your style (Modern, Southern, English, Beachy, etc.).",
+        "Expert plant selection for year-round interest, color, and suitability to your site.",
+        "Enhanced curb appeal and property value through thoughtful design.",
+        "Creation of functional and beautiful outdoor living spaces.",
+        "Solutions for challenging sites, incorporating elements like grading and drainage.",
+        "Collaborative process ensuring your vision is realized.",
       ]}
       process={[
         {
-          title: "Initial Consultation",
+          title: "Initial Consultation & Vision Sharing",
           description:
-            "We meet to discuss your vision, preferences, budget, and how you want to use your outdoor space.",
+            "We start by listening. We'll discuss your likes, dislikes, how you envision using the space, preferred styles (e.g., modern, southern, formal, natural), and budget.",
         },
         {
-          title: "Site Analysis",
+          title: "Site Analysis & Assessment",
           description:
-            "We evaluate your property's soil conditions, sun exposure, drainage patterns, and existing vegetation.",
+            "Our team thoroughly evaluates your property, considering house style, neighborhood context, soil conditions, sun exposure, drainage, and existing features.",
         },
         {
-          title: "Concept Design",
+          title: "Concept Development & Plant Palette Curation",
           description:
-            "Our designers create a custom garden plan with plant selections, layout, and features tailored to your property.",
+            "Based on your input and our analysis, we develop design concepts. This includes selecting a palette of plants from our trusted nurseries, focusing on variety, color, texture, and seasonal interest. We love incorporating diverse plants beyond standard 'builder packages'.",
         },
         {
-          title: "Design Presentation",
+          title: "Design Presentation & Refinement",
           description:
-            "We present the design concept with visual representations and plant selections for your review and approval.",
+            "We present you with a detailed design plan, which can include sketches or 3D renderings. We'll walk you through the plant choices and layout, inviting your feedback and making any necessary revisions to perfect the plan.",
         },
         {
-          title: "Installation",
+          title: "Deposit & Material Sourcing",
           description:
-            "Our skilled team prepares the soil, installs plants according to the design plan, and adds mulch and edging as needed.",
+            "Once the design is approved, we secure a deposit and begin sourcing the highest quality plants and materials for your project.",
         },
         {
-          title: "Care Instructions",
+          title: "Professional Installation & Site Management",
           description:
-            "We provide detailed care instructions and can set up a maintenance schedule to ensure your garden thrives.",
+            "Our skilled crews meticulously install your new landscape, including any necessary site preparation like grading. We ensure every plant is perfectly placed and the site is left clean.",
+        },
+        {
+          title: "Post-Installation Guidance & Maintenance Options",
+          description:
+            "We provide comprehensive care instructions for your new garden. We highly recommend our full-service maintenance to ensure your landscape thrives, allowing us to monitor irrigation, lighting, and plant health proactively.",
         },
       ]}
       gallery={[
         {
           image: "/garden-design-planting/perennial-garden.png",
-          title: "Perennial Garden",
-          description: "Colorful perennial garden with year-round interest",
+          title: "Vibrant Perennial Garden",
+          description: "A riot of color and texture designed for continuous blooms.",
         },
         {
           image: "/garden-design-planting/native-plants.png",
-          title: "Native Plant Landscape",
-          description: "Eco-friendly garden featuring native plants and pollinators",
+          title: "Sustainable Native Planting",
+          description: "Eco-friendly design supporting local pollinators and requiring less water.",
         },
         {
           image: "/garden-design-planting/formal-garden.png",
-          title: "Formal Garden Design",
-          description: "Structured formal garden with symmetrical layout and boxwood hedges",
+          title: "Elegant Formal Garden",
+          description: "Structured design with clean lines and classic symmetry.",
         },
         {
           image: "/garden-design-planting/shade-garden.png",
-          title: "Shade Garden",
-          description: "Lush shade garden with hostas, ferns, and woodland flowers",
+          title: "Lush Shade Garden Retreat",
+          description: "Thriving plants selected for low-light conditions, creating a cool oasis.",
         },
         {
           image: "/garden-design-planting/foundation-planting.png",
-          title: "Foundation Planting",
-          description: "Attractive foundation plantings enhancing home architecture",
+          title: "Inviting Foundation Plantings",
+          description: "Enhancing home architecture and creating a welcoming entrance.",
         },
         {
           image: "/garden-design-planting/cottage-garden.png",
-          title: "Cottage Garden",
-          description: "Informal cottage garden with abundant flowers and herbs",
+          title: "Charming Cottage Garden",
+          description: "Informal, romantic, and abundant with a mix of flowers and foliage.",
         },
       ]}
       testimonials={[
         {
-          name: "Elizabeth & John Parker",
-          location: "Residential Clients",
+          name: "Elizabeth P.",
           rating: 5,
-          text: "A-Z Landscaping transformed our boring yard into a stunning garden retreat. Their plant knowledge is impressive, and they created a design that gives us something beautiful to look at in every season.",
+          text: "A-Z Landscapes transformed our yard into a stunning garden. Their plant knowledge is impressive, and they created a design that gives us beauty in every season.",
         },
         {
-          name: "Susan Miller",
-          location: "Residential Client",
+          name: "Susan M.",
           rating: 5,
-          text: "I wanted a low-maintenance native garden, and A-Z delivered beyond my expectations. The garden attracts so many butterflies and birds now, and it requires minimal care.",
+          text: "I wanted a low-maintenance native garden, and A-Z delivered beyond expectations. It's now a haven for butterflies and birds!",
         },
         {
-          name: "Robert & Maria Garcia",
-          location: "Residential Clients",
+          name: "Robert G.",
           rating: 5,
-          text: "The designers at A-Z really listened to what we wanted and created a garden that perfectly suits our lifestyle and home. The installation team was meticulous and left everything spotless.",
+          text: "The designers truly listened and created a garden perfect for our lifestyle. The installation team was meticulous.",
         },
       ]}
       faqs={[
         {
-          question: "How do you select plants for my garden design?",
+          question: "How do you tailor a design to my personal style?",
           answer:
-            "We select plants based on several factors: your site conditions (soil, sun exposure, drainage), your aesthetic preferences, maintenance requirements, and seasonal interest. We also consider how plants will mature and interact with each other over time to create a cohesive, long-lasting garden.",
+            "Our first step is always a detailed conversation to understand your preferences – whether you love a modern, minimalist look, a lush Southern garden, a formal English style, or a relaxed beachy vibe. We then combine this with your home's architecture and site conditions to create something uniquely yours.",
         },
         {
-          question: "Can you design a low-maintenance garden?",
+          question: "What if I don't know what plants I want?",
           answer:
-            "We specialize in creating beautiful gardens that require minimal maintenance. This involves selecting the right plants for your conditions, proper spacing to reduce pruning needs, effective mulching to minimize weeding, and efficient irrigation systems to reduce watering time.",
+            "That's perfectly fine! Many clients don't. Part of our expertise is recommending plants that will thrive in your specific environment and match your desired aesthetic. We'll show you options and explain their characteristics.",
         },
         {
-          question: "Do you offer eco-friendly or native garden designs?",
+          question: "How long does the landscape design process take?",
           answer:
-            "Yes, we're passionate about sustainable landscaping. We can design gardens using native plants that support local wildlife, require less water and maintenance, and thrive naturally in your local environment. These gardens can be just as beautiful as traditional gardens while being more environmentally friendly.",
+            "The design phase duration varies based on project complexity and client responsiveness. It can range from a few days for simple plans to several weeks for extensive designs. Installation lead times also vary, typically from a few weeks to a couple of months depending on our schedule.",
         },
         {
-          question: "What's the best time of year to install a new garden?",
+          question: "Do you use 3D design software?",
           answer:
-            "Spring and fall are generally the best times for planting in most regions, as temperatures are moderate and rainfall is typically adequate. However, with proper care and irrigation, we can install gardens throughout the growing season. For larger projects, we often phase the installation to ensure optimal planting times for different plant types.",
+            "Yes, we have 3D design software with CAD capabilities that allows us to create detailed visualizations, including a library of plants, so you can see a virtual representation of your future landscape. This helps in making informed decisions.",
         },
         {
-          question: "Do you offer ongoing maintenance for the gardens you design?",
+          question: "Why is post-installation maintenance important?",
           answer:
-            "Yes, we offer comprehensive maintenance services to keep your garden looking its best. This can include seasonal pruning, fertilization, mulching, division of perennials, and ongoing care tailored to your specific garden. Many clients find that professional maintenance, especially in the first few years, helps their garden develop as intended.",
+            "A new landscape needs careful attention to establish. We prefer to manage the ongoing maintenance (irrigation adjustments, plant health checks, lighting tweaks) to ensure everything thrives as intended. While we provide care guides if you self-maintain, we cannot offer the same guarantees as when we manage the aftercare.",
         },
       ]}
       relatedServices={[
-        {
-          title: "Lawn Care & Maintenance",
-          slug: "lawn-care-maintenance",
-        },
-        {
-          title: "Irrigation Systems",
-          slug: "irrigation-systems",
-        },
-        {
-          title: "Landscape Lighting",
-          slug: "landscape-lighting",
-        },
+        { title: "Hardscape & Patios", slug: "patios-walkways" },
+        { title: "Landscape Lighting", slug: "landscape-lighting" },
+        { title: "Irrigation & Drainage", slug: "irrigation-systems" },
+        { title: "Lawn Care & Maintenance", slug: "lawn-care-maintenance" },
       ]}
     />
   )

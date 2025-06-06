@@ -1,4 +1,11 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Driveway Design & Installation | A-Z Landscapes",
+  description:
+    "Enhance curb appeal with custom driveways by A-Z Landscapes. We install paver, concrete, and asphalt driveways. Durable and stylish solutions.",
+}
 
 export default function DrivewaysPage() {
   return (

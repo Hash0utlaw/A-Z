@@ -1,4 +1,11 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Professional Tree Care Services | A-Z Landscapes",
+  description:
+    "Expert tree services from A-Z Landscapes: pruning, removal, planting, and health assessments by certified professionals for healthy, beautiful trees.",
+}
 
 export default function TreeServicesPage() {
   return (

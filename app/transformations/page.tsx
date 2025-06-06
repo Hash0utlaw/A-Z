@@ -3,6 +3,13 @@ import { ChevronRight } from "lucide-react"
 
 import { BeforeAfterSlider } from "@/components/before-after-slider"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Before & After Landscape Transformations | A-Z Landscapes",
+  description:
+    "See dramatic before and after photos of landscape transformations by A-Z Landscapes. Witness how we revitalize outdoor spaces with our expert services.",
+}
 
 const transformations = [
   {

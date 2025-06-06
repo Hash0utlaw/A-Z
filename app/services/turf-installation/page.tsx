@@ -3,11 +3,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, ChevronRight, ExternalLink, Star, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Professional Turf Installation Services | A-Z Landscapes",
+export const metadata: Metadata = {
+  title: "Artificial Turf Installation Services | A-Z Landscapes",
   description:
-    "Transform your lawn with our professional turf installation services. We offer high-quality sod, artificial turf, and hydroseeding solutions for residential and commercial properties.",
+    "A-Z Landscapes offers expert artificial turf installation for low-maintenance lawns, pet areas, and putting greens. Durable and realistic solutions.",
 }
 
 export default function TurfInstallationPage() {
@@ -31,8 +32,8 @@ export default function TurfInstallationPage() {
             <Badge className="bg-kelly-500 text-white hover:bg-kelly-600 mb-4">Landscaping</Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Professional Turf Installation</h1>
             <p className="text-xl text-gray-200 mb-8">
-              Transform your property with lush, healthy turf that provides instant curb appeal and a beautiful outdoor
-              space for your family to enjoy.
+              Achieve a perfect, low-maintenance lawn with our professional artificial turf installation. Ideal for pet
+              owners, busy families, challenging shady areas, or creating specialized spaces like putting greens.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -68,12 +69,13 @@ export default function TurfInstallationPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "Instant transformation with same-day results",
-              "Increased property value and curb appeal",
-              "Erosion control and soil stabilization",
-              "Cooler outdoor temperatures in summer months",
-              "Reduced mud, dust, and dirt tracked into your home",
-              "Options for traditional sod, artificial turf, or hydroseeding",
+              "Virtually no maintenance: no mowing, watering, or fertilizing.",
+              "Perfect for pets: durable, easy to clean, and resistant to digging/stains.",
+              "Solves problem areas: thrives in shade or hard-to-grow spots.",
+              "Ideal for specific uses: putting greens, play areas, pool surrounds.",
+              "Conserves water and eliminates need for pesticides/herbicides.",
+              "Stays green and beautiful year-round, regardless of weather.",
+              'Different textures, colors, and pile heights (1/4" to 2") available.',
             ].map((benefit, index) => (
               <div key={index} className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-kelly-500 flex-shrink-0 mt-0.5" />
@@ -121,7 +123,7 @@ export default function TurfInstallationPage() {
               {
                 title: "Turf Selection",
                 description:
-                  "Based on your property's conditions and your preferences, we help you select the ideal turf variety from our premium sod options, artificial turf materials, or hydroseeding mixes.",
+                  'We guide you through various artificial turf options, considering texture, color, pile height (from 1/4" for putting greens to 2" for a lush lawn look), and intended use (e.g., pet-friendly, high-traffic).',
               },
               {
                 title: "Professional Installation",
@@ -338,12 +340,17 @@ export default function TurfInstallationPage() {
               {
                 question: "How long will my new turf last?",
                 answer:
-                  "Properly maintained natural sod can last indefinitely as it's living grass that regenerates. Premium artificial turf typically lasts 15-20 years before needing replacement. Hydroseeded lawns, once established, are also permanent with proper maintenance.",
+                  "High-quality artificial turf typically lasts 15-20 years or more with minimal maintenance like occasional rerolling (every 1-2 years) and cleaning.",
               },
               {
                 question: "Do you offer warranties on turf installation?",
                 answer:
                   "Yes, we offer warranties on both our installation work and the turf materials. Sod typically comes with a 30-day establishment warranty, while artificial turf includes manufacturer warranties ranging from 8-15 years depending on the product selected. Please visit our specialized turf website for detailed warranty information.",
+              },
+              {
+                question: "What are the best applications for artificial turf?",
+                answer:
+                  "Artificial turf is excellent for homeowners with pets, families with children wanting a clean play area, properties with significant shade where natural grass struggles, creating custom putting greens, or for anyone seeking a beautiful, ultra-low-maintenance lawn. It's also great for small townhome sections or areas around pools.",
               },
             ].map((faq, index) => (
               <div key={index} className="py-6">
@@ -378,18 +385,9 @@ export default function TurfInstallationPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {
-                title: "Lawn Care & Maintenance",
-                slug: "lawn-care-maintenance",
-              },
-              {
-                title: "Irrigation Systems",
-                slug: "irrigation-systems",
-              },
-              {
-                title: "Garden Design & Planting",
-                slug: "garden-design-planting",
-              },
+              { title: "Landscape Design", slug: "garden-design-planting" },
+              { title: "Hardscape & Patios", slug: "patios-walkways" },
+              { title: "Drainage Solutions", slug: "irrigation-systems" }, // Assuming drainage is part of irrigation page
             ].map((service, index) => (
               <Card key={index} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6">

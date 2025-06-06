@@ -1,145 +1,129 @@
+import type { Metadata } from "next"
 import ServicePageTemplate from "@/components/service-page-template"
 
-export default function RetainingWallsPage() {
+export const metadata: Metadata = {
+  title: "Retaining Wall Construction & Design | A-Z Landscapes",
+  description:
+    "A-Z Landscapes builds durable and decorative retaining walls using natural stone, boulders, and blocks. Solve slope issues and enhance your landscape.",
+}
+
+const RetainingWallsPage = () => {
   return (
     <ServicePageTemplate
       category="hardscape"
-      title="Retaining Walls"
-      description="Create beautiful, functional solutions for sloped properties with our custom retaining walls that prevent erosion, define spaces, and enhance your landscape."
+      title="Durable & Decorative Retaining Walls"
+      description="A-Z Landscapes designs and builds structurally sound and aesthetically pleasing retaining walls. We specialize in various materials including natural stone, boulders, and manufactured block systems to manage slopes, create terraced gardens, and define outdoor spaces."
       heroImage="/retaining-walls/hero.png"
       benefits={[
-        "Prevent soil erosion and manage sloped terrain",
-        "Create usable, level spaces in your landscape",
-        "Add visual interest and architectural elements",
-        "Increase property value with professional hardscaping",
-        "Define garden beds and landscape zones",
-        "Solve drainage issues and protect your property",
+        "Effectively manage sloped terrain and prevent soil erosion.",
+        "Create more usable flat areas for gardens, patios, or play spaces.",
+        "Enhance the visual appeal and definition of your landscape.",
+        "Increase property value with professionally engineered and constructed walls.",
+        "Wide choice of materials: natural stone, boulders, manufactured blocks.",
+        "Custom designs to complement your home and landscape style.",
       ]}
       process={[
         {
-          title: "Site Analysis",
+          title: "Site Evaluation & Engineering Needs",
           description:
-            "We evaluate your property's topography, soil conditions, and drainage patterns to determine the best wall solution.",
+            "We assess the slope, soil conditions, drainage requirements, and the purpose of the wall (e.g., structural support, decorative). For larger walls, engineering considerations are paramount.",
         },
         {
-          title: "Engineering Assessment",
+          title: "Material Selection & Design",
           description:
-            "For larger walls, we ensure proper engineering to guarantee stability, safety, and compliance with local codes.",
+            "Choose from natural stone for a rustic look, boulders for a dramatic statement, or versatile manufactured blocks for uniform appearance. We design the wall's height, length, and style to meet your needs.",
         },
         {
-          title: "Design Development",
+          title: "Proper Footing & Base Preparation",
           description:
-            "We create a custom design that addresses your functional needs while enhancing your landscape aesthetics.",
+            "A solid foundation is critical for a retaining wall's longevity. We ensure proper excavation, footing construction, and base material compaction.",
         },
         {
-          title: "Material Selection",
+          title: "Wall Construction & Drainage Integration",
           description:
-            "We help you choose from natural stone, engineered blocks, timber, or other materials based on style and requirements.",
+            "Our experienced team constructs the wall with precision, incorporating necessary drainage systems (e.g., gravel backfill, weep holes, or drain pipes) to relieve hydrostatic pressure and ensure stability.",
         },
         {
-          title: "Professional Construction",
+          title: "Backfilling & Finishing",
           description:
-            "Our skilled team handles excavation, base preparation, drainage installation, and precise wall construction.",
-        },
-        {
-          title: "Landscape Integration",
-          description:
-            "We complete your project with appropriate plantings, lighting, or other features to integrate the wall into your landscape.",
+            "Once the wall is built, we carefully backfill and compact the soil. We can also integrate landscaping, capstones, or lighting into the final design.",
         },
       ]}
+      galleryTitle="Retaining Wall Solutions"
       gallery={[
         {
           image: "/retaining-walls/natural-stone-wall.png",
-          title: "Natural Stone Wall",
-          description: "Dry-stacked natural stone wall with integrated steps",
+          title: "Natural Stone Retaining Wall",
+          description: "Classic beauty and durability with a natural stacked stone wall.",
         },
         {
           image: "/retaining-walls/block-wall-system.png",
-          title: "Engineered Block System",
-          description: "Modern engineered block wall with tiered plantings",
+          title: "Manufactured Block Wall",
+          description: "Versatile and uniform, block walls offer many design options.",
         },
         {
           image: "/retaining-walls/terraced-garden.png",
           title: "Terraced Garden Walls",
-          description: "Multi-level retaining walls creating garden terraces",
+          description: "Creating multiple levels for planting on a sloped yard.",
         },
         {
           image: "/retaining-walls/boulder-wall.png",
-          title: "Boulder Retaining Wall",
-          description: "Natural boulder wall with native plant landscaping",
+          title: "Impressive Boulder Wall",
+          description: "Large boulders creating a natural and robust retaining solution.",
         },
         {
           image: "/retaining-walls/concrete-wall.png",
-          title: "Decorative Concrete Wall",
-          description: "Stamped concrete wall with integrated lighting",
+          title: "Poured Concrete Wall",
+          description: "Modern and strong, poured concrete walls for specific applications.",
         },
         {
           image: "/retaining-walls/timber-wall.png",
           title: "Timber Retaining Wall",
-          description: "Pressure-treated timber wall for garden elevation",
+          description: "A more rustic option, suitable for certain aesthetics and smaller walls.",
         },
       ]}
       testimonials={[
         {
-          name: "The Martinez Family",
-          location: "Residential Clients",
+          name: "The Jacksons",
           rating: 5,
-          text: "Our sloped backyard was practically unusable until A-Z installed a beautiful terraced retaining wall system. Now we have flat areas for gardening and a patio where we can actually enjoy our yard!",
+          text: "A-Z Landscapes built a beautiful and sturdy retaining wall that solved our erosion problem and gave us more garden space. Highly recommend!",
         },
         {
-          name: "Hillside Community Center",
-          location: "Commercial Client",
+          name: "Maria B.",
           rating: 5,
-          text: "A-Z Landscaping solved our serious erosion problems with an engineered retaining wall that not only functions perfectly but looks fantastic. Their knowledge of proper drainage was impressive.",
-        },
-        {
-          name: "Robert & Emma",
-          location: "Residential Clients",
-          rating: 5,
-          text: "The natural stone retaining wall A-Z built transformed our front yard. It's become a neighborhood showpiece, and we've received countless compliments on the craftsmanship.",
+          text: "The boulder wall is a work of art! It completely transformed our difficult slope. The team was professional and efficient.",
         },
       ]}
       faqs={[
         {
-          question: "Do I need a permit for a retaining wall?",
+          question: "What materials are best for retaining walls?",
           answer:
-            "Permit requirements vary by location and wall height. Generally, walls over 3-4 feet tall require permits and possibly engineered plans. Even for smaller walls, there may be setback requirements or other regulations. We handle all permitting processes for our clients, ensuring your wall is compliant with local codes and built to proper safety standards.",
+            "The best material depends on the wall's height, purpose, your aesthetic preference, and budget. Manufactured blocks are versatile and cost-effective. Natural stone and boulders offer unique, high-end looks and great durability. We'll help you choose.",
         },
         {
-          question: "What types of retaining walls do you build?",
+          question: "Does my retaining wall need drainage?",
           answer:
-            "We construct various types of retaining walls including gravity walls (natural stone, boulder, or block), reinforced walls with geogrid for additional stability, cantilevered walls, and segmental retaining walls. Material options include natural stone, manufactured concrete blocks, timber, poured concrete, and gabion baskets. We'll recommend the best system based on your site conditions, aesthetic preferences, and budget.",
+            "Yes, almost all retaining walls require proper drainage to prevent water buildup behind the wall, which can cause it to fail. We incorporate drainage solutions like gravel backfill and perforated pipes into our designs.",
         },
         {
-          question: "How long will my retaining wall last?",
+          question: "How tall can a retaining wall be?",
           answer:
-            "A properly designed and constructed retaining wall should last decades. Natural stone walls can last 100+ years, quality concrete block systems 50+ years, and pressure-treated timber walls 20-30 years. The key to longevity is proper design, drainage, construction techniques, and materials. All our walls are built with durability in mind, using industry best practices to ensure a long-lasting structure.",
+            "Wall height limits vary by local codes and often require engineering for taller structures. We design and build walls that are safe, compliant, and appropriate for your site.",
         },
         {
-          question: "How do you handle drainage for retaining walls?",
+          question: "Can you build a retaining wall on a steep slope?",
           answer:
-            "Proper drainage is critical for retaining wall performance. We install drainage systems behind all our walls, typically including gravel backfill, filter fabric, and perforated drain pipes. For larger walls, we may incorporate additional drainage features. These systems prevent water pressure buildup behind the wall, which is the most common cause of wall failure. Our drainage solutions are designed specifically for your site's conditions.",
-        },
-        {
-          question: "Can you incorporate steps or lighting into my retaining wall?",
-          answer:
-            "We often integrate steps, lighting, seating, planters, and other features into our retaining wall designs. These elements not only enhance functionality but also create a more cohesive and attractive landscape. During the design phase, we'll discuss these options and how they might work with your specific project.",
+            "Yes, that's one of the primary functions of retaining walls. We have extensive experience with challenging slopes and can design solutions like terraced walls to make these areas usable and stable.",
         },
       ]}
       relatedServices={[
-        {
-          title: "Patios & Walkways",
-          slug: "patios-walkways",
-        },
-        {
-          title: "Driveways",
-          slug: "driveways",
-        },
-        {
-          title: "Garden Design & Planting",
-          slug: "garden-design-planting",
-        },
+        { title: "Patios & Walkways", slug: "patios-walkways" },
+        { title: "Garden Design & Planting", slug: "garden-design-planting" },
+        { title: "Drainage Solutions", slug: "irrigation-systems" }, // Assuming drainage is part of irrigation page
+        { title: "Grading & Site Preparation", slug: "seasonal-services" }, // Assuming grading is part of seasonal
       ]}
     />
   )
 }
+
+export default RetainingWallsPage

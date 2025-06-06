@@ -1,50 +1,58 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Lawn Care & Full-Service Maintenance | A-Z Landscapes",
+  description:
+    "A-Z Landscapes provides comprehensive lawn care and landscape maintenance. Mowing, fertilization, weed control, seasonal cleanups. Reliable service.",
+}
 
 export default function LawnCareMaintenancePage() {
   return (
     <ServicePageTemplate
       category="landscaping"
-      title="Lawn Care & Maintenance"
-      description="Keep your lawn healthy, green, and beautiful year-round with our comprehensive lawn care and maintenance services."
+      title="Lawn Care & Full-Service Maintenance"
+      description="Comprehensive year-round care to keep your lawn and landscape healthy, green, and immaculate. We offer tailored maintenance packages, from weekly mowing and fertilization to seasonal cleanups and proactive property care."
       heroImage="/lawn-care-maintenance/hero.png"
       benefits={[
-        "Save time and energy with professional lawn care services",
-        "Maintain a consistently healthy, green lawn throughout the growing season",
-        "Prevent weed growth, disease, and pest infestations with proactive treatments",
-        "Improve soil health and grass root development with proper fertilization",
-        "Enhance your property's curb appeal and value with a well-maintained lawn",
-        "Receive customized care plans based on your lawn's specific needs and conditions",
+        "Enjoy a consistently beautiful and healthy lawn without the hassle.",
+        "Save time and energy with our reliable, professional services.",
+        "Benefit from our 7-step fertilization and weed control program for optimal turf health.",
+        "Proactive care that identifies and addresses potential issues before they escalate.",
+        "Customizable packages: weekly (Mar-Dec) & bi-weekly (Jan-Feb) visits.",
+        "Includes mowing, edging, trimming, blowing, and bed weed control.",
+        "A la carte options for pruning, mulching, and specialized treatments.",
+        "Priority storm cleanup services for maintenance clients.",
       ]}
       process={[
         {
-          title: "Initial Lawn Assessment",
+          title: "Initial Consultation & Property Assessment",
           description:
-            "We evaluate your lawn's current condition, identifying grass types, problem areas, soil quality, and specific needs.",
+            "We discuss your needs and assess your property to create a tailored maintenance plan. We identify grass types, soil conditions, and any specific challenges.",
         },
         {
-          title: "Customized Care Plan",
+          title: "Customized Maintenance Schedule",
           description:
-            "Based on the assessment, we develop a tailored lawn care program addressing your lawn's unique requirements and your goals.",
+            "Based on 48 visits per year, we establish a weekly (growing season) or bi-weekly (winter) schedule. This includes mowing, edging, trimming, and blowing.",
         },
         {
-          title: "Regular Maintenance",
+          title: "Turf Health Program",
           description:
-            "We provide scheduled mowing, edging, and trimming services to keep your lawn looking its best at all times.",
+            "Implementation of our 7-application fertilization and weed control program, using organic options where possible, to ensure a lush, healthy lawn.",
         },
         {
-          title: "Seasonal Treatments",
-          description:
-            "Throughout the year, we apply appropriate fertilizers, weed control, and pest management treatments as needed.",
+          title: "Ongoing Landscape Bed Care",
+          description: "Regular weed control in landscape beds to keep them looking neat and tidy.",
         },
         {
-          title: "Ongoing Monitoring",
+          title: "Seasonal Adjustments & A La Carte Services",
           description:
-            "Our team continuously monitors your lawn's health, making adjustments to the care plan as conditions change.",
+            "Services like pruning and mulching are typically offered as separate, per-service items. We also handle seasonal needs like leaf removal and storm cleanup.",
         },
         {
-          title: "Annual Review",
+          title: "Proactive Monitoring & Communication",
           description:
-            "We conduct yearly comprehensive reviews to evaluate progress and plan improvements for the coming season.",
+            "Our team proactively looks for ways to improve your property, such as suggesting beneficial pruning or identifying drainage issues. We believe in open communication.",
         },
       ]}
       gallery={[
@@ -81,64 +89,52 @@ export default function LawnCareMaintenancePage() {
       ]}
       testimonials={[
         {
-          name: "David & Lisa Thompson",
-          location: "Residential Clients",
+          name: "David & Lisa T.",
           rating: 5,
-          text: "We've been using A-Z Landscapes for our lawn care for three years now, and our yard has never looked better. Their team is reliable, thorough, and always professional.",
+          text: "A-Z Landscapes has kept our lawn looking its best for years. Reliable, thorough, and always professional. We've had them for twelve years and wouldn't trust anyone else!",
         },
         {
-          name: "Amanda Rodriguez",
-          location: "Homeowners Association Manager",
+          name: "Amanda R., HOA Manager",
           rating: 5,
-          text: "A-Z Landscapes maintains all the common areas in our community, and they do an outstanding job. The lawns are always immaculate, and they're very responsive to any special requests.",
+          text: "A-Z Landscapes maintains all common areas in our community impeccably. They are responsive and the quality is outstanding.",
         },
         {
-          name: "James Wilson",
-          location: "Residential Client",
+          name: "James W.",
           rating: 5,
-          text: "My lawn was in terrible shape when I bought my home. A-Z Landscapes developed a restoration plan, and within one season, it was transformed into the best-looking lawn on the block!",
+          text: "My lawn was a disaster. A-Z Landscapes developed a restoration plan, and now it's the best on the block! Their proactive approach makes a huge difference.",
         },
       ]}
       faqs={[
         {
-          question: "How often should my lawn be mowed?",
+          question: "What's included in your full-service maintenance?",
           answer:
-            "During the growing season, most lawns benefit from weekly mowing. However, this can vary based on grass type, weather conditions, and your preferences. We'll recommend an optimal mowing schedule for your specific lawn as part of your maintenance plan.",
+            "Our full-service packages typically include weekly/bi-weekly mowing, edging, trimming, blowing, bed weed control, and our comprehensive fertilization/weed control program for the turf. Pruning and mulching are usually a la carte but can be incorporated. We tailor packages to your needs.",
         },
         {
-          question: "What's included in your basic lawn maintenance service?",
+          question: "How often will you service my property?",
           answer:
-            "Our basic lawn maintenance service includes mowing, edging along walkways and driveways, trimming around obstacles, and cleanup of clippings from hard surfaces. We can also include additional services such as fertilization, weed control, and seasonal treatments in a comprehensive care package.",
+            "During the main growing season (approx. March 1st through New Year's), we provide weekly service. In January and February, service is typically bi-weekly. This totals around 48 visits per year.",
         },
         {
-          question: "When is the best time to fertilize my lawn?",
+          question: "Do you use organic products?",
           answer:
-            "The optimal fertilization schedule depends on your grass type and local climate. Generally, cool-season grasses benefit from fertilization in early spring and fall, while warm-season grasses should be fertilized in late spring and summer. Our lawn care programs include properly timed fertilization applications for your specific grass type.",
+            "We try to use as much organic material as we can. For example, in our fertilization programs. Currently, a fully organic broadleaf herbicide isn't available, but we are always looking for effective and environmentally conscious options.",
         },
         {
-          question: "How do you handle weed control?",
+          question: "How do you handle storm cleanup?",
           answer:
-            "We use a combination of pre-emergent and post-emergent herbicides applied at strategic times throughout the year to prevent and control weeds. Our approach focuses on targeted applications rather than blanket treatments, minimizing environmental impact while effectively managing weeds.",
+            "Our maintenance customers receive priority for storm cleanup. Minor debris removal is often part of the regular service. For significant damage requiring extra equipment or time, we provide a separate estimate.",
         },
         {
-          question: "Do you offer organic lawn care options?",
+          question: "Can I customize my maintenance package?",
           answer:
-            "Yes, we offer organic and eco-friendly lawn care programs that use natural fertilizers and biological controls instead of synthetic chemicals. While these programs may take longer to show results, they can be very effective while being safer for children, pets, and the environment.",
+            "Absolutely. While we offer comprehensive packages, we understand every property and client has unique needs. We can customize services like pruning and mulching frequency, or focus on specific areas.",
         },
       ]}
       relatedServices={[
-        {
-          title: "Garden Design & Planting",
-          slug: "garden-design-planting",
-        },
-        {
-          title: "Irrigation Systems",
-          slug: "irrigation-systems",
-        },
-        {
-          title: "Seasonal Services",
-          slug: "seasonal-services",
-        },
+        { title: "Landscape Design & Planting", slug: "garden-design-planting" },
+        { title: "Irrigation & Drainage", slug: "irrigation-systems" },
+        { title: "Seasonal Services & Grading", slug: "seasonal-services" },
       ]}
     />
   )

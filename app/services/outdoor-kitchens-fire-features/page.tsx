@@ -1,144 +1,130 @@
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Outdoor Kitchens & Fire Features | A-Z Landscapes",
+  description:
+    "Custom outdoor kitchens, fire pits, and fireplaces by A-Z Landscapes. Design and build services for your perfect outdoor entertainment space.",
+}
 
 export default function OutdoorKitchensFireFeaturesPage() {
   return (
     <ServicePageTemplate
       category="hardscape"
       title="Outdoor Kitchens & Fire Features"
-      description="Extend your living space with custom outdoor kitchens, fire pits, and fireplaces that create the perfect environment for entertaining and relaxation."
+      description="Extend your living space and create the ultimate entertainment hub with custom-designed outdoor kitchens, fire pits, and fireplaces from A-Z Landscapes. We tailor every feature to your lifestyle, space, and budget."
       heroImage="/outdoor-kitchens-fire-features/hero.png"
       benefits={[
-        "Create a functional outdoor cooking and dining space for entertaining",
-        "Extend your outdoor living season with warming fire features",
-        "Increase your home's value with high-quality outdoor living amenities",
-        "Design custom features that complement your home's architecture and style",
-        "Choose from a variety of materials, appliances, and design options",
-        "Build durable, weather-resistant features that will last for years",
+        "Create a functional and stylish outdoor cooking and dining experience.",
+        "Extend your outdoor enjoyment into cooler evenings with warming fire pits or fireplaces.",
+        "Increase your home's value and appeal with high-quality outdoor amenities.",
+        "Custom designs that seamlessly integrate with your home's architecture and landscape.",
+        "Wide choice of materials, appliances, and design options (gas or wood-burning fire features).",
+        "Durable, weather-resistant construction built to last for years of enjoyment.",
       ]}
       process={[
         {
-          title: "Design Consultation",
+          title: "Lifestyle & Needs Consultation",
           description:
-            "We discuss your vision, how you plan to use the space, your entertaining needs, and design preferences.",
+            "We start by understanding your vision: How do you plan to use the space? For intimate family gatherings or larger entertaining? What are your cooking needs and style preferences for fire features (e.g., wood-burning vs. gas)?",
         },
         {
-          title: "Site Planning",
+          title: "Site Evaluation & Space Planning",
           description:
-            "We evaluate your outdoor space to determine the optimal location and layout for your kitchen or fire feature.",
+            "We assess your outdoor area to determine the optimal location, layout, and integration with existing landscape and structures, considering factors like utility access and traffic flow.",
         },
         {
-          title: "Custom Design",
+          title: "Custom Design & Material Selection",
           description:
-            "Our designers create detailed plans including layout, materials, appliances, and any special features you desire.",
+            "Our designers create detailed plans, helping you select materials (natural stone, pavers, etc.), appliances for kitchens, and the style of your fire pit or fireplace to match your aesthetic and budget.",
         },
         {
-          title: "Material & Appliance Selection",
+          title: "Utility Coordination (If Needed)",
           description:
-            "We help you select the perfect materials and appliances that balance aesthetics, functionality, and durability.",
+            "For outdoor kitchens (gas, water, electric) or gas fire features, we coordinate with licensed professionals to ensure proper and safe utility connections.",
         },
         {
-          title: "Construction",
+          title: "Expert Construction & Craftsmanship",
           description:
-            "Our skilled craftsmen build your outdoor kitchen or fire feature with attention to detail and quality craftsmanship.",
+            "Our skilled craftsmen build your outdoor kitchen or fire feature with meticulous attention to detail, ensuring structural integrity and a beautiful finish.",
         },
         {
-          title: "Final Walkthrough",
+          title: "Final Walkthrough & Feature Demonstration",
           description:
-            "We demonstrate how to use and maintain your new outdoor living features and ensure everything meets your expectations.",
+            "We ensure you're delighted with the result and demonstrate how to safely use and maintain your new outdoor living features.",
         },
       ]}
+      galleryTitle="Outdoor Living Inspirations"
       gallery={[
         {
           image: "/outdoor-kitchens-fire-features/complete-kitchen.png",
-          title: "Complete Outdoor Kitchen",
-          description: "Full-featured outdoor kitchen with grill, refrigerator, and bar seating",
+          title: "Full Outdoor Kitchen",
+          description: "Gourmet outdoor kitchen with grill, sink, refrigerator, and bar seating.",
         },
         {
           image: "/outdoor-kitchens-fire-features/stone-firepit.png",
-          title: "Stone Fire Pit",
-          description: "Natural stone fire pit with surrounding patio and seating",
+          title: "Cozy Stone Fire Pit",
+          description: "Natural stone fire pit with built-in seating, perfect for gatherings.",
         },
         {
           image: "/outdoor-kitchens-fire-features/outdoor-fireplace.png",
-          title: "Outdoor Fireplace",
-          description: "Masonry outdoor fireplace with built-in wood storage",
+          title: "Elegant Outdoor Fireplace",
+          description: "Grand masonry outdoor fireplace creating a stunning focal point.",
         },
         {
           image: "/outdoor-kitchens-fire-features/pizza-oven.png",
-          title: "Pizza Oven Installation",
-          description: "Custom outdoor pizza oven with countertop prep space",
+          title: "Artisan Pizza Oven",
+          description: "Custom outdoor pizza oven for authentic wood-fired cooking.",
         },
         {
           image: "/outdoor-kitchens-fire-features/fire-table.png",
-          title: "Modern Fire Table",
-          description: "Contemporary gas fire table in outdoor lounge setting",
+          title: "Modern Gas Fire Table",
+          description: "Sleek and contemporary gas fire table for ambiance and warmth.",
         },
         {
           image: "/outdoor-kitchens-fire-features/covered-kitchen.png",
-          title: "Covered Outdoor Kitchen",
-          description: "Pergola-covered outdoor kitchen with lighting and fans",
+          title: "Covered Outdoor Kitchen & Dining",
+          description: "Outdoor kitchen under a pergola for all-weather enjoyment.",
         },
       ]}
       testimonials={[
         {
-          name: "Brian & Jessica Thompson",
-          location: "Residential Clients",
+          name: "The Thompsons",
           rating: 5,
-          text: "Our outdoor kitchen from A-Z Landscaping has completely transformed how we use our backyard. We're entertaining more than ever, and the quality of the construction is outstanding.",
+          text: "Our A-Z Landscapes outdoor kitchen is a game-changer! We entertain constantly now. The quality is outstanding.",
         },
         {
-          name: "Daniel Wright",
-          location: "Residential Client",
+          name: "Daniel W.",
           rating: 5,
-          text: "The fire pit area A-Z designed and built has become our family's favorite gathering spot. The stonework is beautiful, and they perfectly integrated it with our existing patio.",
-        },
-        {
-          name: "Michelle & Kevin Barnes",
-          location: "Residential Clients",
-          rating: 5,
-          text: "From design to completion, A-Z made the process of installing our outdoor kitchen seamless. They thought of details we hadn't considered, and the result is both beautiful and functional.",
+          text: "The fire pit area A-Z built is our family's favorite spot. Beautiful stonework and perfectly integrated with our patio.",
         },
       ]}
       faqs={[
         {
-          question: "What appliances can be included in an outdoor kitchen?",
+          question: "What's the difference between a wood-burning and gas fire feature?",
           answer:
-            "Outdoor kitchens can include a wide range of appliances including built-in grills, side burners, refrigerators, ice makers, pizza ovens, smokers, sinks with running water, beverage centers, warming drawers, and storage components. We'll help you select the right appliances based on how you plan to use your outdoor kitchen.",
+            "Wood-burning fire pits/fireplaces offer a traditional campfire ambiance and aroma. Gas features provide instant on/off convenience, consistent flame, and no smoke or ash cleanup. We discuss your preferences to help you choose.",
         },
         {
-          question: "What's the difference between a fire pit and a fireplace?",
+          question: "What appliances can I include in an outdoor kitchen?",
           answer:
-            "Fire pits are typically open on all sides, allowing people to gather around them in a circle. They're great for larger groups and provide a 360-degree view of the fire. Outdoor fireplaces are more architectural, with a chimney and usually open on only one side. They provide more of a focal point, offer better smoke control, and can provide more privacy and wind protection.",
+            "Almost anything you have indoors! Grills, side burners, refrigerators, ice makers, sinks, pizza ovens, smokers, warming drawers, and beverage centers are all popular options.",
         },
         {
-          question: "What materials are best for outdoor kitchens?",
+          question: "What materials are best for outdoor kitchens and fire features?",
           answer:
-            "We use durable, weather-resistant materials specifically designed for outdoor use. Popular options include natural stone, brick, concrete pavers, stucco, and tile for construction, with stainless steel appliances and granite, concrete, or composite countertops. The best choice depends on your design preferences, climate, and budget.",
+            "We use durable, weather-resistant materials like natural stone, brick, pavers, and high-quality stainless steel for appliances. Countertops can be granite, concrete, or other suitable outdoor surfaces.",
         },
         {
-          question: "Do I need utilities run to my outdoor kitchen or fire feature?",
+          question: "Do I need a permit for an outdoor kitchen or fireplace?",
           answer:
-            "Outdoor kitchens typically require gas, water, and electrical connections. Gas fire features need a gas line, while wood-burning features don't require utilities. We coordinate with licensed plumbers and electricians to ensure all utility connections are properly installed and meet local building codes.",
-        },
-        {
-          question: "How much maintenance do outdoor kitchens and fire features require?",
-          answer:
-            "Maintenance requirements vary based on materials and usage. Generally, outdoor kitchens need regular cleaning of appliances and surfaces, occasional sealing of countertops, and winterizing in cold climates. Fire features require ash removal for wood-burning units and periodic inspection of gas components. We provide detailed maintenance instructions for your specific installation.",
+            "Permit requirements vary by location and project scope. We can advise you on local regulations and assist with the permitting process if needed.",
         },
       ]}
       relatedServices={[
-        {
-          title: "Patios & Walkways",
-          slug: "patios-walkways",
-        },
-        {
-          title: "Pergolas & Gazebos",
-          slug: "pergolas-gazebos",
-        },
-        {
-          title: "Landscape Lighting",
-          slug: "landscape-lighting",
-        },
+        { title: "Patios & Walkways", slug: "patios-walkways" },
+        { title: "Pergolas & Gazebos", slug: "pergolas-gazebos" },
+        { title: "Landscape Lighting", slug: "landscape-lighting" },
       ]}
     />
   )
