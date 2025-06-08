@@ -40,6 +40,7 @@ type CareerFormValues = z.infer<typeof careerFormSchema>
 export default function CareersPageClient() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [fileName, setFileName] = useState<string | null>(null)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
 
   const form = useForm<CareerFormValues>({
     resolver: zodResolver(careerFormSchema),
@@ -56,33 +57,85 @@ export default function CareersPageClient() {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
-      setFileName(event.target.files[0].name)
-      // Here you would typically also handle the file data itself
-      // For this example, we're just setting the name.
-      // form.setValue('resume', event.target.files[0]) // If you want to store the file object in form state
+      const file = event.target.files[0]
+      if (file.size > 5 * 1024 * 1024) {
+        // 5MB limit
+        toast({
+          title: "File too large",
+          description: "Resume file should not exceed 5MB.",
+          variant: "destructive",
+        })
+        setFileName(null)
+        setSelectedFile(null)
+        event.target.value = "" // Clear the input
+        return
+      }
+      setFileName(file.name)
+      setSelectedFile(file)
     } else {
       setFileName(null)
-      // form.setValue('resume', null)
+      setSelectedFile(null)
     }
   }
 
   async function onSubmit(data: CareerFormValues) {
     setIsSubmitting(true)
-    console.log("Career Application Data:", data)
 
-    // Simulate API call for form submission
-    // In a real application, you would send this data to your backend
-    // and handle file uploads appropriately (e.g., to Vercel Blob or S3)
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    const formData = new FormData()
+    formData.append("fullName", data.fullName)
+    formData.append("email", data.email)
+    formData.append("phone", data.phone)
+    if (data.positionOfInterest) {
+      formData.append("positionOfInterest", data.positionOfInterest)
+    }
+    formData.append("experience", data.experience)
+    formData.append("whyJoin", data.whyJoin)
 
-    setIsSubmitting(false)
-    toast({
-      title: "Application Submitted!",
-      description:
-        "Thank you for your interest. We will review your application and get back to you if there's a suitable opening.",
-    })
-    form.reset()
-    setFileName(null)
+    if (selectedFile) {
+      formData.append("resume", selectedFile)
+    }
+    // The 'agreeToTerms' field is mostly for client-side validation,
+    // but you could send it if your backend needs to log consent.
+    // formData.append('agreeToTerms', String(data.agreeToTerms));
+
+    try {
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        body: formData,
+        // Do NOT set Content-Type header when sending FormData with files,
+        // the browser will set it correctly with the boundary.
+      })
+
+      const result = await response.json()
+
+      if (response.ok && result.success) {
+        toast({
+          title: "Application Submitted!",
+          description: "Thank you for your interest. We'll review your application.",
+        })
+        form.reset()
+        setFileName(null)
+        setSelectedFile(null)
+        // Clear the file input visually if possible (can be tricky)
+        const fileInput = document.getElementById("resume-upload") as HTMLInputElement | null
+        if (fileInput) fileInput.value = ""
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: result.message || "An error occurred. Please try again.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Submission error:", error)
+      toast({
+        title: "Network Error",
+        description: "Could not connect to the server. Please check your connection and try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
