@@ -2,12 +2,13 @@ import type { Metadata } from "next"
 import OptimizedImage from "@/components/optimized-image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Our Portfolio | A-Z Landscapes",
   description:
-    "Explore the stunning landscape transformations by A-Z Landscapes. View our portfolio of completed projects, from patios and walkways to gardens and outdoor living spaces in [Your City/Region].",
+    "Explore the stunning landscape transformations by A-Z Landscapes. View our portfolio of completed projects, from patios and walkways to gardens and outdoor living spaces in Your City/Region.",
+  // Remember to replace "[Your City/Region]" in the description and keywords
   keywords: [
     "landscape portfolio",
     "landscaping projects",
@@ -15,7 +16,9 @@ export const metadata: Metadata = {
     "patio design",
     "garden installation",
     "outdoor living spaces",
-    "[Your City/Region] landscaping",
+    "Your City/Region landscaping",
+    "landscape design showcase",
+    "best landscaping work",
   ],
 }
 
@@ -24,84 +27,90 @@ interface Project {
   title: string
   description: string
   imageUrl: string
-  slug: string
+  slug: string // This should link to a detailed project page or a relevant transformations category
   category: string
 }
 
+// Ensure these image paths are correct and images exist in /public/projects/
 const projects: Project[] = [
   {
     id: "1",
     title: "Modern Backyard Oasis",
     description:
-      "Complete transformation of a suburban backyard into a modern oasis featuring a multi-level patio, custom fire pit, and lush plantings.",
+      "A complete overhaul transforming a standard backyard into a luxurious modern retreat with a multi-level paver patio, integrated fire pit, and ambient lighting.",
     imageUrl: "/projects/modern-backyard-oasis.png",
-    slug: "/transformations/backyard-patios", // Link to a relevant transformations sub-page or a dedicated project page
+    slug: "/transformations/backyard-patios",
     category: "Patios & Outdoor Living",
   },
   {
     id: "2",
     title: "Front Yard Curb Appeal Enhancement",
     description:
-      "Designed and installed a welcoming front yard landscape with a new stone walkway, vibrant flower beds, and accent lighting.",
+      "Elevated this home's street presence with a new natural stone walkway, terraced garden beds, and carefully selected plantings for year-round interest.",
     imageUrl: "/projects/front-yard-transformation.png",
-    slug: "/transformations/front-yard-makeovers",
+    slug: "/transformations/front-yard-makeovers", // Example slug, adjust as needed
     category: "Garden Design & Walkways",
   },
   {
     id: "3",
     title: "Expansive Outdoor Living Space",
     description:
-      "Created an entertainer's dream with an outdoor kitchen, spacious seating areas, and a custom pergola.",
+      "Designed for entertainment, this space features a fully equipped outdoor kitchen, a spacious dining area under a custom cedar pergola, and cozy seating zones.",
     imageUrl: "/projects/outdoor-living-space.png",
-    slug: "/transformations/outdoor-kitchens",
+    slug: "/transformations/outdoor-kitchens", // Example slug
     category: "Outdoor Kitchens & Structures",
   },
   {
     id: "4",
     title: "Serene Garden Paradise",
     description:
-      "A tranquil garden space featuring a koi pond, native plantings, and winding stone paths for a peaceful retreat.",
+      "Crafted a tranquil escape with a naturalistic koi pond, meandering flagstone paths, and a diverse palette of native and ornamental plants.",
     imageUrl: "/projects/garden-paradise.png",
-    slug: "/transformations/water-features-gardens",
+    slug: "/transformations/water-features-gardens", // Example slug
     category: "Gardens & Water Features",
   },
   {
     id: "5",
     title: "Commercial Property Landscaping",
     description:
-      "Professional landscaping for a commercial complex, including low-maintenance plantings, irrigation, and seasonal color.",
+      "Professional and inviting landscape solution for a corporate campus, focusing on low-maintenance, drought-tolerant plantings and clear, accessible pathways.",
     imageUrl: "/projects/commercial-landscaping.png",
-    slug: "/transformations/commercial-projects",
+    slug: "/transformations/commercial-projects", // Example slug
     category: "Commercial Landscaping",
   },
   {
     id: "6",
     title: "Sustainable & Eco-Friendly Landscape",
     description:
-      "Designed with sustainability in mind, this landscape features drought-tolerant plants, permeable pavers, and a rainwater harvesting system.",
+      "An environmentally conscious design incorporating permeable pavers, a rainwater harvesting system, native plant species, and organic lawn care practices.",
     imageUrl: "/projects/sustainable-landscape.png",
-    slug: "/transformations/sustainable-landscapes",
+    slug: "/transformations/sustainable-landscapes", // Example slug
     category: "Sustainable Landscaping",
   },
 ]
 
 export default function PortfolioPage() {
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-gray-50 text-foreground">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-b from-green-600 to-green-700 text-white">
-        <div className="absolute inset-0">
+      <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-emerald-600 text-white py-24 md:py-32">
+        <div className="absolute inset-0 opacity-20">
           <OptimizedImage
-            src="/hero-landscape.png" // Replace with a stunning, relevant portfolio hero image
-            alt="Panoramic view of a beautifully landscaped property"
+            src="/hero-landscape.png" // Replace with a high-quality, general portfolio hero image
+            alt="Beautifully landscaped property showcase"
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
+            priority // Prioritize loading for LCP
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">Our Landscape Masterpieces</h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
-            Discover the quality, creativity, and attention to detail that A-Z Landscapes brings to every project.
+          <Sparkles className="mx-auto h-12 w-12 text-amber-400 mb-4" />
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+            Our Landscape Transformations
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-green-50">
+            Witness the artistry and dedication A-Z Landscapes invests in every project. Explore our gallery of
+            beautifully crafted outdoor spaces.
           </p>
         </div>
       </section>
@@ -109,59 +118,84 @@ export default function PortfolioPage() {
       {/* Portfolio Grid Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-navy-800">Explore Our Work</h2>
-          <p className="text-lg text-center text-gray-700 mb-12 max-w-2xl mx-auto">
-            Each project in our portfolio showcases our commitment to transforming outdoor spaces into beautiful,
-            functional, and enduring landscapes.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-white rounded-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl group"
-              >
-                <Link href={project.slug} passHref>
-                  <div className="relative aspect-video">
-                    <OptimizedImage
-                      src={project.imageUrl}
-                      alt={`Completed landscape project: ${project.title}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </Link>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-navy-700 mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-600 mb-1">
-                    <span className="font-medium">Category:</span> {project.category}
-                  </p>
-                  <p className="text-gray-700 mb-4 text-sm leading-relaxed">{project.description}</p>
-                  <Link href={project.slug} passHref>
-                    <Button
-                      variant="outline"
-                      className="w-full group text-green-600 border-green-600 hover:bg-green-600 hover:text-white"
-                    >
-                      View Project Details{" "}
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            ))}
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy-800 mb-4">A Showcase of Our Finest Work</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Each project reflects our commitment to quality, innovative design, and exceeding client expectations.
+              Find inspiration for your own outdoor transformation.
+            </p>
           </div>
+
+          {projects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1"
+                >
+                  <Link href={project.slug} className="block overflow-hidden">
+                    <div className="relative aspect-[4/3] w-full">
+                      <OptimizedImage
+                        src={project.imageUrl}
+                        alt={`Showcase of ${project.title}`}
+                        fill
+                        className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </Link>
+                  <div className="p-5 md:p-6 flex flex-col flex-grow">
+                    <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full mb-3 self-start">
+                      {project.category}
+                    </span>
+                    <h3 className="text-xl lg:text-2xl font-semibold text-navy-800 mb-2">
+                      <Link href={project.slug} className="hover:text-green-600 transition-colors duration-200">
+                        {project.title}
+                      </Link>
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-5 leading-relaxed flex-grow">{project.description}</p>
+                    <Link href={project.slug} passHref className="mt-auto block">
+                      <Button
+                        variant="default"
+                        className="w-full bg-green-600 hover:bg-green-700 text-white transition-colors"
+                        aria-label={`View details for ${project.title}`}
+                      >
+                        View Project
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <Sparkles className="mx-auto h-16 w-16 text-gray-400 mb-4" />
+              <h3 className="text-2xl font-semibold text-navy-700 mb-2">Our Portfolio is Growing!</h3>
+              <p className="text-gray-600">
+                We're currently curating our best projects to showcase here. Check back soon to see our latest work.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 md:py-24 bg-gray-100">
+      <section className="py-16 md:py-24 bg-navy-700 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-navy-800 mb-6">Inspired by Our Work?</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-xl mx-auto">
-            Let A-Z Landscapes bring your outdoor vision to life. Contact us today for a consultation.
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Start Your Transformation?</h2>
+          <p className="text-lg text-navy-100 mb-8 max-w-xl mx-auto">
+            If our portfolio has inspired you, let's discuss how A-Z Landscapes can bring your dream outdoor space to
+            life.
           </p>
           <Link href="/contact" passHref>
-            <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
-              Get Your Free Estimate <ArrowRight className="ml-2 h-5 w-5" />
+            <Button
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-600 text-navy-800 font-semibold px-8 py-3 transition-colors"
+            >
+              Get Your Free Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
         </div>
