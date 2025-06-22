@@ -1,0 +1,12 @@
+# Tell all web crawlers that they are allowed to crawl the site.
+User-agent: *
+Allow: /
+
+# Disallow crawlers from accessing Next.js specific folders and any API routes.
+# These files don't need to be indexed and can waste crawl budget.
+Disallow: /_next/
+Disallow: /api/
+
+# Point crawlers to your sitemap for a complete list of pages to index.
+# Make sure to replace 'www.a-z-landscaping.com' with your actual domain name once live.
+Sitemap: https://www.a-z-landscaping.com/sitemap.xml
