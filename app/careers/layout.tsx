@@ -2,11 +2,11 @@ import type React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Join Our Team | Careers at A-Z Landscapes",
+  title: "Careers | A-Z Landscapes",
   description:
-    "Looking for a rewarding career in landscaping? A-Z Landscapes is hiring passionate individuals. Apply today and grow with us!",
+    "Explore exciting career opportunities at A-Z Landscapes. We're looking for passionate individuals to join our dedicated landscaping and hardscaping team. Apply today and grow with us!",
   keywords:
-    "landscaping careers, landscape jobs, hardscaping jobs, A-Z Landscapes careers, apply for landscaping, outdoor careers",
+    "landscaping careers, A-Z Landscapes jobs, hardscaping jobs, outdoor careers, landscape technician jobs, garden design careers, join our team",
 }
 
 export default function CareersLayout({

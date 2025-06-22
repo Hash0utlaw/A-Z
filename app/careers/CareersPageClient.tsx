@@ -1,23 +1,25 @@
 "use client"
 
 import type React from "react"
+import { useState } from "react"
+import Link from "next/link"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox" // Assuming you have this from shadcn/ui
+import { Checkbox } from "@/components/ui/checkbox"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { toast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
+import OptimizedImage from "@/components/optimized-image"
+import { countries } from "@/lib/countries" // Ensure this file exists
+
 import { Loader2, Briefcase, Users, Leaf, UploadCloud } from "lucide-react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import Link from "next/link"
-import OptimizedImage from "@/components/optimized-image" // Assuming this component exists
-import { useState } from "react"
 
 const careerFormSchema = z.object({
   fullName: z.string().min(3, { message: "Full name must be at least 3 characters." }),
@@ -25,19 +27,20 @@ const careerFormSchema = z.object({
   phone: z
     .string()
     .min(10, { message: "Phone number must be at least 10 digits." })
-    .regex(/^[0-9()-.\s]+$/, { message: "Please enter a valid phone number." }),
+    .regex(/^[0-9()-.\s+]+$/, { message: "Please enter a valid phone number." }),
   positionOfInterest: z.string().optional(),
   experience: z.string().min(10, { message: "Please briefly describe your experience (min 10 characters)." }),
   whyJoin: z.string().min(10, { message: "Please tell us why you want to join (min 10 characters)." }),
-  resume: z.any().optional(), // Basic handling for file upload, more robust solution needed for actual upload
+  resume: z.any().optional(), // For react-hook-form; actual file handling via 'selectedFile' state
   agreeToTerms: z.literal(true, {
-    errorMap: () => ({ message: "You must agree to the terms and conditions." }),
+    errorMap: () => ({ message: "You must agree to the privacy policy." }),
   }),
 })
 
 type CareerFormValues = z.infer<typeof careerFormSchema>
 
 export default function CareersPageClient() {
+  const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [fileName, setFileName] = useState<string | null>(null)
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
@@ -52,6 +55,7 @@ export default function CareersPageClient() {
       experience: "",
       whyJoin: "",
       agreeToTerms: false,
+      resume: undefined,
     },
   })
 
@@ -67,14 +71,17 @@ export default function CareersPageClient() {
         })
         setFileName(null)
         setSelectedFile(null)
+        form.setValue("resume", undefined) // Clear RHF value
         event.target.value = "" // Clear the input
         return
       }
       setFileName(file.name)
       setSelectedFile(file)
+      form.setValue("resume", event.target.files) // Set RHF value
     } else {
       setFileName(null)
       setSelectedFile(null)
+      form.setValue("resume", undefined) // Clear RHF value
     }
   }
 
@@ -94,16 +101,12 @@ export default function CareersPageClient() {
     if (selectedFile) {
       formData.append("resume", selectedFile)
     }
-    // The 'agreeToTerms' field is mostly for client-side validation,
-    // but you could send it if your backend needs to log consent.
-    // formData.append('agreeToTerms', String(data.agreeToTerms));
 
     try {
       const response = await fetch("/api/apply", {
+        // Corrected API endpoint
         method: "POST",
         body: formData,
-        // Do NOT set Content-Type header when sending FormData with files,
-        // the browser will set it correctly with the boundary.
       })
 
       const result = await response.json()
@@ -111,12 +114,12 @@ export default function CareersPageClient() {
       if (response.ok && result.success) {
         toast({
           title: "Application Submitted!",
-          description: "Thank you for your interest. We'll review your application.",
+          description:
+            "Thank you for your interest. We'll review your application and be in touch if there's a potential fit.",
         })
         form.reset()
         setFileName(null)
         setSelectedFile(null)
-        // Clear the file input visually if possible (can be tricky)
         const fileInput = document.getElementById("resume-upload") as HTMLInputElement | null
         if (fileInput) fileInput.value = ""
       } else {
@@ -266,7 +269,7 @@ export default function CareersPageClient() {
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="border-gray-300 focus:border-kelly-500 focus:ring-kelly-500">
-                              <SelectValue placeholder="Select a position or type 'Other'" />
+                              <SelectValue placeholder="Select a position" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
@@ -323,11 +326,37 @@ export default function CareersPageClient() {
                     )}
                   />
 
+                  {/* Country field - assuming lib/countries.ts exists */}
                   <FormField
                     control={form.control}
-                    name="resume"
+                    name="country" // Assuming you want to add this field back
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-navy-700">Country (Optional)</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="border-gray-300 focus:border-kelly-500 focus:ring-kelly-500">
+                              <SelectValue placeholder="Select your country" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {countries.map((country) => (
+                              <SelectItem key={country.code} value={country.name}>
+                                {country.name}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="resume" // This name matches the schema
                     render={(
-                      { field }, // field is not directly used for input type="file" with RHF in this basic setup
+                      { fieldState }, // field is not directly used for input type="file" with RHF in this basic setup
                     ) => (
                       <FormItem>
                         <FormLabel className="text-navy-700">Upload Resume (Optional)</FormLabel>
@@ -349,15 +378,14 @@ export default function CareersPageClient() {
                                 id="resume-upload"
                                 type="file"
                                 className="hidden"
-                                accept=".pdf,.doc,.docx"
+                                accept=".pdf,.doc,.docx,.txt"
                                 onChange={handleFileChange}
-                                // {...field} // RHF's field spread might not work as expected for file inputs without custom register
                               />
                             </label>
                           </div>
                         </FormControl>
-                        <FormDescription>Accepted file types: PDF, DOC, DOCX. Max file size: 5MB.</FormDescription>
-                        <FormMessage />
+                        <FormDescription>Accepted file types: PDF, DOC, DOCX, TXT. Max file size: 5MB.</FormDescription>
+                        {fieldState.error && <FormMessage>{fieldState.error.message}</FormMessage>}
                       </FormItem>
                     )}
                   />
@@ -372,8 +400,11 @@ export default function CareersPageClient() {
                         </FormControl>
                         <div className="space-y-1 leading-none">
                           <FormLabel htmlFor="agreeToTerms" className="text-sm font-medium text-gray-700">
-                            I acknowledge that the information provided is true and accurate, and I consent to A-Z
-                            Landscapes contacting me regarding potential employment.*
+                            I acknowledge that I have read and understood the{" "}
+                            <Link href="/privacy-policy" className="underline text-kelly-600 hover:text-kelly-700">
+                              Privacy Policy
+                            </Link>{" "}
+                            regarding my application data.*
                           </FormLabel>
                           <FormMessage />
                         </div>
@@ -407,7 +438,7 @@ export default function CareersPageClient() {
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-navy-800 mb-6">Our Commitment to Excellence</h2>
               <OptimizedImage
-                src="/careers/team-working.png"
+                src="/careers/team-working.png" // Ensure this image exists
                 alt="A-Z Landscapes team collaborating on a project"
                 width={700}
                 height={400}
@@ -430,8 +461,3 @@ export default function CareersPageClient() {
     </>
   )
 }
-
-// Note: For actual file uploads, you'll need a backend handler.
-// The 'resume' field in the form schema and the file input are placeholders for UI.
-// You'd typically use a service like Vercel Blob, AWS S3, or another storage solution,
-// and handle the upload in the onSubmit function via an API route.

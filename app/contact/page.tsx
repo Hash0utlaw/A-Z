@@ -419,8 +419,11 @@ export default function ContactPage() {
                             </FormControl>
                             <div className="space-y-1 leading-none">
                               <FormLabel>
-                                I consent to A-Z Landscaping collecting my name, email, phone number, and project
-                                details to contact me regarding my request.*
+                                I agree to the terms and have read the{" "}
+                                <Link href="/privacy-policy" className="underline text-kelly-600 hover:text-kelly-700">
+                                  Privacy Policy
+                                </Link>
+                                .*
                               </FormLabel>
                               <FormMessage />
                             </div>

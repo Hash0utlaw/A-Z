@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Leaf, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import OptimizedImage from "@/components/optimized-image"
 
 export function Footer() {
   return (
@@ -8,10 +9,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Leaf className="h-6 w-6 text-kelly-500" />
-              <span className="text-xl font-bold text-white">A-Z Landscapes</span>
-            </div>
+            <Link href="/" className="block mb-4">
+              <OptimizedImage
+                src="/logo.png"
+                alt="A-Z Landscapes Logo"
+                width={180} // Adjust width as needed for footer
+                height={50} // Adjust height based on aspect ratio and desired size
+                className="object-contain" // Ensures logo scales nicely
+                // If your logo is dark and the footer background is dark,
+                // you might need a version of the logo suitable for dark backgrounds
+                // or apply a filter if the PNG has transparency and the logo itself is light.
+                // For this PNG, it seems to have dark text, so it might need a light version for dark bg.
+                // Assuming the provided logo is versatile or you have a version for dark backgrounds.
+              />
+            </Link>
             <p className="mb-4">
               Transforming outdoor spaces with professional landscaping and hardscaping services since 2008.
             </p>

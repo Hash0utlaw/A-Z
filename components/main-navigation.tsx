@@ -38,6 +38,7 @@ import {
   Briefcase,
   Mail,
 } from "lucide-react"
+import OptimizedImage from "@/components/optimized-image"
 
 export function MainNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -55,9 +56,14 @@ export function MainNavigation() {
     <>
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-between w-full">
-        <Link href="/" className="flex items-center space-x-2">
-          <Leaf className="h-8 w-8 text-accent" /> {/* Kelly Green Leaf */}
-          <span className="text-2xl font-bold text-primary-foreground">A-Z Landscapes</span> {/* White text */}
+        <Link href="/" className="flex items-center">
+          <OptimizedImage
+            src="/logo.png"
+            alt="A-Z Landscapes Logo"
+            width={180} // Adjust width as needed for desktop
+            height={50} // Adjust height based on aspect ratio and desired size
+            className="object-contain" // Ensures logo scales nicely
+          />
         </Link>
 
         <nav className="flex items-center space-x-6">
@@ -290,9 +296,14 @@ export function MainNavigation() {
 
       {/* Mobile Navigation */}
       <div className="md:hidden flex items-center justify-between w-full">
-        <Link href="/" className="flex items-center space-x-2">
-          <Leaf className="h-7 w-7 text-accent" /> {/* Kelly Green Leaf */}
-          <span className="text-xl font-bold text-primary-foreground">A-Z Landscapes</span> {/* White text */}
+        <Link href="/" className="flex items-center">
+          <OptimizedImage
+            src="/logo.png"
+            alt="A-Z Landscapes Logo"
+            width={150} // Adjust width as needed for mobile
+            height={42} // Adjust height based on aspect ratio and desired size
+            className="object-contain"
+          />
         </Link>
 
         <div className="flex items-center space-x-4">
