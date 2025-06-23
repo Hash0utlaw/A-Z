@@ -86,6 +86,45 @@ export default function OutdoorKitchensFireFeaturesPage() {
           title: "Covered Outdoor Kitchen & Dining",
           description: "Outdoor kitchen under a pergola for all-weather enjoyment.",
         },
+        {
+          image: "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+          title: "Evening Patio with Fire Pit & Kitchen",
+          description:
+            "Spacious paver patio featuring a modern fire pit and full outdoor kitchen, perfect for evening gatherings.",
+        },
+        {
+          image: "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
+          title: "Complete Outdoor Kitchen Setup",
+          description:
+            "Grey stone outdoor kitchen with smoker, grill, sink, and stainless steel cabinets on a paver patio.",
+        },
+        {
+          image: "/user-uploads/outdoor-kitchen-island-grill-stone-countertop-side-view.jpeg",
+          title: "Outdoor Kitchen Island Detail",
+          description:
+            "Side view of a custom outdoor kitchen island with integrated grill and smoker, showcasing stone and countertop work.",
+        },
+        {
+          image: "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
+          title: "Illuminated Outdoor Kitchen at Night",
+          description:
+            "Outdoor kitchen with under-cabinet lighting highlighting stainless steel appliances and stone construction.",
+        },
+        {
+          image: "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
+          title: "Poolside Linear Fire Feature",
+          description: "Modern linear fire pit with fire glass enhancing a luxury pool area at night.",
+        },
+        {
+          image: "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
+          title: "Pool & Fire Pit Night Ambiance",
+          description: "Backyard pool with a glowing linear fire pit creating a warm ambiance with landscape lighting.",
+        },
+        {
+          image: "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
+          title: "Expansive Patio with Kitchen & Dining",
+          description: "Large paver patio featuring an outdoor kitchen, wooden dining set, and fire pit zone.",
+        },
       ]}
       testimonials={[
         {

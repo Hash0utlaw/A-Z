@@ -206,6 +206,11 @@ export default function TurfInstallationPage() {
                 title: "Drought-Resistant Turf",
                 description: "Water-wise turf variety installation for an environmentally conscious homeowner.",
               },
+              {
+                image: "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
+                title: "Poolside Artificial Turf",
+                description: "Vibrant artificial turf perfectly complementing a poolside landscape design.",
+              },
             ].map((project, index) => (
               <Card key={index} className="overflow-hidden">
                 <div className="relative h-64">

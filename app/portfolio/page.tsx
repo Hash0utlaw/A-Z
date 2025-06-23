@@ -31,7 +31,7 @@ interface Project {
   category: string
 }
 
-// Ensure these image paths are correct and images exist in /public/projects/
+// Ensure these image paths are correct and images exist in /public/
 const projects: Project[] = [
   {
     id: "1",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     description:
       "Elevated this home's street presence with a new natural stone walkway, terraced garden beds, and carefully selected plantings for year-round interest.",
     imageUrl: "/projects/front-yard-transformation.png",
-    slug: "/transformations/front-yard-makeovers", // Example slug, adjust as needed
+    slug: "/transformations/front-yard-makeovers",
     category: "Garden Design & Walkways",
   },
   {
@@ -57,7 +57,7 @@ const projects: Project[] = [
     description:
       "Designed for entertainment, this space features a fully equipped outdoor kitchen, a spacious dining area under a custom cedar pergola, and cozy seating zones.",
     imageUrl: "/projects/outdoor-living-space.png",
-    slug: "/transformations/outdoor-kitchens", // Example slug
+    slug: "/transformations/outdoor-kitchens",
     category: "Outdoor Kitchens & Structures",
   },
   {
@@ -66,7 +66,7 @@ const projects: Project[] = [
     description:
       "Crafted a tranquil escape with a naturalistic koi pond, meandering flagstone paths, and a diverse palette of native and ornamental plants.",
     imageUrl: "/projects/garden-paradise.png",
-    slug: "/transformations/water-features-gardens", // Example slug
+    slug: "/transformations/water-features-gardens",
     category: "Gardens & Water Features",
   },
   {
@@ -75,7 +75,7 @@ const projects: Project[] = [
     description:
       "Professional and inviting landscape solution for a corporate campus, focusing on low-maintenance, drought-tolerant plantings and clear, accessible pathways.",
     imageUrl: "/projects/commercial-landscaping.png",
-    slug: "/transformations/commercial-projects", // Example slug
+    slug: "/transformations/commercial-projects",
     category: "Commercial Landscaping",
   },
   {
@@ -84,8 +84,44 @@ const projects: Project[] = [
     description:
       "An environmentally conscious design incorporating permeable pavers, a rainwater harvesting system, native plant species, and organic lawn care practices.",
     imageUrl: "/projects/sustainable-landscape.png",
-    slug: "/transformations/sustainable-landscapes", // Example slug
+    slug: "/transformations/sustainable-landscapes",
     category: "Sustainable Landscaping",
+  },
+  {
+    id: "user-1",
+    title: "Evening Patio Retreat with Fire Pit & Kitchen",
+    description:
+      "A stunning paver patio designed for evening enjoyment, featuring a modern fire pit, outdoor dining, and a complete outdoor kitchen setup.",
+    imageUrl: "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+    slug: "/services/outdoor-kitchens-fire-features",
+    category: "Patios & Outdoor Living",
+  },
+  {
+    id: "user-2",
+    title: "Deluxe Outdoor Kitchen Installation",
+    description:
+      "This full-featured outdoor kitchen boasts a built-in grill, smoker, ample storage, and elegant stone construction for the ultimate culinary experience.",
+    imageUrl: "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
+    slug: "/services/outdoor-kitchens-fire-features",
+    category: "Outdoor Kitchens & Structures",
+  },
+  {
+    id: "user-3",
+    title: "Poolside Paradise with Artificial Turf",
+    description:
+      "Transforming a poolside area with vibrant, low-maintenance artificial turf and complementary landscaping for year-round beauty.",
+    imageUrl: "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
+    slug: "/services/turf-installation",
+    category: "Lawn & Turf Solutions",
+  },
+  {
+    id: "user-4",
+    title: "Elegant Natural Stone Steps",
+    description:
+      "Beautifully crafted natural stone slab steps integrated into a sloped landscape with boulder accents, enhancing accessibility and aesthetics.",
+    imageUrl: "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
+    slug: "/services/retaining-walls",
+    category: "Hardscaping & Retaining Walls",
   },
 ]
 
@@ -96,11 +132,11 @@ export default function PortfolioPage() {
       <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-emerald-600 text-white py-24 md:py-32">
         <div className="absolute inset-0 opacity-20">
           <OptimizedImage
-            src="/hero-landscape.png" // Replace with a high-quality, general portfolio hero image
+            src="/hero-landscape.png"
             alt="Beautifully landscaped property showcase"
             fill
             className="object-cover"
-            priority // Prioritize loading for LCP
+            priority
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">

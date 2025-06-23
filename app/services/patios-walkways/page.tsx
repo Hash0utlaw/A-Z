@@ -92,6 +92,28 @@ const patiosWalkwaysData = {
       title: "Multi-Level Paver Patio",
       description: "Expansive multi-level paver patio with integrated seating and planters.",
     },
+    {
+      image: "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+      title: "Spacious Evening Patio",
+      description: "Large paver patio designed for entertainment with fire pit and outdoor kitchen.",
+    },
+    {
+      image: "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
+      title: "Patterned Patio Overlooking Water",
+      description:
+        "Patterned paver or stamped concrete patio with a curved design, leading to a lawn and waterfront view.",
+    },
+    {
+      image: "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
+      title: "Multi-Zone Paver Patio",
+      description: "Expansive paver patio with distinct zones for cooking, dining, and relaxation around a fire pit.",
+    },
+    {
+      image: "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
+      title: "Natural Stone Slab Steps",
+      description:
+        "Wide, natural stone steps integrated into a landscaped slope, enhancing accessibility and aesthetics.",
+    },
   ],
   testimonials: [
     {

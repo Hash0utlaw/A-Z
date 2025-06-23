@@ -30,8 +30,52 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function HomePage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": ["HomeAndConstructionBusiness", "Landscaper"],
+    name: "A-Z Landscapes",
+    image: "https://www.a-z-landscaping.com/logo.png", // IMPORTANT: Update domain
+    url: "https://www.a-z-landscaping.com", // IMPORTANT: Update domain
+    telephone: "+1-555-123-4567", // IMPORTANT: Update phone
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "123 Main Street", // IMPORTANT: Update
+      addressLocality: "Your City", // IMPORTANT: Update
+      addressRegion: "YS", // IMPORTANT: Update
+      postalCode: "00000", // IMPORTANT: Update
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "YOUR_LATITUDE", // IMPORTANT: Update
+      longitude: "YOUR_LONGITUDE", // IMPORTANT: Update
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00", // IMPORTANT: Update
+        closes: "17:00", // IMPORTANT: Update
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "10:00",
+        closes: "14:00",
+      },
+    ],
+    description:
+      "A-Z Landscapes offers comprehensive landscaping and hardscaping services in [Your City] and surrounding areas. With over 20 years of experience, we transform outdoor dreams into reality, from patios and retaining walls to garden design and lawn care.", // IMPORTANT: Update service area
+    priceRange: "$$",
+    sameAs: [
+      "https://www.facebook.com/your-az-landscapes-profile", // IMPORTANT: Update
+      "https://www.instagram.com/your-az-landscapes-profile", // IMPORTANT: Update
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       {/* Hero Section */}
       <section id="home" className="relative bg-gradient-to-br from-kelly-50 to-kelly-100 py-20 lg:py-32">
         <div className="container mx-auto px-4">

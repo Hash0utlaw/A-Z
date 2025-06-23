@@ -43,12 +43,12 @@ export default function ServicePageTemplate({
   title,
   description,
   heroImage,
-  benefits,
-  process,
-  gallery,
-  testimonials,
-  faqs,
-  relatedServices,
+  benefits = [],
+  process = [],
+  gallery = [],
+  testimonials = [],
+  faqs = [],
+  relatedServices = [],
 }: ServicePageProps) {
   return (
     <div>

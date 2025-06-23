@@ -17,7 +17,7 @@ const galleryCategories = [
   {
     id: "all",
     name: "All Photos",
-    images: [],
+    images: [], // This will be populated dynamically
   },
   {
     id: "patios-walkways",
@@ -29,6 +29,10 @@ const galleryCategories = [
       "/gallery/patios/stamped-concrete.png",
       "/gallery/patios/brick-entrance.png",
       "/gallery/patios/multi-level-patio.png",
+      "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+      "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
+      "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
+      "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg", // Steps are often part of walkways
     ],
   },
   {
@@ -41,6 +45,7 @@ const galleryCategories = [
       "/gallery/walls/boulder-wall.png",
       "/gallery/walls/concrete-wall.png",
       "/gallery/walls/timber-wall.png",
+      "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg", // Also relevant here
     ],
   },
   {
@@ -53,11 +58,12 @@ const galleryCategories = [
       "/gallery/water/pondless-waterfall.png",
       "/gallery/water/water-wall.png",
       "/gallery/water/koi-pond.png",
+      // No direct new water features, but pool images could go here if a "Pools" category was added
     ],
   },
   {
     id: "outdoor-living",
-    name: "Outdoor Living",
+    name: "Outdoor Living", // Includes kitchens, fire pits, pergolas
     images: [
       "/gallery/outdoor-kitchens/complete-kitchen.png",
       "/gallery/outdoor-kitchens/stone-firepit.png",
@@ -65,11 +71,18 @@ const galleryCategories = [
       "/gallery/pergolas/cedar-pergola.png",
       "/gallery/pergolas/traditional-gazebo.png",
       "/gallery/pergolas/modern-pergola.png",
+      "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+      "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
+      "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
+      "/user-uploads/outdoor-kitchen-island-grill-stone-countertop-side-view.jpeg",
+      "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
+      "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
+      "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
     ],
   },
   {
-    id: "gardens",
-    name: "Gardens",
+    id: "gardens", // Includes general landscaping, turf
+    name: "Gardens & Turf",
     images: [
       "/gallery/gardens/perennial-garden.png",
       "/gallery/gardens/native-plants.png",
@@ -77,6 +90,7 @@ const galleryCategories = [
       "/gallery/gardens/shade-garden.png",
       "/gallery/gardens/foundation-planting.png",
       "/gallery/gardens/cottage-garden.png",
+      "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
     ],
   },
   {
@@ -89,12 +103,16 @@ const galleryCategories = [
       "/gallery/lighting/water-lighting.png",
       "/gallery/lighting/deck-lighting.png",
       "/gallery/lighting/security-lighting.png",
+      "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg", // Night ambiance
+      "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg", // Evening lighting focus
+      "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg", // Kitchen lighting
     ],
   },
 ]
 
-// Get all images for "All Photos" tab
-const allImages = galleryCategories.filter((cat) => cat.id !== "all").flatMap((cat) => cat.images)
+// Get all images for "All Photos" tab by combining unique images from other categories
+const allImages = Array.from(new Set(galleryCategories.filter((cat) => cat.id !== "all").flatMap((cat) => cat.images)))
+galleryCategories.find((cat) => cat.id === "all")!.images = allImages
 
 export default function GalleryPage() {
   return (
@@ -115,7 +133,7 @@ export default function GalleryPage() {
               <TabsTrigger
                 key={category.id}
                 value={category.id}
-                className="rounded-md border border-gray-200 bg-white px-4 py-2 data-[state=active]:border-navy-500 data-[state=active]:bg-navy-50 data-[state=active]:text-navy-700"
+                className="rounded-md border border-gray-200 bg-white px-4 py-2 data-[state=active]:border-navy-500 data-[state=active]:bg-navy-50 data-[state=active]:text-navy-700 whitespace-nowrap"
               >
                 {category.name}
               </TabsTrigger>
@@ -123,43 +141,28 @@ export default function GalleryPage() {
           </TabsList>
         </div>
 
-        <TabsContent value="all" className="mt-0">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {allImages.map((image, index) => (
-              <div key={index} className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer">
-                <Image
-                  src={image || "/placeholder.svg"}
-                  alt={`Gallery image ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
-              </div>
-            ))}
-          </div>
-        </TabsContent>
-
-        {galleryCategories
-          .filter((category) => category.id !== "all")
-          .map((category) => (
-            <TabsContent key={category.id} value={category.id} className="mt-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {category.images.map((image, index) => (
-                  <div key={index} className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer">
-                    <Image
-                      src={image || "/placeholder.svg"}
-                      alt={`${category.name} ${index + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
+        {galleryCategories.map((category) => (
+          <TabsContent key={category.id} value={category.id} className="mt-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {category.images.map((image, index) => (
+                <div
+                  key={`${category.id}-${index}`}
+                  className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer"
+                >
+                  <Image
+                    src={image || "/placeholder.svg"}
+                    alt={`${category.name} example ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    loading={index < 8 ? "eager" : "lazy"} // Eager load first few images per tab
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+        ))}
       </Tabs>
 
       <div className="mt-16 grid md:grid-cols-2 gap-8">

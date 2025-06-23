@@ -81,6 +81,12 @@ const RetainingWallsPage = () => {
           title: "Timber Retaining Wall",
           description: "A more rustic option, suitable for certain aesthetics and smaller walls.",
         },
+        {
+          image: "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
+          title: "Stone Steps with Boulder Accents",
+          description:
+            "Natural stone slab steps integrated with boulders, showcasing a robust landscaping solution for slopes.",
+        },
       ]}
       testimonials={[
         {
