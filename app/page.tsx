@@ -1,10 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
   Star,
@@ -103,7 +100,7 @@ export default function HomePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-navy-500 text-navy-700 hover:bg-navy-50 text-lg px-8 py-3"
+                    className="border-navy-500 text-navy-700 hover:bg-navy-50 text-lg px-8 py-3 bg-transparent"
                   >
                     View Our Work
                   </Button>
@@ -274,7 +271,11 @@ export default function HomePage() {
                 </p>
               </div>
               <Link href="/about">
-                <Button size="lg" variant="outline" className="border-navy-500 text-navy-700 hover:bg-navy-50">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-navy-500 text-navy-700 hover:bg-navy-50 bg-transparent"
+                >
                   Learn More About Us
                 </Button>
               </Link>
@@ -372,7 +373,11 @@ export default function HomePage() {
           <div className="text-center mt-12">
             {/* Placeholder for a link to a full testimonials page if created */}
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-navy-500 text-navy-700 hover:bg-kelly-50">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-navy-500 text-navy-700 hover:bg-kelly-50 bg-transparent"
+              >
                 Share Your Experience
               </Button>
             </Link>
@@ -391,39 +396,13 @@ export default function HomePage() {
               no-obligation consultation and estimate.
             </p>
           </div>
-          <div className="max-w-lg mx-auto">
-            <Card className="border-navy-100">
-              <CardHeader>
-                <CardTitle className="text-2xl text-gray-900">Request a Free Consultation</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Simplified form, actual form on /contact page */}
-                <div className="space-y-2">
-                  <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" placeholder="Your Name" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="your@email.com" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone (Optional)</Label>
-                  <Input id="phone" type="tel" placeholder="(555) 123-4567" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Briefly describe your project</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="e.g., New patio, garden redesign, lawn maintenance..."
-                    className="min-h-[100px]"
-                  />
-                </div>
-                <Link href="/contact" className="w-full">
-                  <Button className="w-full bg-kelly-500 hover:bg-kelly-600">Go to Full Contact Form</Button>
-                </Link>
-                <p className="text-xs text-gray-500 text-center pt-2">Or call us at (555) 123-4567</p>
-              </CardContent>
-            </Card>
+          <div className="text-center">
+            <Link href="/contact">
+              <Button size="lg" className="bg-kelly-500 hover:bg-kelly-600 text-lg px-10 py-4">
+                Request Your Free Consultation
+              </Button>
+            </Link>
+            <p className="text-md text-gray-600 mt-6">Or call us at (555) 123-4567 to speak with our team directly.</p>
           </div>
         </div>
       </section>

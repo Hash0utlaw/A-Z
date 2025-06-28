@@ -1,197 +1,171 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import GalleryGrid from "@/components/gallery-grid"
 
 export const metadata: Metadata = {
-  title: "Photo Gallery | A-Z Landscapes Projects",
+  title: "Project Gallery | A-Z Landscapes",
   description:
-    "Browse A-Z Landscapes' photo gallery of stunning landscaping, hardscaping, patios, gardens, lighting, and water feature projects. Get inspired!",
+    "Browse our gallery of completed projects. See stunning examples of our work in patios, retaining walls, outdoor kitchens, water features, and more.",
 }
 
-// Gallery categories with images
 const galleryCategories = [
   {
-    id: "all",
-    name: "All Photos",
-    images: [], // This will be populated dynamically
-  },
-  {
-    id: "patios-walkways",
     name: "Patios & Walkways",
     images: [
-      "/gallery/patios/modern-paver-patio.png",
-      "/gallery/patios/flagstone-patio.png",
-      "/gallery/patios/stone-walkway.png",
-      "/gallery/patios/stamped-concrete.png",
-      "/gallery/patios/brick-entrance.png",
-      "/gallery/patios/multi-level-patio.png",
-      "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+      "/patios-walkways/modern-paver-patio.png",
+      "/patios-walkways/stone-walkway.png",
+      "/patios-walkways/stamped-concrete.png",
+      "/patios-walkways/brick-entrance.png",
+      "/patios-walkways/flagstone-patio.png",
+      "/patios-walkways/multi-level-patio.png",
       "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
+      "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
       "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
-      "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg", // Steps are often part of walkways
     ],
   },
   {
-    id: "retaining-walls",
     name: "Retaining Walls",
     images: [
-      "/gallery/walls/natural-stone-wall.png",
-      "/gallery/walls/block-wall-system.png",
-      "/gallery/walls/terraced-garden.png",
-      "/gallery/walls/boulder-wall.png",
-      "/gallery/walls/concrete-wall.png",
-      "/gallery/walls/timber-wall.png",
-      "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg", // Also relevant here
+      "/retaining-walls/natural-stone-wall.png",
+      "/retaining-walls/block-wall-system.png",
+      "/retaining-walls/terraced-garden.png",
+      "/retaining-walls/boulder-wall.png",
+      "/retaining-walls/concrete-wall.png",
+      "/retaining-walls/timber-wall.png",
+      "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
     ],
   },
   {
-    id: "water-features",
-    name: "Water Features",
+    name: "Outdoor Kitchens",
     images: [
-      "/gallery/water/garden-fountain.png",
-      "/gallery/water/natural-pond.png",
-      "/gallery/water/waterfall.png",
-      "/gallery/water/pondless-waterfall.png",
-      "/gallery/water/water-wall.png",
-      "/gallery/water/koi-pond.png",
-      // No direct new water features, but pool images could go here if a "Pools" category was added
-    ],
-  },
-  {
-    id: "outdoor-living",
-    name: "Outdoor Living", // Includes kitchens, fire pits, pergolas
-    images: [
-      "/gallery/outdoor-kitchens/complete-kitchen.png",
-      "/gallery/outdoor-kitchens/stone-firepit.png",
-      "/gallery/outdoor-kitchens/outdoor-fireplace.png",
-      "/gallery/pergolas/cedar-pergola.png",
-      "/gallery/pergolas/traditional-gazebo.png",
-      "/gallery/pergolas/modern-pergola.png",
-      "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
-      "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
+      "/outdoor-kitchens-fire-features/complete-kitchen.png",
+      "/outdoor-kitchens-fire-features/covered-kitchen.png",
       "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
       "/user-uploads/outdoor-kitchen-island-grill-stone-countertop-side-view.jpeg",
-      "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
-      "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
       "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
     ],
   },
   {
-    id: "gardens", // Includes general landscaping, turf
-    name: "Gardens & Turf",
+    name: "Fire Features",
     images: [
-      "/gallery/gardens/perennial-garden.png",
-      "/gallery/gardens/native-plants.png",
-      "/gallery/gardens/formal-garden.png",
-      "/gallery/gardens/shade-garden.png",
-      "/gallery/gardens/foundation-planting.png",
-      "/gallery/gardens/cottage-garden.png",
+      "/outdoor-kitchens-fire-features/stone-firepit.png",
+      "/outdoor-kitchens-fire-features/outdoor-fireplace.png",
+      "/outdoor-kitchens-fire-features/fire-table.png",
+      "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
+      "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
+    ],
+  },
+  {
+    name: "Water Features",
+    images: [
+      "/water-features/garden-fountain.png",
+      "/water-features/natural-pond.png",
+      "/water-features/waterfall.png",
+      "/water-features/pondless-waterfall.png",
+      "/water-features/water-wall.png",
+      "/water-features/koi-pond.png",
+    ],
+  },
+  {
+    name: "Pergolas & Gazebos",
+    images: [
+      "/pergolas-gazebos/cedar-pergola.png",
+      "/pergolas-gazebos/traditional-gazebo.png",
+      "/pergolas-gazebos/modern-pergola.png",
+      "/pergolas-gazebos/poolside-cabana.png",
+      "/pergolas-gazebos/garden-arbor.png",
+      "/pergolas-gazebos/attached-pergola.png",
+    ],
+  },
+  {
+    name: "Gardens & Planting",
+    images: [
+      "/garden-design-planting/perennial-garden.png",
+      "/garden-design-planting/native-plants.png",
+      "/garden-design-planting/formal-garden.png",
+      "/garden-design-planting/shade-garden.png",
+      "/garden-design-planting/foundation-planting.png",
+      "/garden-design-planting/cottage-garden.png",
+    ],
+  },
+  {
+    name: "Lawn & Turf",
+    images: [
+      "/lawn-care-maintenance/lush-lawn.png",
+      "/lawn-care-maintenance/lawn-renovation.png",
+      "/turf-installation/artificial-turf.png",
+      "/turf-installation/sod-installation.png",
       "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
     ],
   },
   {
-    id: "lighting",
-    name: "Lighting",
+    name: "Landscape Lighting",
     images: [
-      "/gallery/lighting/architectural-lighting.png",
-      "/gallery/lighting/path-lighting.png",
-      "/gallery/lighting/tree-lighting.png",
-      "/gallery/lighting/water-lighting.png",
-      "/gallery/lighting/deck-lighting.png",
-      "/gallery/lighting/security-lighting.png",
-      "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg", // Night ambiance
-      "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg", // Evening lighting focus
-      "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg", // Kitchen lighting
+      "/landscape-lighting/architectural-lighting.png",
+      "/landscape-lighting/path-lighting.png",
+      "/landscape-lighting/tree-lighting.png",
+      "/landscape-lighting/water-lighting.png",
+      "/landscape-lighting/deck-lighting.png",
+      "/landscape-lighting/security-lighting.png",
+      "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
+      "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
     ],
   },
 ]
 
-// Get all images for "All Photos" tab by combining unique images from other categories
-const allImages = Array.from(new Set(galleryCategories.filter((cat) => cat.id !== "all").flatMap((cat) => cat.images)))
-galleryCategories.find((cat) => cat.id === "all")!.images = allImages
+const allImages = Array.from(new Set(galleryCategories.flatMap((category) => category.images)))
 
 export default function GalleryPage() {
   return (
-    <main className="container mx-auto px-4 py-12">
-      <div className="max-w-3xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Photo Gallery</h1>
-        <p className="text-lg text-gray-600">
-          Explore our extensive collection of landscaping and hardscaping projects. Each photo showcases our attention
-          to detail and commitment to quality craftsmanship.
-        </p>
-      </div>
-
-      <Tabs defaultValue="all" className="w-full">
-        <div className="relative mb-8">
-          <div className="absolute right-0 top-1 z-10 h-12 w-12 bg-gradient-to-l from-white via-white to-transparent md:hidden" />
-          <TabsList className="h-12 w-full justify-start overflow-x-auto scrollbar-none space-x-2 rounded-md bg-transparent p-0 md:flex md:justify-center">
-            {galleryCategories.map((category) => (
-              <TabsTrigger
-                key={category.id}
-                value={category.id}
-                className="rounded-md border border-gray-200 bg-white px-4 py-2 data-[state=active]:border-navy-500 data-[state=active]:bg-navy-50 data-[state=active]:text-navy-700 whitespace-nowrap"
-              >
-                {category.name}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="bg-navy-800 text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Project Gallery</h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-navy-200">
+            Explore our portfolio of stunning landscapes and hardscapes. Get inspired for your own outdoor
+            transformation.
+          </p>
         </div>
+      </section>
 
-        {galleryCategories.map((category) => (
-          <TabsContent key={category.id} value={category.id} className="mt-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {category.images.map((image, index) => (
-                <div
-                  key={`${category.id}-${index}`}
-                  className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer"
-                >
-                  <Image
-                    src={image || "/placeholder.svg"}
-                    alt={`${category.name} example ${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    loading={index < 8 ? "eager" : "lazy"} // Eager load first few images per tab
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
-                </div>
-              ))}
+      {/* Gallery Tabs */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <Tabs defaultValue="all" className="w-full">
+            <div className="flex justify-center mb-8">
+              <TabsList className="grid w-full max-w-4xl grid-cols-3 md:grid-cols-5 lg:grid-cols-10 h-auto">
+                <TabsTrigger value="all" className="whitespace-nowrap">
+                  All Photos
+                </TabsTrigger>
+                {galleryCategories.map((category) => (
+                  <TabsTrigger key={category.name} value={category.name} className="whitespace-nowrap">
+                    {category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
             </div>
-          </TabsContent>
-        ))}
-      </Tabs>
 
-      <div className="mt-16 grid md:grid-cols-2 gap-8">
-        <div className="bg-navy-50 rounded-xl p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">See the Transformations</h2>
-          <p className="text-gray-600 mb-6">
-            Want to see the dramatic before and after changes? Check out our transformation gallery to see how we've
-            completely reimagined outdoor spaces.
-          </p>
-          <Link href="/transformations">
-            <Button className="bg-kelly-500 hover:bg-kelly-600">
-              View Before & After <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        </div>
+            <TabsContent value="all">
+              <GalleryGrid
+                items={allImages.map((src) => ({ image: src, title: "Project", description: "View our work" }))}
+              />
+            </TabsContent>
 
-        <div className="bg-gray-50 rounded-xl p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Start Your Project</h2>
-          <p className="text-gray-600 mb-6">
-            Inspired by what you see? Let's discuss how we can transform your outdoor space into something
-            extraordinary.
-          </p>
-          <Link href="/contact">
-            <Button className="bg-kelly-500 hover:bg-kelly-600">
-              Get a Free Quote <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
+            {galleryCategories.map((category) => (
+              <TabsContent key={category.name} value={category.name}>
+                <GalleryGrid
+                  items={category.images.map((src) => ({
+                    image: src,
+                    title: category.name,
+                    description: "View our work",
+                  }))}
+                />
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
-      </div>
-    </main>
+      </section>
+    </div>
   )
 }

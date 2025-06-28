@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import ServicePageTemplate from "@/components/service-page-template" // Corrected import path
+import ServicePageTemplate from "@/components/service-page-template"
 
 export const metadata: Metadata = {
   title: "Water Feature Design & Installation | A-Z Landscapes",
