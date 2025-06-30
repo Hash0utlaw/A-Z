@@ -4,14 +4,14 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Landscape Lighting Design & Installation | A-Z Landscapes",
   description:
-    "Custom LED landscape lighting by A-Z Landscapes. Enhance beauty, safety, and ambiance with uplighting, path lights, and more. Energy-efficient.",
+    "Custom LED landscape lighting by A-Z Landscapes. Enhance beauty, safety, and ambiance with uplighting, path lights, and more. Energy-efficient and professionally installed.",
 }
 
 const landscapeLightingData = {
   category: "landscaping" as const,
   title: "Custom Landscape Lighting",
   description:
-    "Illuminate your property's beauty, enhance safety, and extend outdoor enjoyment with A-Z Landscapes' custom low-voltage LED lighting designs. We offer a wide array of fixtures and techniques to create the perfect ambiance.",
+    "Illuminate your property's beauty, enhance safety, and extend your outdoor enjoyment with A-Z Landscapes' custom low-voltage LED lighting designs. We create breathtaking scenes that highlight your home's architecture and landscape features.",
   heroImage: "/landscape-lighting/hero.png",
   benefits: [
     "Extend your outdoor living hours well into the evening.",
@@ -19,33 +19,33 @@ const landscapeLightingData = {
     "Improve safety and security along walkways, steps, and around your property.",
     "Create captivating ambiance and drama with professional lighting design.",
     "Energy-efficient LED systems for lower operating costs and longevity.",
-    "Options for color-changing LEDs for seasonal or festive displays.",
+    "Increase your home's curb appeal and overall value.",
   ],
   process: [
     {
-      title: "Lighting Consultation & Goal Setting",
+      title: "1. Consultation & Vision",
       description:
-        "We discuss your objectives: Do you want to highlight specific features, improve safety, create a mood, or all of the above? We also consider your budget.",
+        "We start by discussing your goals. Do you want to create a mood, improve safety, or highlight specific features? We'll walk your property with you to understand your vision.",
     },
     {
-      title: "Fixture Selection & Design Plan",
+      title: "2. Design & Fixture Selection",
       description:
-        "We select from a range of high-quality, low-voltage LED fixtures (uplights, downlights, path lights, well lights) based on your needs and create a comprehensive design plan.",
+        "Our experts design a custom lighting plan, selecting from a range of high-quality, low-voltage LED fixtures like uplights, path lights, and accent lights to achieve the desired effect.",
     },
     {
-      title: "Nighttime Demonstration (Optional)",
+      title: "3. Nighttime Demonstration (Optional)",
       description:
-        "For some projects, we can conduct a nighttime demonstration with temporary lights to help you visualize the effects and make informed decisions.",
+        "For some projects, we can set up a temporary lighting demo at night. This allows you to see the design in action and make adjustments before the final installation.",
     },
     {
-      title: "Professional Installation",
+      title: "4. Professional Installation",
       description:
-        "Our technicians expertly install your lighting system with minimal disruption, ensuring proper wiring, connections, and fixture placement for optimal effect and durability.",
+        "Our technicians expertly install your lighting system with meticulous care and minimal disruption, ensuring all wiring is hidden and connections are secure for lasting durability.",
     },
     {
-      title: "Final Adjustments & System Programming",
+      title: "5. Final Adjustments & Walkthrough",
       description:
-        "We make precise adjustments at night to perfect the illumination. If applicable, we program timers or smart controls, including any color-changing scenes.",
+        "After installation, we perform a final walkthrough at night to make precise adjustments, ensuring every light is perfectly aimed. We'll also show you how to operate your new system.",
     },
   ],
   gallery: [
@@ -98,17 +98,17 @@ const landscapeLightingData = {
     {
       question: "What types of landscape lighting fixtures do you use?",
       answer:
-        "We use a wide variety of low-voltage LED fixtures, including uplights, downlights, path lights, well lights, wash lights, and specialty lights. We select fixtures based on the desired effect, durability, and your budget.",
+        "We use a wide variety of professional-grade, low-voltage LED fixtures, including uplights, downlights, path lights, wash lights, and specialty lights. We select fixtures based on the desired effect, durability, and your budget.",
     },
     {
       question: "Can I get color-changing lights for holidays?",
       answer:
-        "Yes! We offer advanced LED systems that are color-changing and can be programmed for holidays like Christmas or Halloween, or any other mood you want to create.",
+        "Yes! We offer advanced smart LED systems that are color-changing and can be programmed via a smartphone app for holidays, parties, or any mood you want to create.",
     },
     {
       question: "Is LED lighting energy-efficient?",
       answer:
-        "Absolutely. LED lighting uses significantly less energy than traditional halogen systems and has a much longer lifespan, resulting in lower operating costs and less maintenance.",
+        "Absolutely. Modern LED lighting uses up to 80% less energy than traditional halogen systems and has a much longer lifespan, resulting in significant savings on operating costs and maintenance.",
     },
   ],
   relatedServices: [

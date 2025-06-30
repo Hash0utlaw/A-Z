@@ -4,48 +4,48 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Outdoor Kitchens & Fire Features | A-Z Landscapes",
   description:
-    "Custom outdoor kitchens, fire pits, and fireplaces by A-Z Landscapes. Design and build services for your perfect outdoor entertainment space.",
+    "Design and build services for custom outdoor kitchens, fire pits, and fireplaces. Create your perfect outdoor entertainment space with A-Z Landscapes.",
 }
 
 const outdoorKitchensData = {
   category: "hardscape" as const,
   title: "Outdoor Kitchens & Fire Features",
   description:
-    "Extend your living space and create the ultimate entertainment hub with custom-designed outdoor kitchens, fire pits, and fireplaces from A-Z Landscapes. We tailor every feature to your lifestyle, space, and budget.",
+    "Extend your living space and create the ultimate entertainment hub with a custom-designed outdoor kitchen, fire pit, or fireplace from A-Z Landscapes. We tailor every feature to your lifestyle, space, and budget.",
   heroImage: "/outdoor-kitchens-fire-features/hero.png",
   benefits: [
     "Create a functional and stylish outdoor cooking and dining experience.",
-    "Extend your outdoor enjoyment into cooler evenings with warming fire pits or fireplaces.",
+    "Extend your outdoor enjoyment into cooler evenings with a warming fire feature.",
     "Increase your home's value and appeal with high-quality outdoor amenities.",
     "Custom designs that seamlessly integrate with your home's architecture and landscape.",
     "Wide choice of materials, appliances, and design options (gas or wood-burning).",
-    "Durable, weather-resistant construction built to last for years of enjoyment.",
+    "Durable, weather-resistant construction built for years of enjoyment.",
   ],
   process: [
     {
-      title: "Lifestyle & Needs Consultation",
+      title: "1. Lifestyle & Needs Consultation",
       description:
-        "We start by understanding your vision: How do you plan to use the space? For intimate family gatherings or larger entertaining? What are your cooking needs and style preferences?",
+        "We start by understanding your vision: How do you plan to use the space? For intimate family gatherings or large parties? What are your cooking needs and fire feature style preferences?",
     },
     {
-      title: "Site Evaluation & Space Planning",
+      title: "2. Site Evaluation & Space Planning",
       description:
-        "We assess your outdoor area to determine the optimal location, layout, and integration with existing landscape and structures, considering factors like utility access and traffic flow.",
+        "We assess your outdoor area to determine the optimal location and layout, considering factors like utility access, wind direction, and traffic flow.",
     },
     {
-      title: "Custom Design & Material Selection",
+      title: "3. Custom Design & Material Selection",
       description:
-        "Our designers create detailed plans, helping you select materials (natural stone, pavers, etc.), appliances for kitchens, and the style of your fire pit or fireplace.",
+        "Our designers create detailed 3D plans, helping you select materials (natural stone, pavers, etc.), appliances, and the style of your fire pit or fireplace to match your aesthetic.",
     },
     {
-      title: "Expert Construction & Craftsmanship",
+      title: "4. Expert Construction & Craftsmanship",
       description:
-        "Our skilled craftsmen build your outdoor kitchen or fire feature with meticulous attention to detail, ensuring structural integrity and a beautiful finish.",
+        "Our skilled craftsmen build your outdoor kitchen or fire feature with meticulous attention to detail, ensuring structural integrity and a beautiful finish that lasts.",
     },
     {
-      title: "Final Walkthrough & Feature Demonstration",
+      title: "5. Final Walkthrough & Demonstration",
       description:
-        "We ensure you're delighted with the result and demonstrate how to safely use and maintain your new outdoor living features.",
+        "We ensure you're delighted with the result and demonstrate how to safely operate and maintain your new outdoor living features.",
     },
   ],
   gallery: [
@@ -98,17 +98,17 @@ const outdoorKitchensData = {
     {
       question: "What's the difference between a wood-burning and gas fire feature?",
       answer:
-        "Wood-burning fire pits/fireplaces offer a traditional campfire ambiance. Gas features provide instant on/off convenience and no smoke or ash cleanup. We discuss your preferences to help you choose.",
+        "Wood-burning features offer a traditional campfire ambiance and aroma. Gas features provide instant on/off convenience, consistent flame, and no smoke or ash cleanup. We help you choose based on your lifestyle.",
     },
     {
       question: "What appliances can I include in an outdoor kitchen?",
       answer:
-        "Almost anything you have indoors! Grills, side burners, refrigerators, ice makers, sinks, pizza ovens, and beverage centers are all popular options.",
+        "Almost anything you have indoors! Grills, side burners, refrigerators, ice makers, sinks, pizza ovens, smokers, and beverage centers are all popular options.",
     },
     {
       question: "Do I need a permit for an outdoor kitchen or fireplace?",
       answer:
-        "Permit requirements vary by location and project scope. We can advise you on local regulations and assist with the permitting process if needed.",
+        "Permit requirements vary by location and project scope, especially when gas or electrical lines are involved. We will advise you on local regulations and can manage the permitting process for you.",
     },
   ],
   relatedServices: [

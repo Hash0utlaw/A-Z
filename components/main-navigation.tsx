@@ -30,7 +30,6 @@ import {
   TreePine,
   Lightbulb,
   SunSnow,
-  Phone,
   ImageIcon,
   ArrowRightLeft,
   Grid,
@@ -284,10 +283,6 @@ export function MainNavigation() {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <div className="hidden lg:flex items-center space-x-2 text-primary-foreground/80">
-            <Phone className="h-4 w-4" />
-            <span className="font-semibold">(555) 123-4567</span>
-          </div>
           <Link href="/contact">
             <Button variant="default">Get Quote</Button> {/* Default is Kelly Green */}
           </Link>
@@ -307,9 +302,6 @@ export function MainNavigation() {
         </Link>
 
         <div className="flex items-center space-x-4">
-          <Link href="tel:5551234567" className="text-primary-foreground/80">
-            <Phone className="h-5 w-5" />
-          </Link>
           <Button
             variant="ghost"
             size="icon"

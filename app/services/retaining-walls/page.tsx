@@ -4,48 +4,48 @@ import ServicePageTemplate from "@/components/service-page-template"
 export const metadata: Metadata = {
   title: "Retaining Wall Construction & Design | A-Z Landscapes",
   description:
-    "A-Z Landscapes builds durable and decorative retaining walls using natural stone, boulders, and blocks. Solve slope issues and enhance your landscape.",
+    "A-Z Landscapes builds beautiful, durable retaining walls from natural stone, boulders, and blocks. We solve slope issues and enhance your landscape's usability and appeal.",
 }
 
 const retainingWallsData = {
   category: "hardscape" as const,
   title: "Durable & Decorative Retaining Walls",
   description:
-    "A-Z Landscapes designs and builds structurally sound and aesthetically pleasing retaining walls. We specialize in various materials including natural stone, boulders, and manufactured block systems to manage slopes, create terraced gardens, and define outdoor spaces.",
+    "A-Z Landscapes designs and builds structurally sound and aesthetically pleasing retaining walls. We specialize in using natural stone, boulders, and manufactured block systems to manage slopes, prevent erosion, and create more usable space.",
   heroImage: "/retaining-walls/hero.png",
   benefits: [
-    "Effectively manage sloped terrain and prevent soil erosion.",
-    "Create more usable flat areas for gardens, patios, or play spaces.",
+    "Effectively manage sloped terrain and prevent costly soil erosion.",
+    "Create more usable flat areas for patios, gardens, or lawns.",
     "Enhance the visual appeal and definition of your landscape.",
     "Increase property value with professionally engineered and constructed walls.",
-    "Wide choice of materials: natural stone, boulders, manufactured blocks.",
+    "Wide choice of materials: natural stone, boulders, or manufactured blocks.",
     "Custom designs to complement your home and landscape style.",
   ],
   process: [
     {
-      title: "Site Evaluation & Engineering Needs",
+      title: "1. Site Evaluation & Engineering",
       description:
-        "We assess the slope, soil conditions, and drainage requirements. For larger walls, engineering considerations are paramount.",
+        "We perform a thorough assessment of the slope, soil conditions, and water drainage. For taller walls, we adhere to strict engineering standards to ensure safety and longevity.",
     },
     {
-      title: "Material Selection & Design",
+      title: "2. Material Selection & Design",
       description:
-        "Choose from natural stone, boulders, or versatile manufactured blocks. We design the wall's height, length, and style to meet your needs.",
+        "Choose from natural stone for a rustic look, boulders for a dramatic statement, or versatile manufactured blocks. We design the wall to meet your functional needs and aesthetic goals.",
     },
     {
-      title: "Proper Footing & Base Preparation",
+      title: "3. Foundation & Base Preparation",
       description:
-        "A solid foundation is critical. We ensure proper excavation, footing construction, and base material compaction for longevity.",
+        "A solid, compacted gravel footing is critical for a retaining wall's stability. We never cut corners on this essential step, ensuring a foundation that lasts.",
     },
     {
-      title: "Wall Construction & Drainage Integration",
+      title: "4. Wall Construction & Drainage",
       description:
-        "Our experienced team constructs the wall with precision, incorporating necessary drainage systems (e.g., gravel backfill, weep holes) to relieve hydrostatic pressure.",
+        "Our experienced team constructs the wall with precision, incorporating robust drainage systems (like gravel backfill and drain pipes) to relieve water pressure and prevent failure.",
     },
     {
-      title: "Backfilling & Finishing",
+      title: "5. Backfilling & Final Grading",
       description:
-        "Once the wall is built, we carefully backfill and compact the soil. We can also integrate landscaping, capstones, or lighting into the final design.",
+        "Once the wall is complete, we carefully backfill the area with soil and grade the surrounding landscape for a seamless, professional finish.",
     },
   ],
   gallery: [
@@ -96,19 +96,19 @@ const retainingWallsData = {
   ],
   faqs: [
     {
-      question: "What materials are best for retaining walls?",
+      question: "What is the best material for my retaining wall?",
       answer:
-        "The best material depends on the wall's height, purpose, and your budget. Manufactured blocks are versatile and cost-effective. Natural stone and boulders offer unique, high-end looks. We'll help you choose.",
+        "The best material depends on the wall's height, purpose, your aesthetic preference, and budget. Manufactured blocks are versatile and cost-effective. Natural stone and boulders offer unique, high-end looks. We'll help you choose the right fit.",
     },
     {
-      question: "Does my retaining wall need drainage?",
+      question: "Does my retaining wall need a drainage system?",
       answer:
-        "Yes, almost all retaining walls require proper drainage to prevent water buildup, which can cause it to fail. We incorporate drainage solutions like gravel backfill and perforated pipes into our designs.",
+        "Yes, absolutely. Proper drainage is the most critical factor in a retaining wall's longevity. It prevents water pressure (hydrostatic pressure) from building up behind the wall, which is the primary cause of failure.",
     },
     {
-      question: "How tall can a retaining wall be?",
+      question: "How tall can a retaining wall be before it needs an engineer?",
       answer:
-        "Wall height limits vary by local codes and often require engineering for taller structures. We design and build walls that are safe, compliant, and appropriate for your site.",
+        "This varies by local building codes, but typically walls over 3-4 feet in height require a permit and an engineered design. We are knowledgeable about local requirements and ensure all our walls are built to be safe and compliant.",
     },
   ],
   relatedServices: [

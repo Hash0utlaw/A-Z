@@ -4,43 +4,48 @@ import ServicePageTemplate from "@/components/service-page-template"
 export const metadata: Metadata = {
   title: "Patios & Walkways Design & Installation | A-Z Landscapes",
   description:
-    "A-Z Landscapes designs and installs beautiful, durable patios and walkways using pavers, natural stone, concrete, and more. Create your ideal outdoor living area.",
+    "A-Z Landscapes designs and installs beautiful, durable patios and walkways using pavers, natural stone, and concrete. Create your ideal outdoor living area.",
 }
 
 const patiosWalkwaysData = {
   category: "hardscape" as const,
   title: "Patios & Walkways",
   description:
-    "Transform your outdoor areas into beautiful, functional extensions of your home with custom-designed patios and walkways by A-Z Landscapes. We specialize in creating durable and aesthetically pleasing surfaces that enhance your lifestyle and property value.",
+    "Transform your outdoor areas into a beautiful, functional extension of your home with a custom-designed patio or walkway by A-Z Landscapes. We specialize in creating durable and aesthetically pleasing surfaces that enhance your lifestyle and property value.",
   heroImage: "/patios-walkways/hero.png",
   benefits: [
-    "Expands usable outdoor living and entertainment space.",
-    "Increases property value and curb appeal significantly.",
-    "Offers a wide range of materials, colors, and patterns for custom designs.",
-    "Provides durable, long-lasting surfaces built to withstand weather and use.",
-    "Improves accessibility and flow throughout your landscape.",
-    "Reduces lawn maintenance in paved areas.",
+    "Expands your usable outdoor living and entertainment space.",
+    "Significantly increases your property's value and curb appeal.",
+    "Offers a wide range of materials, colors, and patterns for a truly custom design.",
+    "Provides durable, long-lasting surfaces built to withstand the elements.",
+    "Improves accessibility and creates a natural flow throughout your landscape.",
+    "Reduces high-maintenance lawn areas, saving you time and effort.",
   ],
   process: [
     {
-      title: "Consultation & Design",
+      title: "1. Consultation & Design",
       description:
-        "We start with a detailed consultation to understand your vision. Our design team then creates a custom plan, selecting materials and layouts that complement your home.",
+        "We start with a detailed consultation to understand your vision. Our design team then creates a custom 3D plan, helping you visualize the layout and select materials.",
     },
     {
-      title: "Site Preparation",
+      title: "2. Site Preparation & Base Construction",
       description:
-        "Proper site preparation is key. This includes excavation, grading, and ensuring a stable base to prevent shifting and settling, guaranteeing longevity.",
+        "The longevity of your patio depends on the base. We properly excavate, grade, and install a compacted aggregate base to prevent shifting and settling.",
     },
     {
-      title: "Material Installation",
+      title: "3. Meticulous Installation",
       description:
-        "Our skilled craftsmen meticulously install your chosen materials, whether it's intricate paver patterns, elegant natural stone, or durable concrete.",
+        "Our skilled craftsmen meticulously install your chosen materials, whether it's an intricate paver pattern or elegant natural stone, ensuring clean lines and professional quality.",
     },
     {
-      title: "Finishing & Sealing",
+      title: "4. Jointing & Finishing",
       description:
-        "We complete the project with joint sanding for pavers, edge restraints, and optional sealing to protect against stains and enhance color.",
+        "We complete the project by installing edge restraints, sweeping polymeric sand into the joints to lock pavers in place, and cleaning the surface.",
+    },
+    {
+      title: "5. Final Walkthrough & Care Instructions",
+      description:
+        "We conduct a final walkthrough to ensure your complete satisfaction and provide guidance on how to care for your new patio or walkway to keep it looking its best.",
     },
   ],
   gallery: [
@@ -93,17 +98,22 @@ const patiosWalkwaysData = {
     {
       question: "What materials do you offer for patios and walkways?",
       answer:
-        "We offer a wide variety of materials including concrete pavers, natural stone (flagstone, bluestone), traditional bricks, and poured concrete (stamped, colored, or brushed).",
+        "We offer a wide variety of materials including interlocking concrete pavers, natural stone (like flagstone and bluestone), traditional bricks, and poured concrete (which can be stamped or colored).",
     },
     {
-      question: "How long does a typical patio or walkway installation take?",
+      question: "How long does a typical patio installation take?",
       answer:
-        "The duration depends on the size and complexity of the project. Small walkways might take a few days, while large, intricate patios could take 1-2 weeks. We provide a detailed timeline with our quote.",
+        "The duration depends on the size, complexity, and site conditions. A straightforward walkway might take a few days, while a large, intricate paver patio could take 1-2 weeks. We provide a detailed timeline with our quote.",
     },
     {
       question: "How do I maintain my new paver patio?",
       answer:
-        "Maintenance generally includes regular sweeping, occasional washing, and weed control between joints. We also recommend re-sanding and sealing every 3-5 years to prolong its life and appearance.",
+        "Maintenance is simple. It generally includes regular sweeping and occasional washing. To keep it looking pristine, we recommend re-applying jointing sand and a protective sealer every 3-5 years.",
+    },
+    {
+      question: "Can you repair my existing, uneven patio?",
+      answer:
+        "Yes, in many cases we can repair existing paver patios. This often involves lifting the pavers, re-grading and re-compacting the base, and then re-laying the original pavers for a smooth, stable surface.",
     },
   ],
   relatedServices: [

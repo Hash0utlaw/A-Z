@@ -4,48 +4,48 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Artificial Turf Installation Services | A-Z Landscapes",
   description:
-    "A-Z Landscapes offers expert artificial turf installation for low-maintenance lawns, pet areas, and putting greens. Durable and realistic solutions.",
+    "Expert artificial turf installation for pristine, low-maintenance lawns, pet areas, and putting greens. Durable, realistic, and professionally installed by A-Z Landscapes.",
 }
 
 const turfInstallationData = {
   category: "landscaping" as const,
   title: "Professional Turf Installation",
   description:
-    "Achieve a perfect, low-maintenance lawn with our professional artificial turf installation. Ideal for pet owners, busy families, challenging shady areas, or creating specialized spaces like putting greens.",
+    "Achieve a perfect, lush green lawn year-round without the constant maintenance. Our professional artificial turf installation is ideal for busy homeowners, pet owners, and for creating specialized spaces like personal putting greens.",
   heroImage: "/turf-installation/hero.png",
   benefits: [
-    "Virtually no maintenance: no mowing, watering, or fertilizing.",
-    "Perfect for pets: durable, easy to clean, and resistant to digging/stains.",
-    "Solves problem areas: thrives in shade or hard-to-grow spots.",
-    "Ideal for specific uses: putting greens, play areas, pool surrounds.",
-    "Conserves water and eliminates need for pesticides/herbicides.",
-    "Stays green and beautiful year-round, regardless of weather.",
+    "Virtually zero maintenance: no mowing, watering, or fertilizing.",
+    "Pet-friendly: durable, easy to clean, and resistant to digging and stains.",
+    "Solves problem areas: thrives in deep shade or on slopes where grass won't grow.",
+    "Perfect for specific uses: putting greens, play areas, pool surrounds, and rooftop patios.",
+    "Conserves water and eliminates the need for pesticides and herbicides.",
+    "Stays green and beautiful in all seasons, regardless of weather.",
   ],
   process: [
     {
-      title: "Site Assessment & Consultation",
+      title: "1. Site Assessment & Consultation",
       description:
-        "We evaluate your property's drainage, usage goals, and discuss the best turf options for your needs.",
+        "We evaluate your property's drainage and usage goals, and help you select the perfect turf product for your needs from our range of high-quality samples.",
     },
     {
-      title: "Site Preparation",
+      title: "2. Ground Preparation",
       description:
-        "We remove existing vegetation, grade the area properly, and install a compacted base material to create a stable and permeable foundation.",
+        "This is the most critical step. We excavate the area, install any necessary drainage, and build up a compacted aggregate base to create a stable, permeable foundation.",
     },
     {
-      title: "Turf Selection & Layout",
+      title: "3. Turf Installation & Seaming",
       description:
-        "We help you choose from various artificial turf options, considering texture, color, and pile height, then lay it out with precision.",
+        "Our experienced team carefully lays out the turf, meticulously seaming sections together for a completely invisible transition. The perimeter is then securely fastened.",
     },
     {
-      title: "Seaming & Securing",
+      title: "4. Infill Application",
       description:
-        "Our experienced team carefully seams sections together for an invisible transition and secures the perimeter for a durable, long-lasting installation.",
+        "We apply a specialized infill material which helps the turf blades stand upright, provides a soft feel underfoot, and protects the backing from UV rays.",
     },
     {
-      title: "Infill & Final Grooming",
+      title: "5. Final Grooming & Cleanup",
       description:
-        "We apply infill to help the blades stand up, add ballast, and protect the backing. A final grooming ensures a perfect, natural look.",
+        "A final power brushing makes the turf blades stand up for a perfect, natural look. We ensure your property is left clean and your new lawn is ready to enjoy.",
     },
   ],
   gallery: [
@@ -57,7 +57,7 @@ const turfInstallationData = {
     {
       image: "/turf-installation/artificial-turf.png",
       title: "Backyard Play Area",
-      description: "Low-maintenance artificial turf installation for a family backyard play area.",
+      description: "A clean, safe, and low-maintenance artificial turf installation for a family backyard play area.",
     },
     {
       image: "/turf-installation/sports-turf.png",
@@ -98,22 +98,22 @@ const turfInstallationData = {
     {
       question: "How much maintenance does artificial turf require?",
       answer:
-        "Artificial turf requires minimal maintenance. Regular tasks include occasional rinsing to remove dust and debris, brushing high-traffic areas to keep fibers upright, and removing leaves. No mowing, watering, or fertilizing is needed.",
+        "Artificial turf requires very little maintenance. We recommend occasional rinsing to remove dust, brushing high-traffic areas to keep fibers upright, and removing leaves or debris. No mowing, watering, or fertilizing is ever needed.",
     },
     {
       question: "Is artificial turf safe for pets and children?",
       answer:
-        "Yes, our artificial turf products are non-toxic and lead-free, making them perfectly safe for both pets and children. They also provide a soft, cushioned surface for play.",
+        "Yes, all our artificial turf products are non-toxic and lead-free, making them perfectly safe for both pets and children. They also provide a soft, cushioned surface for play.",
     },
     {
       question: "How long will my new turf last?",
       answer:
-        "High-quality artificial turf, when properly installed and maintained, can last 15-20 years or more. Manufacturer warranties typically cover color fading and material degradation for 8-15 years.",
+        "High-quality artificial turf, when properly installed and maintained, can last 15-20 years or more. Manufacturer warranties typically cover aspects like color fading for 8-15 years.",
     },
     {
-      question: "How does artificial turf handle drainage?",
+      question: "How does artificial turf handle drainage from rain or pets?",
       answer:
-        "Our turf products have a perforated backing that allows water to drain through. We also prepare a permeable base underneath, ensuring that rainwater and pet urine drain away efficiently, preventing puddles and odors.",
+        "Our turf products have a fully permeable backing that allows liquids to drain through. We install it over a compacted, permeable base, ensuring that rainwater and pet urine drain away efficiently, preventing puddles and odors.",
     },
   ],
   relatedServices: [
