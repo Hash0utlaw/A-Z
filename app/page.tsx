@@ -282,8 +282,8 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <Image
-                src="/team-at-work.png"
-                alt="A-Z Landscapes team collaborating on a project"
+                src="/zach-owner-headshot.jpeg"
+                alt="Zach Wardell, Founder of A-Z Landscapes"
                 width={600}
                 height={600}
                 className="rounded-2xl shadow-xl"
@@ -306,9 +306,12 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Modern Backyard Oasis", image: "/projects/modern-backyard-oasis.png" },
-              { title: "Front Yard Transformation", image: "/projects/front-yard-transformation.png" },
-              { title: "Outdoor Living Space", image: "/projects/outdoor-living-space.png" },
+              { title: "Woodland Fire Pit Retreat", image: "/user-uploads/backyard-fire-pit-patio-residential.jpeg" },
+              {
+                title: "Complete Outdoor Kitchen",
+                image: "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
+              },
+              { title: "Pollinator Paradise Garden", image: "/user-uploads/butterfly-garden-flower-residential.jpeg" },
             ].map((project, index) => (
               <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">

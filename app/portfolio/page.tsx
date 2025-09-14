@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: "Our Portfolio | A-Z Landscapes",
   description:
     "Explore the stunning landscape transformations by A-Z Landscapes. View our portfolio of completed projects, from patios and walkways to gardens and outdoor living spaces in Your City/Region.",
-  // Remember to replace "[Your City/Region]" in the description and keywords
   keywords: [
     "landscape portfolio",
     "landscaping projects",
@@ -27,12 +26,29 @@ interface Project {
   title: string
   description: string
   imageUrl: string
-  slug: string // This should link to a detailed project page or a relevant transformations category
+  slug: string
   category: string
 }
 
-// Ensure these image paths are correct and images exist in /public/
 const projects: Project[] = [
+  {
+    id: "featured-1",
+    title: "Woodland Fire Pit Retreat - Aerial View",
+    description:
+      "Aerial perspective of our comprehensive outdoor living project featuring a circular stone fire pit, curved seating walls, extensive paver patio, decorative dry creek drainage, and strategic boulder placement in a secluded woodland setting.",
+    imageUrl: "/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg",
+    slug: "/services/outdoor-kitchens-fire-features",
+    category: "Fire Features & Patios",
+  },
+  {
+    id: "featured-2",
+    title: "Woodland Fire Pit Retreat - Ground Level",
+    description:
+      "Ground-level view showcasing the craftsmanship of our circular stone fire pit with curved seating walls, decorative dry creek drainage, and professional paver patio installation.",
+    imageUrl: "/user-uploads/backyard-fire-pit-patio-residential.jpeg",
+    slug: "/services/outdoor-kitchens-fire-features",
+    category: "Fire Features & Patios",
+  },
   {
     id: "1",
     title: "Modern Backyard Oasis",
@@ -122,6 +138,33 @@ const projects: Project[] = [
     imageUrl: "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
     slug: "/services/retaining-walls",
     category: "Hardscaping & Retaining Walls",
+  },
+  {
+    id: "user-5",
+    title: "Professional Concrete Pad & Stone Walkway",
+    description:
+      "Clean, durable concrete pad installation with complementary stone walkway elements, showcasing precision in both functionality and design.",
+    imageUrl: "/user-uploads/concrete-pad-stone-walkway-residential.jpeg",
+    slug: "/services/driveways",
+    category: "Driveways & Hardscaping",
+  },
+  {
+    id: "user-6",
+    title: "Illuminated Stone Walkway with Garden Beds",
+    description:
+      "Beautiful paver walkway featuring integrated landscape lighting and thoughtfully designed garden beds with ornamental grasses and drainage features.",
+    imageUrl: "/user-uploads/stone-walkway-residential.jpeg",
+    slug: "/services/patios-walkways",
+    category: "Walkways & Lighting",
+  },
+  {
+    id: "user-7",
+    title: "Pollinator-Friendly Garden Design",
+    description:
+      "Vibrant garden design featuring native flowering plants that attract butterflies and beneficial pollinators, creating a sustainable and beautiful ecosystem.",
+    imageUrl: "/user-uploads/butterfly-garden-flower-residential.jpeg",
+    slug: "/services/garden-design-planting",
+    category: "Garden Design & Planting",
   },
 ]
 

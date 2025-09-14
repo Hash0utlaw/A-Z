@@ -36,7 +36,7 @@ export default function AboutPage() {
                   <Button className="bg-kelly-500 hover:bg-kelly-600">Our Services</Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" className="border-navy-200 text-navy-700 hover:bg-navy-50">
+                  <Button variant="outline" className="border-navy-200 text-navy-700 hover:bg-navy-50 bg-transparent">
                     Contact Us
                   </Button>
                 </Link>
@@ -44,8 +44,8 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/about/team-landscape.png"
-                alt="A-Z Landscapes Team creating a beautiful landscape"
+                src="/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg"
+                alt="A-Z Landscapes aerial view of completed fire pit and patio project"
                 fill
                 className="object-cover"
                 priority
@@ -84,7 +84,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl order-2 lg:order-1">
               <Image
-                src="/about/founder.png"
+                src="/zach-owner-headshot.jpeg"
                 alt="Zach Wardell, Founder of A-Z Landscapes"
                 fill
                 className="object-cover"
@@ -207,7 +207,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Certifications & Affiliations - Placeholder, can be updated if specific info is available */}
+      {/* Certifications & Affiliations */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-navy-900 text-center mb-12">Our Commitment to Excellence</h2>

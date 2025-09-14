@@ -50,6 +50,18 @@ const outdoorKitchensData = {
   ],
   gallery: [
     {
+      image: "/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg",
+      title: "Woodland Fire Pit Retreat - Aerial View",
+      description:
+        "Aerial perspective showcasing the complete scope of this comprehensive project with circular fire pit, curved seating, extensive paver patio, and decorative drainage elements.",
+    },
+    {
+      image: "/user-uploads/backyard-fire-pit-patio-residential.jpeg",
+      title: "Woodland Fire Pit Retreat - Ground Level",
+      description:
+        "Ground-level view highlighting the craftsmanship of the circular stone fire pit with curved seating walls and decorative dry creek drainage.",
+    },
+    {
       image: "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
       title: "Full Outdoor Kitchen Suite",
       description: "A complete outdoor kitchen with a built-in grill, smoker, and ample storage.",
@@ -63,16 +75,6 @@ const outdoorKitchensData = {
       image: "/outdoor-kitchens-fire-features/outdoor-fireplace.png",
       title: "Cozy Outdoor Fireplace",
       description: "A grand stone fireplace creating a warm and inviting outdoor living room.",
-    },
-    {
-      image: "/outdoor-kitchens-fire-features/pizza-oven.png",
-      title: "Artisan Pizza Oven",
-      description: "A custom-built pizza oven, perfect for gourmet outdoor cooking and family fun.",
-    },
-    {
-      image: "/outdoor-kitchens-fire-features/fire-table.png",
-      title: "Casual Fire Table",
-      description: "A stylish and functional fire table, perfect for conversations and casual evenings.",
     },
     {
       image: "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
@@ -93,6 +95,18 @@ const outdoorKitchensData = {
       rating: 5,
       text: "The fire pit area A-Z built is our family's favorite spot. Beautiful stonework and perfectly integrated with our patio.",
     },
+    {
+      name: "Rebecca & Tom Martinez",
+      location: "Residential Clients",
+      rating: 5,
+      text: "The circular fire pit with curved seating that A-Z designed has become the heart of our backyard. The aerial view really shows how well it integrates with our entire landscape - it's absolutely stunning.",
+    },
+    {
+      name: "Sarah Johnson",
+      location: "Residential Client",
+      rating: 5,
+      text: "A-Z Landscapes transformed our wooded backyard into an incredible entertainment space. The fire pit design with the decorative drainage and boulder placement is pure artistry.",
+    },
   ],
   faqs: [
     {
@@ -109,6 +123,16 @@ const outdoorKitchensData = {
       question: "Do I need a permit for an outdoor kitchen or fireplace?",
       answer:
         "Permit requirements vary by location and project scope, especially when gas or electrical lines are involved. We will advise you on local regulations and can manage the permitting process for you.",
+    },
+    {
+      question: "Can you integrate seating into fire pit designs?",
+      answer:
+        "We often design curved stone seating walls, built-in benches, or designated seating areas around fire features. This creates a cohesive, functional space perfect for gatherings.",
+    },
+    {
+      question: "How do you handle drainage around fire features and patios?",
+      answer:
+        "Proper drainage is crucial for any hardscape project. We incorporate decorative drainage solutions like dry creek beds, French drains, and proper grading to manage water flow while enhancing the overall design aesthetic.",
     },
   ],
   relatedServices: [

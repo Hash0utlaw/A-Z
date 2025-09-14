@@ -2,9 +2,9 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Driveway Design & Installation | A-Z Landscapes",
+  title: "Driveways | A-Z Landscapes",
   description:
-    "Enhance curb appeal with custom driveways by A-Z Landscapes. We install paver, concrete, and asphalt driveways. Durable and stylish solutions.",
+    "Professional driveway installation and repair services by A-Z Landscapes. Concrete, asphalt, paver, and gravel driveways designed for durability and curb appeal.",
 }
 
 export default function DrivewaysPage() {
@@ -12,125 +12,127 @@ export default function DrivewaysPage() {
     <ServicePageTemplate
       category="hardscape"
       title="Driveways"
-      description="Enhance your property's curb appeal and functionality with durable, attractive driveways designed and installed by our expert hardscape team."
+      description="Create a lasting first impression with a professionally installed driveway from A-Z Landscapes. We specialize in concrete, asphalt, paver, and decorative driveway solutions that combine durability, functionality, and aesthetic appeal to enhance your property's value and curb appeal."
       heroImage="/driveways/hero.png"
       benefits={[
-        "Create a stunning first impression with a beautifully designed driveway",
-        "Increase your property value with high-quality hardscaping",
-        "Choose from a variety of materials including asphalt, concrete, and pavers",
-        "Improve drainage and reduce pudding with proper grading and installation",
-        "Enjoy decades of use with minimal maintenance",
-        "Design custom features like borders, patterns, and decorative elements",
+        "Enhance your home's curb appeal and create a strong first impression",
+        "Increase property value with professional driveway installation",
+        "Choose from multiple materials including concrete, pavers, and asphalt",
+        "Ensure proper drainage and long-lasting durability",
+        "Custom designs that complement your home's architecture",
+        "Low-maintenance solutions built to withstand weather and traffic",
       ]}
       process={[
         {
-          title: "Site Evaluation",
+          title: "Initial Consultation & Site Assessment",
           description:
-            "We assess your existing driveway or site, including soil conditions, drainage patterns, and space requirements.",
+            "We evaluate your property's grade, drainage, soil conditions, and access requirements. We discuss your preferences for materials, design, and budget considerations.",
         },
         {
-          title: "Design Consultation",
+          title: "Design & Permitting",
           description:
-            "Our designers work with you to select materials, layout, patterns, and any special features for your new driveway.",
+            "Our team creates detailed plans showing layout, materials, and drainage solutions. We handle any necessary permits and ensure compliance with local regulations.",
         },
         {
-          title: "Proposal Development",
+          title: "Excavation & Site Preparation",
           description:
-            "We create a detailed proposal outlining materials, timeline, process, and investment for your driveway project.",
+            "We carefully excavate to proper depth, address any drainage issues, and prepare a stable base using appropriate aggregate materials compacted to specifications.",
         },
         {
-          title: "Site Preparation",
+          title: "Installation & Finishing",
           description:
-            "Our team removes your old driveway if needed, establishes proper grading, and prepares a stable foundation.",
+            "We install your chosen driveway material using professional techniques and equipment, ensuring proper thickness, slope, and finishing for optimal performance and appearance.",
         },
         {
-          title: "Installation",
+          title: "Final Inspection & Maintenance Guidance",
           description:
-            "We install your new driveway using quality materials and proper techniques to ensure durability and appearance.",
-        },
-        {
-          title: "Final Inspection",
-          description:
-            "We complete a thorough inspection to ensure every detail meets our high standards and your expectations.",
+            "We conduct a thorough final inspection and provide you with care instructions to maximize the life and appearance of your new driveway.",
         },
       ]}
       gallery={[
         {
+          image: "/user-uploads/concrete-pad-stone-walkway-residential.jpeg",
+          title: "Professional Concrete Installation",
+          description:
+            "Clean, durable concrete pad installation showcasing precision in both functionality and design with complementary walkway elements",
+        },
+        {
           image: "/driveways/concrete-driveway.png",
-          title: "Concrete Driveway",
-          description: "Stamped and colored concrete driveway with decorative border",
+          title: "Standard Concrete Driveway",
+          description: "Clean, durable concrete driveway with proper drainage and finishing",
         },
         {
           image: "/driveways/paver-driveway.png",
-          title: "Paver Driveway",
-          description: "Interlocking concrete paver driveway with contrasting border pattern",
+          title: "Elegant Paver Driveway",
+          description: "Sophisticated paver driveway with decorative borders and patterns",
         },
         {
           image: "/driveways/asphalt-driveway.png",
-          title: "Asphalt Driveway",
-          description: "Smooth asphalt driveway with paver border accent",
+          title: "Professional Asphalt Installation",
+          description: "Smooth asphalt driveway with proper edging and drainage",
         },
         {
           image: "/driveways/circular-driveway.png",
-          title: "Circular Driveway",
-          description: "Elegant circular driveway design with central landscaped island",
+          title: "Circular Driveway Design",
+          description: "Elegant circular driveway providing convenient access and impressive curb appeal",
         },
         {
           image: "/driveways/permeable-driveway.png",
-          title: "Permeable Paver Driveway",
-          description: "Eco-friendly permeable paver system for improved drainage",
-        },
-        {
-          image: "/driveways/stone-driveway.png",
-          title: "Natural Stone Driveway",
-          description: "Premium natural stone driveway with custom inlay design",
+          title: "Permeable Paver System",
+          description: "Eco-friendly permeable pavers that manage stormwater runoff",
         },
       ]}
       testimonials={[
         {
-          name: "Robert & Claire Thompson",
+          name: "John & Mary Peterson",
           location: "Residential Clients",
           rating: 5,
-          text: "Our new paver driveway from A-Z Landscaping has completely transformed the front of our home. The design team helped us choose the perfect pattern and colors to complement our home's architecture.",
+          text: "A-Z Landscapes installed our concrete driveway with such precision and attention to detail. The drainage is perfect and it looks fantastic. Excellent workmanship!",
         },
         {
-          name: "David Wilson",
+          name: "Robert Thompson",
           location: "Residential Client",
           rating: 5,
-          text: "After years of patching our old cracked concrete driveway, we finally decided to replace it. A-Z did an amazing job with our new driveway - the stamped concrete looks like natural stone but at a fraction of the cost.",
+          text: "Our new paver driveway has completely transformed our home's curb appeal. The quality of installation and materials is outstanding. Highly recommend A-Z Landscapes.",
         },
         {
-          name: "Lakeview Estates HOA",
-          location: "Commercial Client",
+          name: "Lisa & David Chen",
+          location: "Residential Clients",
           rating: 5,
-          text: "A-Z replaced all the driveways in our community with a cohesive design that has dramatically improved our neighborhood's appearance. Their team was professional, efficient, and the quality of work is outstanding.",
+          text: "The team at A-Z handled our circular driveway project professionally from start to finish. The design is beautiful and the installation was completed on time and on budget.",
+        },
+        {
+          name: "Michael Rodriguez",
+          location: "Residential Client",
+          rating: 5,
+          text: "A-Z installed a concrete pad and walkway system for us that perfectly balances functionality with aesthetic appeal. The craftsmanship is evident in every detail.",
         },
       ]}
       faqs={[
         {
-          question: "What driveway material is most durable?",
+          question: "What's the difference between concrete, asphalt, and paver driveways?",
           answer:
-            "All materials we offer (concrete, asphalt, and pavers) are durable when properly installed. Concrete typically lasts 30+ years, asphalt 15-20 years with maintenance, and pavers 25+ years with the advantage of being repairable in sections if needed. The best choice depends on your budget, aesthetic preferences, climate, and maintenance preferences.",
+            "Concrete offers durability and low maintenance with a clean appearance, lasting 25-30 years. Asphalt is cost-effective and flexible, ideal for colder climates, lasting 15-20 years. Pavers provide the most design flexibility and easy repair options, lasting 25+ years but at a higher initial cost. Each has different maintenance requirements and aesthetic qualities.",
         },
         {
-          question: "How long will it take to install my new driveway?",
+          question: "How long does driveway installation take?",
           answer:
-            "Installation time varies based on size, design complexity, and materials. A typical residential driveway replacement takes 3-7 days from demolition to completion. Concrete driveways require additional curing time of 7-10 days before they can be used. We'll provide a specific timeline for your project during the proposal phase.",
+            "Installation time varies by size, material, and site conditions. A standard concrete driveway typically takes 2-3 days, while paver installations may take 3-5 days. Weather conditions and curing time for concrete can affect the timeline. We provide detailed schedules during the planning phase.",
         },
         {
-          question: "Can you install a driveway in winter?",
+          question: "Do I need permits for driveway installation?",
           answer:
-            "Installation during freezing temperatures is not recommended for most driveway materials. Concrete shouldn't be installed when temperatures are below 40°F, and asphalt requires warm temperatures for proper compaction. The ideal seasons for driveway installation are spring, summer, and fall when temperatures are moderate.",
+            "Permit requirements vary by location and project scope. New driveways, significant expansions, or changes to drainage patterns often require permits. We're familiar with local regulations and can handle the permitting process for you.",
         },
         {
-          question: "What maintenance will my new driveway require?",
+          question: "How do you ensure proper drainage for driveways?",
           answer:
-            "Maintenance requirements vary by material. Concrete needs periodic cleaning and sealing every 2-3 years. Asphalt should be seal-coated every 2-5 years and may need minor repairs over time. Paver driveways require occasional joint sand replenishment and may need periodic sealing depending on the product. We provide detailed maintenance instructions for your specific driveway.",
+            "Proper drainage is crucial for driveway longevity. We ensure adequate slope away from structures (typically 1-2% grade), install appropriate base materials, and may incorporate drainage systems like French drains or permeable materials when needed. Our site evaluation identifies potential drainage issues before installation.",
         },
         {
-          question: "Can you incorporate drainage solutions into my driveway design?",
+          question: "Can you repair or resurface existing driveways?",
           answer:
-            "Yes, proper drainage is a critical component of any driveway project. We can incorporate various drainage solutions including proper sloping away from structures, channel drains, catch basins, or permeable paving options. During our site evaluation, we'll assess your specific drainage needs and recommend appropriate solutions.",
+            "Yes, we offer repair and resurfacing services for concrete and asphalt driveways. Options include crack repair, resurfacing, and partial replacement depending on the condition. We'll assess your existing driveway and recommend the most cost-effective solution.",
         },
       ]}
       relatedServices={[

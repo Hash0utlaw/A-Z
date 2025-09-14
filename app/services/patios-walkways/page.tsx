@@ -1,128 +1,160 @@
-import type { Metadata } from "next"
 import ServicePageTemplate from "@/components/service-page-template"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Patios & Walkways Design & Installation | A-Z Landscapes",
+  title: "Patios & Walkways | A-Z Landscapes",
   description:
-    "A-Z Landscapes designs and installs beautiful, durable patios and walkways using pavers, natural stone, and concrete. Create your ideal outdoor living area.",
-}
-
-const patiosWalkwaysData = {
-  category: "hardscape" as const,
-  title: "Patios & Walkways",
-  description:
-    "Transform your outdoor areas into a beautiful, functional extension of your home with a custom-designed patio or walkway by A-Z Landscapes. We specialize in creating durable and aesthetically pleasing surfaces that enhance your lifestyle and property value.",
-  heroImage: "/patios-walkways/hero.png",
-  benefits: [
-    "Expands your usable outdoor living and entertainment space.",
-    "Significantly increases your property's value and curb appeal.",
-    "Offers a wide range of materials, colors, and patterns for a truly custom design.",
-    "Provides durable, long-lasting surfaces built to withstand the elements.",
-    "Improves accessibility and creates a natural flow throughout your landscape.",
-    "Reduces high-maintenance lawn areas, saving you time and effort.",
-  ],
-  process: [
-    {
-      title: "1. Consultation & Design",
-      description:
-        "We start with a detailed consultation to understand your vision. Our design team then creates a custom 3D plan, helping you visualize the layout and select materials.",
-    },
-    {
-      title: "2. Site Preparation & Base Construction",
-      description:
-        "The longevity of your patio depends on the base. We properly excavate, grade, and install a compacted aggregate base to prevent shifting and settling.",
-    },
-    {
-      title: "3. Meticulous Installation",
-      description:
-        "Our skilled craftsmen meticulously install your chosen materials, whether it's an intricate paver pattern or elegant natural stone, ensuring clean lines and professional quality.",
-    },
-    {
-      title: "4. Jointing & Finishing",
-      description:
-        "We complete the project by installing edge restraints, sweeping polymeric sand into the joints to lock pavers in place, and cleaning the surface.",
-    },
-    {
-      title: "5. Final Walkthrough & Care Instructions",
-      description:
-        "We conduct a final walkthrough to ensure your complete satisfaction and provide guidance on how to care for your new patio or walkway to keep it looking its best.",
-    },
-  ],
-  gallery: [
-    {
-      image: "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
-      title: "Lakeside Paver Patio",
-      description: "A beautiful paver patio designed to maximize views and enjoyment of a lakeside property.",
-    },
-    {
-      image: "/patios-walkways/stone-walkway.png",
-      title: "Natural Stone Walkway",
-      description: "Elegant natural stone walkway meandering through a garden.",
-    },
-    {
-      image: "/patios-walkways/stamped-concrete.png",
-      title: "Stamped Concrete Patio",
-      description: "Versatile stamped concrete patio offering various patterns and colors.",
-    },
-    {
-      image: "/patios-walkways/brick-entrance.png",
-      title: "Classic Brick Entrance",
-      description: "Timeless brick walkway leading to a welcoming home entrance.",
-    },
-    {
-      image: "/patios-walkways/flagstone-patio.png",
-      title: "Rustic Flagstone Patio",
-      description: "Charming flagstone patio creating a natural, rustic outdoor space.",
-    },
-    {
-      image: "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
-      title: "Expansive Paver Patio",
-      description: "A large, multi-zone paver patio with areas for dining, cooking, and relaxing by the fire.",
-    },
-  ],
-  testimonials: [
-    {
-      name: "Sarah L.",
-      location: "Springfield, IL",
-      rating: 5,
-      text: "A-Z Landscapes transformed our backyard with a stunning paver patio. The craftsmanship is top-notch, and the team was professional throughout the entire process. We love our new outdoor space!",
-    },
-    {
-      name: "John B.",
-      location: "Chatham, IL",
-      rating: 5,
-      text: "The new flagstone walkway they installed is absolutely beautiful and has made such a difference to our front yard's appeal. Highly recommend their services for any hardscaping work.",
-    },
-  ],
-  faqs: [
-    {
-      question: "What materials do you offer for patios and walkways?",
-      answer:
-        "We offer a wide variety of materials including interlocking concrete pavers, natural stone (like flagstone and bluestone), traditional bricks, and poured concrete (which can be stamped or colored).",
-    },
-    {
-      question: "How long does a typical patio installation take?",
-      answer:
-        "The duration depends on the size, complexity, and site conditions. A straightforward walkway might take a few days, while a large, intricate paver patio could take 1-2 weeks. We provide a detailed timeline with our quote.",
-    },
-    {
-      question: "How do I maintain my new paver patio?",
-      answer:
-        "Maintenance is simple. It generally includes regular sweeping and occasional washing. To keep it looking pristine, we recommend re-applying jointing sand and a protective sealer every 3-5 years.",
-    },
-    {
-      question: "Can you repair my existing, uneven patio?",
-      answer:
-        "Yes, in many cases we can repair existing paver patios. This often involves lifting the pavers, re-grading and re-compacting the base, and then re-laying the original pavers for a smooth, stable surface.",
-    },
-  ],
-  relatedServices: [
-    { title: "Retaining Walls", slug: "retaining-walls" },
-    { title: "Landscape Lighting", slug: "landscape-lighting" },
-    { title: "Outdoor Kitchens & Fire Features", slug: "outdoor-kitchens-fire-features" },
-  ],
+    "Create beautiful outdoor living spaces with custom patios and walkways by A-Z Landscapes. Expert design and installation of stone, concrete, and paver surfaces.",
 }
 
 export default function PatiosWalkwaysPage() {
-  return <ServicePageTemplate {...patiosWalkwaysData} />
+  return (
+    <ServicePageTemplate
+      category="hardscape"
+      title="Patios & Walkways"
+      description="Transform your outdoor space with expertly designed and installed patios and walkways. From intimate garden paths to expansive entertainment areas, we create beautiful, functional hardscapes that enhance your property's value and your quality of life."
+      heroImage="/patios-walkways/hero.png"
+      benefits={[
+        "Expand your living space with beautiful outdoor areas perfect for entertaining",
+        "Increase property value with professionally installed hardscaping",
+        "Choose from a wide variety of materials including natural stone, pavers, and concrete",
+        "Create safe, accessible pathways throughout your landscape",
+        "Enjoy low-maintenance surfaces that look great year-round",
+        "Design custom patterns, borders, and features to match your style",
+      ]}
+      process={[
+        {
+          title: "Design Consultation",
+          description:
+            "We meet with you to understand your vision, assess your space, and discuss material options, layout possibilities, and budget considerations.",
+        },
+        {
+          title: "Site Analysis & Measurement",
+          description:
+            "Our team conducts a thorough site evaluation, including drainage assessment, soil conditions, and existing landscape features that will influence the design.",
+        },
+        {
+          title: "Custom Design Development",
+          description:
+            "We create detailed plans showing layout, materials, patterns, and any special features like built-in seating, fire pits, or lighting integration.",
+        },
+        {
+          title: "Material Selection & Ordering",
+          description:
+            "Once you approve the design, we source high-quality materials from trusted suppliers, ensuring consistency and durability for your project.",
+        },
+        {
+          title: "Site Preparation & Installation",
+          description:
+            "Our skilled crews excavate, prepare the base, and install your patio or walkway using proper techniques to ensure longevity and stability.",
+        },
+        {
+          title: "Finishing & Cleanup",
+          description:
+            "We complete all finishing touches, including joint sand, sealing if needed, and thorough cleanup, leaving you with a beautiful, ready-to-enjoy space.",
+        },
+      ]}
+      gallery={[
+        {
+          image: "/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg",
+          title: "Comprehensive Patio Design - Aerial View",
+          description:
+            "Aerial perspective of an extensive paver patio project featuring multiple paver patterns, integrated fire features, and comprehensive drainage solutions",
+        },
+        {
+          image: "/user-uploads/backyard-fire-pit-patio-residential.jpeg",
+          title: "Fire Pit Patio with Curved Seating",
+          description:
+            "Expansive paver patio featuring integrated fire pit, curved stone seating walls, and decorative drainage elements",
+        },
+        {
+          image: "/patios-walkways/modern-paver-patio.png",
+          title: "Modern Paver Patio",
+          description: "Clean lines and contemporary design with high-quality concrete pavers",
+        },
+        {
+          image: "/user-uploads/stone-walkway-residential.jpeg",
+          title: "Illuminated Stone Walkway",
+          description: "Beautiful paver walkway with integrated landscape lighting and garden beds",
+        },
+        {
+          image: "/patios-walkways/stone-walkway.png",
+          title: "Natural Stone Walkway",
+          description: "Elegant flagstone path winding through landscaped garden areas",
+        },
+        {
+          image: "/patios-walkways/stamped-concrete.png",
+          title: "Stamped Concrete Patio",
+          description: "Decorative stamped concrete with natural stone appearance",
+        },
+      ]}
+      testimonials={[
+        {
+          name: "Jennifer & Mark Stevens",
+          location: "Residential Clients",
+          rating: 5,
+          text: "Our new paver patio has become the heart of our outdoor entertaining. A-Z Landscapes created exactly what we envisioned - a beautiful space that flows perfectly with our home and garden.",
+        },
+        {
+          name: "Patricia Williams",
+          location: "Residential Client",
+          rating: 5,
+          text: "The flagstone walkway A-Z installed has completely transformed our front yard. The craftsmanship is exceptional, and the design perfectly complements our home's architecture.",
+        },
+        {
+          name: "Michael Chen",
+          location: "Residential Client",
+          rating: 5,
+          text: "We're thrilled with our new stamped concrete patio. It looks like expensive natural stone but was much more budget-friendly. The team was professional and the quality is outstanding.",
+        },
+        {
+          name: "David & Lisa Thompson",
+          location: "Residential Clients",
+          rating: 5,
+          text: "The aerial view of our completed patio project really shows the incredible scope of work A-Z accomplished. The different paver patterns and integration with our landscape is masterful.",
+        },
+      ]}
+      faqs={[
+        {
+          question: "What's the difference between pavers, flagstone, and stamped concrete?",
+          answer:
+            "Pavers are manufactured units (concrete or clay) that offer consistent size and color with easy repair options. Flagstone is natural stone with unique patterns and colors but irregular shapes. Stamped concrete is poured concrete textured to mimic stone or brick, offering a seamless surface at a lower cost. Each has different maintenance requirements, costs, and aesthetic qualities.",
+        },
+        {
+          question: "How do you ensure proper drainage for patios and walkways?",
+          answer:
+            "Proper drainage is critical for any hardscape project. We ensure adequate slope away from structures (typically 1/4 inch per foot), install appropriate base materials, and may incorporate drainage systems like French drains or permeable materials when needed. Our site evaluation identifies potential drainage issues before installation begins.",
+        },
+        {
+          question: "Can you install patios and walkways in winter?",
+          answer:
+            "Installation is weather-dependent. We can work in cool weather, but avoid installation during freezing conditions or when the ground is frozen. Concrete work requires temperatures above 40°F. The best seasons are spring through fall when ground conditions are stable and temperatures are moderate.",
+        },
+        {
+          question: "How long will my new patio or walkway last?",
+          answer:
+            "With proper installation and maintenance, patios and walkways can last decades. Pavers typically last 25+ years, natural stone can last 50+ years, and concrete 20-30 years. Longevity depends on material quality, installation techniques, local climate, and maintenance. We provide care instructions to maximize the life of your investment.",
+        },
+        {
+          question: "Can you create complex patio designs with multiple materials and patterns?",
+          answer:
+            "We specialize in comprehensive patio designs that incorporate multiple paver patterns, different materials, integrated features like fire pits and seating walls, and decorative elements like dry creek beds. Our design team can create detailed plans showing how all elements work together harmoniously.",
+        },
+      ]}
+      relatedServices={[
+        {
+          title: "Landscape Lighting",
+          slug: "landscape-lighting",
+        },
+        {
+          title: "Outdoor Kitchens & Fire Features",
+          slug: "outdoor-kitchens-fire-features",
+        },
+        {
+          title: "Garden Design & Planting",
+          slug: "garden-design-planting",
+        },
+      ]}
+    />
+  )
 }
