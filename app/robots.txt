@@ -1,12 +1,36 @@
-# Tell all web crawlers that they are allowed to crawl the site.
 User-agent: *
 Allow: /
 
-# Disallow crawlers from accessing Next.js specific folders and any API routes.
-# These files don't need to be indexed and can waste crawl budget.
+# Allow crawling of important assets for proper page rendering
+Allow: /images/
+Allow: /_next/static/
+Allow: /favicon.ico
+Allow: /logo-white.png
+Allow: /hero-landscape.png
+
+# Block crawling of unnecessary files and directories
 Disallow: /_next/
 Disallow: /api/
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /test/
+Disallow: /temp/
+Disallow: /private/
 
-# Point crawlers to your sitemap for a complete list of pages to index.
-# Make sure to replace 'www.a-z-landscaping.com' with your actual domain name once live.
+# Sitemap locations
 Sitemap: https://www.a-z-landscaping.com/sitemap.xml
+Sitemap: https://www.a-z-landscaping.com/image-sitemap.xml
+
+# Optional: Crawl delay (uncomment if needed to manage server load)
+# Crawl-delay: 1
+
+# Cache control for better performance
+# Allow search engines to cache static assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$

@@ -217,7 +217,7 @@ export default function HomePage() {
                   { name: "Tree Services", slug: "tree-services", icon: TreePine },
                   { name: "Irrigation & Drainage", slug: "irrigation-systems", icon: Droplet },
                   { name: "Landscape Lighting", slug: "landscape-lighting", icon: Lightbulb },
-                  { name: "Artificial Turf", slug: "turf-installation", icon: Leaf }, // Changed icon for variety
+                  { name: "Artificial Turf", slug: "turf-installation", icon: Leaf },
                   { name: "Seasonal Services", slug: "seasonal-services", icon: SunSnow },
                 ].map((service) => (
                   <Link
@@ -374,7 +374,6 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-12">
-            {/* Placeholder for a link to a full testimonials page if created */}
             <Link href="/contact">
               <Button
                 size="lg"

@@ -6,7 +6,7 @@ const BASE_URL = "https://www.a-z-landscaping.com"
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date()
 
-  // Define static pages
+  // Define static pages with priorities and change frequencies
   const staticRoutes = [
     { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
     { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route.priority,
   }))
 
-  // Define service page slugs (based on your app/services/page.tsx)
+  // Define service page slugs with high priority for SEO
   const serviceSlugs = [
     "patios-walkways",
     "retaining-walls",
@@ -52,7 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Define transformation category page slugs
-  // (based on app/transformations/backyard-patios/page.tsx and slugs in app/portfolio/page.tsx)
   const transformationCategorySlugs = [
     "backyard-patios",
     "front-yard-makeovers",
@@ -60,7 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "water-features-gardens",
     "commercial-projects",
     "sustainable-landscapes",
-    // Add any other transformation category page slugs here
   ]
 
   const transformationPages = transformationCategorySlugs.map((slug) => ({
@@ -70,5 +68,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...servicePages, ...transformationPages]
+  // Add image sitemap reference
+  const imageSitemapEntry = {
+    url: `${BASE_URL}/image-sitemap.xml`,
+    lastModified: currentDate,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }
+
+  // Combine all pages and sort by priority (highest first)
+  const allPages = [...staticPages, ...servicePages, ...transformationPages, imageSitemapEntry]
+
+  return allPages.sort((a, b) => b.priority - a.priority)
 }
