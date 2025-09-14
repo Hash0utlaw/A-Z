@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   description:
     "A-Z Landscapes offers expert landscaping, hardscaping, design, and maintenance services. Transform your outdoor space with our passionate team. Free estimates!",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
