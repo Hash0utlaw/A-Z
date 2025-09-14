@@ -11,16 +11,11 @@ export function Footer() {
           <div>
             <Link href="/" className="block mb-4">
               <OptimizedImage
-                src="/logo.png"
+                src="/logo-white.png"
                 alt="A-Z Landscapes Logo"
-                width={180} // Adjust width as needed for footer
-                height={50} // Adjust height based on aspect ratio and desired size
-                className="object-contain" // Ensures logo scales nicely
-                // If your logo is dark and the footer background is dark,
-                // you might need a version of the logo suitable for dark backgrounds
-                // or apply a filter if the PNG has transparency and the logo itself is light.
-                // For this PNG, it seems to have dark text, so it might need a light version for dark bg.
-                // Assuming the provided logo is versatile or you have a version for dark backgrounds.
+                width={180}
+                height={50}
+                className="object-contain"
               />
             </Link>
             <p className="mb-4">

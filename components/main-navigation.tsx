@@ -57,11 +57,11 @@ export function MainNavigation() {
       <div className="hidden md:flex items-center justify-between w-full">
         <Link href="/" className="flex items-center">
           <OptimizedImage
-            src="/logo.png"
+            src="/logo-white.png"
             alt="A-Z Landscapes Logo"
-            width={180} // Adjust width as needed for desktop
-            height={50} // Adjust height based on aspect ratio and desired size
-            className="object-contain" // Ensures logo scales nicely
+            width={180}
+            height={50}
+            className="object-contain"
           />
         </Link>
 
@@ -83,25 +83,19 @@ export function MainNavigation() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-80 border-border bg-card text-card-foreground">
-              {" "}
-              {/* Dropdown on light bg */}
               <DropdownMenuLabel className="flex items-center gap-2 text-primary">
-                {" "}
-                {/* Navy text */}
                 <Hammer className="h-4 w-4 text-primary/80" /> Hardscape Services
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                {/* Example Item: Patios & Walkways */}
                 <DropdownMenuItem asChild>
                   <Link
                     href="/services/patios-walkways"
                     className="flex items-center gap-2 cursor-pointer hover:bg-muted"
                   >
-                    <Footprints className="h-4 w-4 text-primary/70" /> Patios & Walkways {/* Navy icon/text */}
+                    <Footprints className="h-4 w-4 text-primary/70" /> Patios & Walkways
                   </Link>
                 </DropdownMenuItem>
-                {/* ... other hardscape services, styled similarly ... */}
                 <DropdownMenuItem asChild>
                   <Link
                     href="/services/retaining-walls"
@@ -146,7 +140,6 @@ export function MainNavigation() {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                {/* Example Item: Lawn Care */}
                 <DropdownMenuItem asChild>
                   <Link
                     href="/services/lawn-care-maintenance"
@@ -155,7 +148,6 @@ export function MainNavigation() {
                     <Scissors className="h-4 w-4 text-primary/70" /> Lawn Care & Maintenance
                   </Link>
                 </DropdownMenuItem>
-                {/* ... other landscaping services, styled similarly ... */}
                 <DropdownMenuItem asChild>
                   <Link
                     href="/services/garden-design-planting"
@@ -209,7 +201,7 @@ export function MainNavigation() {
               <DropdownMenuItem asChild>
                 <Link
                   href="/services"
-                  className="flex items-center gap-2 cursor-pointer font-medium text-accent hover:bg-muted" // Accent for "View All"
+                  className="flex items-center gap-2 cursor-pointer font-medium text-accent hover:bg-muted"
                 >
                   View All Services
                 </Link>
@@ -284,7 +276,7 @@ export function MainNavigation() {
 
         <div className="flex items-center space-x-4">
           <Link href="/contact">
-            <Button variant="default">Get Quote</Button> {/* Default is Kelly Green */}
+            <Button variant="default">Get Quote</Button>
           </Link>
         </div>
       </div>
@@ -293,10 +285,10 @@ export function MainNavigation() {
       <div className="md:hidden flex items-center justify-between w-full">
         <Link href="/" className="flex items-center">
           <OptimizedImage
-            src="/logo.png"
+            src="/logo-white.png"
             alt="A-Z Landscapes Logo"
-            width={150} // Adjust width as needed for mobile
-            height={42} // Adjust height based on aspect ratio and desired size
+            width={150}
+            height={42}
             className="object-contain"
           />
         </Link>
@@ -316,8 +308,6 @@ export function MainNavigation() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 z-40 bg-card text-card-foreground pt-20 px-4 overflow-auto top-[68px]">
-          {" "}
-          {/* Adjust top if header height changes */}
           <nav className="flex flex-col space-y-1">
             <Link
               href="/"
@@ -333,7 +323,6 @@ export function MainNavigation() {
                 <h3 className="text-sm font-semibold text-primary/80 flex items-center gap-1 pt-2">
                   <Hammer className="h-3 w-3" /> HARDSCAPE SERVICES
                 </h3>
-                {/* Example mobile menu item */}
                 <Link
                   href="/services/patios-walkways"
                   className="block text-foreground py-2 hover:bg-muted"
@@ -341,7 +330,6 @@ export function MainNavigation() {
                 >
                   Patios & Walkways
                 </Link>
-                {/* ... other mobile menu items ... */}
                 <Link
                   href="/services/retaining-walls"
                   className="block text-foreground py-2 hover:bg-muted"
