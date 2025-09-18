@@ -31,7 +31,6 @@ import {
   Lightbulb,
   SunSnow,
   ImageIcon,
-  ArrowRightLeft,
   Grid,
   HelpCircle,
   Briefcase,
@@ -217,7 +216,7 @@ export function MainNavigation() {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
-                className={`flex items-center gap-1 ${navLinkBaseClasses} ${isActive("/portfolio") || isActive("/transformations") || isActive("/gallery") ? navLinkActiveClasses : ""}`}
+                className={`flex items-center gap-1 ${navLinkBaseClasses} ${isActive("/portfolio") || isActive("/gallery") ? navLinkActiveClasses : ""}`}
               >
                 Portfolio <ChevronDown className="h-4 w-4" />
               </Button>
@@ -227,11 +226,6 @@ export function MainNavigation() {
                 <DropdownMenuItem asChild>
                   <Link href="/portfolio" className="flex items-center gap-2 cursor-pointer hover:bg-muted">
                     <Grid className="h-4 w-4 text-primary/70" /> All Projects
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/transformations" className="flex items-center gap-2 cursor-pointer hover:bg-muted">
-                    <ArrowRightLeft className="h-4 w-4 text-primary/70" /> Before & After
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -446,13 +440,6 @@ export function MainNavigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   All Projects
-                </Link>
-                <Link
-                  href="/transformations"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Before & After
                 </Link>
                 <Link
                   href="/gallery"
