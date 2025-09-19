@@ -31,6 +31,7 @@ const careerFormSchema = z.object({
   positionOfInterest: z.string().optional(),
   experience: z.string().min(10, { message: "Please briefly describe your experience (min 10 characters)." }),
   whyJoin: z.string().min(10, { message: "Please tell us why you want to join (min 10 characters)." }),
+  country: z.string().optional(),
   resume: z.any().optional(), // For react-hook-form; actual file handling via 'selectedFile' state
   agreeToTerms: z.literal(true, {
     errorMap: () => ({ message: "You must agree to the privacy policy." }),
@@ -54,6 +55,7 @@ export default function CareersPageClient() {
       positionOfInterest: "",
       experience: "",
       whyJoin: "",
+      country: "",
       agreeToTerms: false,
       resume: undefined,
     },
@@ -97,6 +99,9 @@ export default function CareersPageClient() {
     }
     formData.append("experience", data.experience)
     formData.append("whyJoin", data.whyJoin)
+    if (data.country) {
+      formData.append("country", data.country)
+    }
 
     if (selectedFile) {
       formData.append("resume", selectedFile)
@@ -355,9 +360,7 @@ export default function CareersPageClient() {
                   <FormField
                     control={form.control}
                     name="resume" // This name matches the schema
-                    render={(
-                      { fieldState }, // field is not directly used for input type="file" with RHF in this basic setup
-                    ) => (
+                    render={({ fieldState }) => (
                       <FormItem>
                         <FormLabel className="text-navy-700">Upload Resume (Optional)</FormLabel>
                         <FormControl>
@@ -374,14 +377,14 @@ export default function CareersPageClient() {
                                 <p className="text-xs text-gray-500">PDF, DOC, DOCX (MAX. 5MB)</p>
                                 {fileName && <p className="text-xs text-kelly-600 mt-1">{fileName}</p>}
                               </div>
-                              <Input
-                                id="resume-upload"
-                                type="file"
-                                className="hidden"
-                                accept=".pdf,.doc,.docx,.txt"
-                                onChange={handleFileChange}
-                              />
                             </label>
+                            <Input
+                              id="resume-upload"
+                              type="file"
+                              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                              accept=".pdf,.doc,.docx,.txt"
+                              onChange={handleFileChange}
+                            />
                           </div>
                         </FormControl>
                         <FormDescription>Accepted file types: PDF, DOC, DOCX, TXT. Max file size: 5MB.</FormDescription>

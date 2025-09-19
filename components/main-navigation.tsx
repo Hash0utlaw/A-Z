@@ -32,9 +32,6 @@ import {
   SunSnow,
   ImageIcon,
   Grid,
-  HelpCircle,
-  Briefcase,
-  Mail,
 } from "lucide-react"
 import OptimizedImage from "@/components/optimized-image"
 
@@ -236,41 +233,17 @@ export function MainNavigation() {
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className={`flex items-center gap-1 ${navLinkBaseClasses} ${isActive("/contact") || isActive("/faq") || isActive("/careers") ? navLinkActiveClasses : ""}`}
-              >
-                Contact <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 border-border bg-card text-card-foreground">
-              <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
-                  <Link href="/contact" className="flex items-center gap-2 cursor-pointer hover:bg-muted">
-                    <Mail className="h-4 w-4 text-primary/70" /> Contact Us
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/faq" className="flex items-center gap-2 cursor-pointer hover:bg-muted">
-                    <HelpCircle className="h-4 w-4 text-primary/70" /> FAQ
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/careers" className="flex items-center gap-2 cursor-pointer hover:bg-muted">
-                    <Briefcase className="h-4 w-4 text-primary/70" /> Careers
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </nav>
 
         <div className="flex items-center space-x-4">
           <Link href="/contact">
-            <Button variant="default">Get Quote</Button>
+            <Button
+              variant="default"
+              size="lg"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold px-8 py-3 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border-0"
+            >
+              Get Quote
+            </Button>
           </Link>
         </div>
       </div>
@@ -451,36 +424,14 @@ export function MainNavigation() {
               </div>
             </div>
 
-            <div className="py-2 border-b border-border">
-              <span className="text-lg font-medium text-primary">Contact</span>
-              <div className="ml-4 mt-2 space-y-1">
-                <Link
-                  href="/contact"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/faq"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="/careers"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Careers
-                </Link>
-              </div>
-            </div>
-
             <div className="pt-4">
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full">Get a Free Quote</Button>
+                <Button
+                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-4 text-lg shadow-lg"
+                  size="lg"
+                >
+                  Get a Free Quote
+                </Button>
               </Link>
             </div>
           </nav>
