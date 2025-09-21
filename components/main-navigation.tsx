@@ -9,30 +9,9 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {
-  ChevronDown,
-  Leaf,
-  Hammer,
-  Menu,
-  X,
-  Footprints,
-  Building,
-  Car,
-  Flame,
-  Droplet,
-  Tent,
-  Scissors,
-  Sprout,
-  TreePine,
-  Lightbulb,
-  SunSnow,
-  ImageIcon,
-  Grid,
-} from "lucide-react"
+import { ChevronDown, Leaf, Hammer, Menu, X, ImageIcon, Grid } from "lucide-react"
 import OptimizedImage from "@/components/optimized-image"
 
 export function MainNavigation() {
@@ -78,130 +57,21 @@ export function MainNavigation() {
                 Services <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-80 border-border bg-card text-card-foreground">
-              <DropdownMenuLabel className="flex items-center gap-2 text-primary">
-                <Hammer className="h-4 w-4 text-primary/80" /> Hardscape Services
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
+            <DropdownMenuContent className="w-64 border-border bg-card text-card-foreground">
               <DropdownMenuGroup>
                 <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/patios-walkways"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Footprints className="h-4 w-4 text-primary/70" /> Patios & Walkways
+                  <Link href="/services" className="flex items-center gap-2 cursor-pointer hover:bg-muted py-3">
+                    <Hammer className="h-5 w-5 text-primary/70" />
+                    <span className="font-medium">Hardscape Services</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/retaining-walls"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Building className="h-4 w-4 text-primary/70" /> Retaining Walls
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/driveways" className="flex items-center gap-2 cursor-pointer hover:bg-muted">
-                    <Car className="h-4 w-4 text-primary/70" /> Driveways
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/outdoor-kitchens-fire-features"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Flame className="h-4 w-4 text-primary/70" /> Outdoor Kitchens & Fire Features
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/water-features"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Droplet className="h-4 w-4 text-primary/70" /> Water Features
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/pergolas-gazebos"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Tent className="h-4 w-4 text-primary/70" /> Pergolas & Gazebos
+                  <Link href="/services" className="flex items-center gap-2 cursor-pointer hover:bg-muted py-3">
+                    <Leaf className="h-5 w-5 text-primary/70" />
+                    <span className="font-medium">Landscaping Services</span>
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuLabel className="flex items-center gap-2 text-primary">
-                <Leaf className="h-4 w-4 text-primary/80" /> Landscaping Services
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/lawn-care-maintenance"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Scissors className="h-4 w-4 text-primary/70" /> Lawn Care & Maintenance
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/garden-design-planting"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Sprout className="h-4 w-4 text-primary/70" /> Garden Design & Planting
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/tree-services"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <TreePine className="h-4 w-4 text-primary/70" /> Tree Services
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/turf-installation"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Sprout className="h-4 w-4 text-primary/70" /> Turf Installation
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/irrigation-systems"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Droplet className="h-4 w-4 text-primary/70" /> Irrigation Systems
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/landscape-lighting"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <Lightbulb className="h-4 w-4 text-primary/70" /> Landscape Lighting
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/services/seasonal-services"
-                    className="flex items-center gap-2 cursor-pointer hover:bg-muted"
-                  >
-                    <SunSnow className="h-4 w-4 text-primary/70" /> Seasonal Services
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
-                <Link
-                  href="/services"
-                  className="flex items-center gap-2 cursor-pointer font-medium text-accent hover:bg-muted"
-                >
-                  View All Services
-                </Link>
-              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -287,111 +157,19 @@ export function MainNavigation() {
             <div className="py-2 border-b border-border">
               <span className="text-lg font-medium text-primary">Services</span>
               <div className="ml-4 mt-2 space-y-1">
-                <h3 className="text-sm font-semibold text-primary/80 flex items-center gap-1 pt-2">
-                  <Hammer className="h-3 w-3" /> HARDSCAPE SERVICES
-                </h3>
-                <Link
-                  href="/services/patios-walkways"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Patios & Walkways
-                </Link>
-                <Link
-                  href="/services/retaining-walls"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Retaining Walls
-                </Link>
-                <Link
-                  href="/services/driveways"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Driveways
-                </Link>
-                <Link
-                  href="/services/outdoor-kitchens-fire-features"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Outdoor Kitchens & Fire Features
-                </Link>
-                <Link
-                  href="/services/water-features"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Water Features
-                </Link>
-                <Link
-                  href="/services/pergolas-gazebos"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Pergolas & Gazebos
-                </Link>
-
-                <h3 className="text-sm font-semibold text-primary/80 flex items-center gap-1 pt-3">
-                  <Leaf className="h-3 w-3" /> LANDSCAPING SERVICES
-                </h3>
-                <Link
-                  href="/services/lawn-care-maintenance"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Lawn Care & Maintenance
-                </Link>
-                <Link
-                  href="/services/garden-design-planting"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Garden Design & Planting
-                </Link>
-                <Link
-                  href="/services/tree-services"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Tree Services
-                </Link>
-                <Link
-                  href="/services/turf-installation"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Turf Installation
-                </Link>
-                <Link
-                  href="/services/irrigation-systems"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Irrigation Systems
-                </Link>
-                <Link
-                  href="/services/landscape-lighting"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Landscape Lighting
-                </Link>
-                <Link
-                  href="/services/seasonal-services"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Seasonal Services
-                </Link>
-
                 <Link
                   href="/services"
-                  className="block text-accent font-medium py-2 hover:bg-muted"
+                  className="flex items-center gap-2 text-foreground py-3 hover:bg-muted font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  View All Services
+                  <Hammer className="h-4 w-4 text-primary/70" /> Hardscape Services
+                </Link>
+                <Link
+                  href="/services"
+                  className="flex items-center gap-2 text-foreground py-3 hover:bg-muted font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Leaf className="h-4 w-4 text-primary/70" /> Landscaping Services
                 </Link>
               </div>
             </div>
