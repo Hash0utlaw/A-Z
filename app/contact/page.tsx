@@ -32,19 +32,35 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus("idle")
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-    setSubmitStatus("success")
-    setIsSubmitting(false)
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    })
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -64,11 +80,11 @@ export default function ContactPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 text-kelly-400 mr-2" />
-                  <span className="text-lg">(555) 123-4567</span>
+                  <span className="text-lg">(704) 989-4839</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-kelly-400 mr-2" />
-                  <span className="text-lg">info@azlandscaping.com</span>
+                  <span className="text-lg">Azlandscapesllc@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -107,6 +123,15 @@ export default function ContactPage() {
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <AlertDescription className="text-green-800">
                       Thank you for your message! We'll get back to you within 24 hours.
+                    </AlertDescription>
+                  </Alert>
+                )}
+
+                {submitStatus === "error" && (
+                  <Alert className="mb-6 border-red-200 bg-red-50">
+                    <AlertDescription className="text-red-800">
+                      Sorry, there was an error sending your message. Please try again or call us directly at (704)
+                      989-4839.
                     </AlertDescription>
                   </Alert>
                 )}
@@ -213,7 +238,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-navy-800">Phone</h3>
-                      <p className="text-gray-600">(555) 123-4567</p>
+                      <p className="text-gray-600">(704) 989-4839</p>
                       <p className="text-sm text-gray-500">Call or text for fastest response</p>
                     </div>
                   </div>
@@ -224,7 +249,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-navy-800">Email</h3>
-                      <p className="text-gray-600">info@azlandscaping.com</p>
+                      <p className="text-gray-600">Azlandscapesllc@gmail.com</p>
                       <p className="text-sm text-gray-500">We respond within 24 hours</p>
                     </div>
                   </div>
@@ -235,8 +260,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-navy-800">Service Area</h3>
-                      <p className="text-gray-600">Greenville, GA and surrounding areas</p>
-                      <p className="text-sm text-gray-500">30-mile radius from Greenville</p>
+                      <p className="text-gray-600">Charlotte, NC and surrounding areas</p>
+                      <p className="text-sm text-gray-500">50-mile radius from Charlotte</p>
                     </div>
                   </div>
 
@@ -291,7 +316,7 @@ export default function ContactPage() {
                   </p>
                   <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
                     <Phone className="mr-2 h-4 w-4" />
-                    Call Emergency Line: (555) 123-4567
+                    Call Emergency Line: (704) 989-4839
                   </Button>
                 </CardContent>
               </Card>
@@ -306,24 +331,28 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-navy-900 mb-4">Areas We Serve</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              A-Z Landscapes proudly serves Greenville, GA and the surrounding communities within a 30-mile radius.
+              A-Z Landscapes proudly serves Charlotte, NC and the surrounding communities within a 50-mile radius.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
             {[
-              "Greenville",
-              "Madison",
-              "Commerce",
-              "Jefferson",
-              "Danielsville",
-              "Royston",
-              "Carnesville",
-              "Franklin Springs",
-              "Pendergrass",
-              "Maysville",
-              "Braselton",
-              "Hoschton",
+              "Charlotte",
+              "Gastonia",
+              "Concord",
+              "Huntersville",
+              "Matthews",
+              "Mint Hill",
+              "Pineville",
+              "Cornelius",
+              "Davidson",
+              "Mooresville",
+              "Kannapolis",
+              "Monroe",
+              "Indian Trail",
+              "Waxhaw",
+              "Belmont",
+              "Mount Holly",
             ].map((city) => (
               <div key={city} className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-medium text-navy-800">{city}</p>

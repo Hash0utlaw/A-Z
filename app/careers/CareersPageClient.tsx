@@ -254,7 +254,7 @@ export default function CareersPageClient() {
                           <FormLabel className="text-navy-700">Phone Number*</FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="(555) 123-4567"
+                              placeholder="(704) 989-4839"
                               {...field}
                               className="border-gray-300 focus:border-kelly-500 focus:ring-kelly-500"
                             />

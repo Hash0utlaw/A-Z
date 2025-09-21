@@ -254,6 +254,15 @@ export default function AboutPage() {
             Let's discuss your vision. Contact A-Z Landscapes today to schedule a consultation with Zach and our design
             team.
           </p>
+          <div className="mb-8">
+            <p className="text-lg text-navy-100 mb-2">Call us today:</p>
+            <a
+              href="tel:7040-989-4839"
+              className="text-2xl font-bold text-kelly-400 hover:text-kelly-300 transition-colors"
+            >
+              (704) 989-4839
+            </a>
+          </div>
           <Link href="/contact">
             <Button className="bg-kelly-500 hover:bg-kelly-600 text-white">Get in Touch</Button>
           </Link>

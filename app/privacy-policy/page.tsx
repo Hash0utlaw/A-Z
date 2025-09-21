@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
                 <strong>The right to object.</strong>
               </li>
               <li>
-                <strong>The right of restriction.</strong>
+                <strong>The right to restriction.</strong>
               </li>
               <li>
                 <strong>The right to data portability.</strong>
@@ -144,12 +144,12 @@ export default function PrivacyPolicyPage() {
             <p>If you have any questions about this Privacy Policy, please contact us:</p>
             <ul>
               <li>
-                By email: <Link href="mailto:privacy@azlandscaping.com">privacy@azlandscaping.com</Link>
+                By email: <Link href="mailto:Azlandscapesllc@gmail.com">Azlandscapesllc@gmail.com</Link>
               </li>
               <li>
                 By visiting this page on our website: <Link href="/contact">https://azlandscaping.com/contact</Link>
               </li>
-              <li>By phone number: (555) 123-4567</li>
+              <li>By phone number: (704) 989-4839</li>
             </ul>
           </article>
         </div>

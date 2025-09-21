@@ -23,7 +23,7 @@ const faqData = [
   {
     question: "How do I get a quote for my project?",
     answer:
-      "You can request a free, no-obligation quote by filling out the contact form on our website, calling us at (555) 123-4567, or emailing us at info@a-zlandscapes.com. We'll schedule a consultation to discuss your needs and assess your property.",
+      "You can request a free, no-obligation quote by filling out the contact form on our website, calling us at (704) 989-4839, or emailing us at Azlandscapesllc@gmail.com. We'll schedule a consultation to discuss your needs and assess your property.",
   },
   {
     question: "Are you licensed and insured?",
@@ -95,10 +95,10 @@ export default function FAQPage() {
                 <Mail className="mr-2 h-5 w-5" /> Contact Us Online
               </Link>
               <a
-                href="tel:5551234567"
+                href="tel:7049894839"
                 className="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary bg-transparent hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
               >
-                <Phone className="mr-2 h-5 w-5" /> Call Us: (555) 123-4567
+                <Phone className="mr-2 h-5 w-5" /> Call Us: (704) 989-4839
               </a>
             </div>
           </div>

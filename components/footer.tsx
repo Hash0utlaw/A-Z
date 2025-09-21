@@ -134,12 +134,13 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-kelly-400" />
-                <span>(555) 123-4567</span>
+                {/* Updated phone number to (704) 989-4839 */}
+                <span>(704) 989-4839</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-kelly-400" />
-                <a href="mailto:info@azlandscaping.com" className="hover:text-white transition-colors">
-                  info@azlandscaping.com
+                <a href="mailto:Azlandscapesllc@gmail.com" className="hover:text-white transition-colors">
+                  Azlandscapesllc@gmail.com
                 </a>
               </li>
             </ul>

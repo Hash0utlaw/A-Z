@@ -33,7 +33,7 @@ export default function HomePage() {
     name: "A-Z Landscapes",
     image: "https://www.a-z-landscaping.com/logo.png", // IMPORTANT: Update domain
     url: "https://www.a-z-landscaping.com", // IMPORTANT: Update domain
-    telephone: "+1-555-123-4567", // IMPORTANT: Update phone
+    telephone: "+1-704-989-4839", // IMPORTANT: Update phone
     address: {
       "@type": "PostalAddress",
       streetAddress: "123 Main Street", // IMPORTANT: Update
@@ -404,7 +404,7 @@ export default function HomePage() {
                 Request Your Free Consultation
               </Button>
             </Link>
-            <p className="text-md text-gray-600 mt-6">Or call us at (555) 123-4567 to speak with our team directly.</p>
+            <p className="text-md text-gray-600 mt-6">Or call us at (704) 989-4839 to speak with our team directly.</p>
           </div>
         </div>
       </section>
