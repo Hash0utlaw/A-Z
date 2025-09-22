@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: ["Azlandscapesllc@gmail.com"],
+      from: "delivered@resend.dev",
+      to: ["azlandscapesllc@gmail.com"], // Lowercase email to match exactly
       subject: `New Quote Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
