@@ -12,9 +12,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Name, email, and phone are required" }, { status: 400 })
     }
 
-    // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "A-Z Landscapes <onboarding@resend.dev>",
+      from: "onboarding@resend.dev",
       to: ["Azlandscapesllc@gmail.com"],
       subject: `New Quote Request from ${name}`,
       html: `
