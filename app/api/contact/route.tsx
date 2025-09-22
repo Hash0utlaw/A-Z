@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, service, message } = await request.json()
+    const { name, email, phone, address, service, message } = await request.json()
 
     // Validate required fields
     if (!name || !email || !phone) {
@@ -28,6 +28,7 @@ export async function POST(request: NextRequest) {
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
+            ${address ? `<p><strong>Project Address:</strong> ${address}</p>` : ""}
             ${service ? `<p><strong>Service Interested In:</strong> ${service}</p>` : ""}
           </div>
 

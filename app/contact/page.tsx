@@ -18,6 +18,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     phone: "",
+    address: "",
     service: "",
     message: "",
   })
@@ -49,6 +50,7 @@ export default function ContactPage() {
           name: "",
           email: "",
           phone: "",
+          address: "",
           service: "",
           message: "",
         })
@@ -173,6 +175,18 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       className="mt-1"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="address">Project Address</Label>
+                    <Input
+                      id="address"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                      placeholder="Enter the address where work will be performed"
                     />
                   </div>
 
