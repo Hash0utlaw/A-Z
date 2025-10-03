@@ -127,9 +127,9 @@ export function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-kelly-400 mt-0.5" />
                 <span>
-                  123 Landscape Lane
+                  11525 Reames Rd, Suite 112
                   <br />
-                  Greenville, GA 30222
+                  Charlotte, NC 28269
                 </span>
               </li>
               <li className="flex items-center space-x-3">
