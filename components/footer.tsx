@@ -107,26 +107,6 @@ export function Footer() {
                   Contact Us
                 </Link>
               </li>
-              <li>
-                <Link href="/privacy-policy" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookie-policy" className="hover:text-white transition-colors">
-                  Cookie Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/gdpr" className="hover:text-white transition-colors">
-                  GDPR & Data Rights
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-of-service" className="hover:text-white transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -159,6 +139,23 @@ export function Footer() {
 
         <div className="border-t border-navy-800 mt-12 pt-8 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} A-Z Landscapes. All rights reserved.</p>
+          <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">
+              Cookie Policy
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link href="/gdpr" className="hover:text-white transition-colors">
+              GDPR & Data Rights
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
