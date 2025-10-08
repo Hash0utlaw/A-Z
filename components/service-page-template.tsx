@@ -5,7 +5,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle, Star } from "lucide-react"
 import Link from "next/link"
 import GalleryGrid from "./gallery-grid"
-import { ChevronRight } from "lucide-react"
 
 interface ServicePageProps {
   category: "hardscape" | "landscaping"
@@ -221,24 +220,6 @@ export default function ServicePageTemplate({
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Transformations Link */}
-      <section className="py-12 bg-white border-t border-navy-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">See Our Transformations</h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Curious about the dramatic difference our {title.toLowerCase()} services can make? Check out our before
-              and after gallery to see real transformations.
-            </p>
-            <Link href="/transformations">
-              <Button variant="outline" className="border-navy-500 text-navy-500 hover:bg-navy-50">
-                View Before & After Gallery <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
