@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { MainNavigation } from "@/components/main-navigation"
 import { Footer } from "@/components/footer"
+import { CookieConsent } from "@/components/cookie-consent"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   },
   description:
     "A-Z Landscapes offers expert landscaping, hardscaping, design, and maintenance services. Transform your outdoor space with our passionate team. Free estimates!",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -39,6 +40,7 @@ export default function RootLayout({
             {/* Main content bg white, text navy */}
             <Footer />
           </div>
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

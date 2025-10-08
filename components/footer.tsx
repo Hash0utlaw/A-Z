@@ -113,6 +113,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/cookie-policy" className="hover:text-white transition-colors">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/gdpr" className="hover:text-white transition-colors">
+                  GDPR & Data Rights
+                </Link>
+              </li>
+              <li>
                 <Link href="/terms-of-service" className="hover:text-white transition-colors">
                   Terms of Service
                 </Link>
