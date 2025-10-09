@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { MainNavigation } from "@/components/main-navigation"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
+import { SkipNavigation } from "@/components/skip-navigation"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -28,16 +29,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <SkipNavigation />
           <div className="flex min-h-screen flex-col">
             <header className="bg-primary text-primary-foreground shadow-md sticky top-0 z-50">
-              {" "}
-              {/* Header bg navy, text white */}
-              <div className="container mx-auto px-4 py-4">
+              <nav aria-label="Main navigation" className="container mx-auto px-4 py-4">
                 <MainNavigation />
-              </div>
+              </nav>
             </header>
-            <main className="flex-1 bg-background text-foreground">{children}</main>{" "}
-            {/* Main content bg white, text navy */}
+            <main id="main-content" tabIndex={-1} className="flex-1 bg-background text-foreground focus:outline-none">
+              {children}
+            </main>
             <Footer />
           </div>
           <CookieConsent />
