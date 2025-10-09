@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Phone, Mail, MapPin, Clock, CheckCircle, Star, MessageSquare, Calendar, Award } from "lucide-react"
 
 export default function ContactPage() {
@@ -25,9 +26,13 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSelectChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, service: value }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -81,12 +86,22 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-kelly-400 mr-2" />
-                  <span className="text-lg">(704) 989-4839</span>
+                  <Phone className="h-5 w-5 text-kelly-400 mr-2" aria-hidden="true" />
+                  <a
+                    href="tel:+17049894839"
+                    className="text-lg hover:underline focus:underline focus:outline-none focus:ring-2 focus:ring-kelly-400 rounded"
+                  >
+                    (704) 989-4839
+                  </a>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-kelly-400 mr-2" />
-                  <span className="text-lg">Azlandscapesllc@gmail.com</span>
+                  <Mail className="h-5 w-5 text-kelly-400 mr-2" aria-hidden="true" />
+                  <a
+                    href="mailto:Azlandscapesllc@gmail.com"
+                    className="text-lg hover:underline focus:underline focus:outline-none focus:ring-2 focus:ring-kelly-400 rounded"
+                  >
+                    Azlandscapesllc@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -111,7 +126,7 @@ export default function ContactPage() {
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl text-navy-900 flex items-center">
-                  <MessageSquare className="h-6 w-6 text-kelly-500 mr-2" />
+                  <MessageSquare className="h-6 w-6 text-kelly-500 mr-2" aria-hidden="true" />
                   Get Your Free Quote
                 </CardTitle>
                 <p className="text-gray-600">
@@ -120,39 +135,52 @@ export default function ContactPage() {
                 </p>
               </CardHeader>
               <CardContent>
-                {submitStatus === "success" && (
-                  <Alert className="mb-6 border-green-200 bg-green-50">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <AlertDescription className="text-green-800">
-                      Thank you for your message! We'll get back to you within 24 hours.
-                    </AlertDescription>
-                  </Alert>
-                )}
+                <div aria-live="polite" aria-atomic="true">
+                  {submitStatus === "success" && (
+                    <Alert className="mb-6 border-green-200 bg-green-50">
+                      <CheckCircle className="h-4 w-4 text-green-600" aria-hidden="true" />
+                      <AlertDescription className="text-green-800">
+                        Thank you for your message! We'll get back to you within 24 hours.
+                      </AlertDescription>
+                    </Alert>
+                  )}
 
-                {submitStatus === "error" && (
-                  <Alert className="mb-6 border-red-200 bg-red-50">
-                    <AlertDescription className="text-red-800">
-                      Sorry, there was an error sending your message. Please try again or call us directly at (704)
-                      989-4839.
-                    </AlertDescription>
-                  </Alert>
-                )}
+                  {submitStatus === "error" && (
+                    <Alert className="mb-6 border-red-200 bg-red-50" role="alert">
+                      <AlertDescription className="text-red-800">
+                        Sorry, there was an error sending your message. Please try again or call us directly at (704)
+                        989-4839.
+                      </AlertDescription>
+                    </Alert>
+                  )}
+                </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">
+                        Full Name{" "}
+                        <span className="text-red-600" aria-label="required">
+                          *
+                        </span>
+                      </Label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
+                        aria-required="true"
                         className="mt-1"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Label htmlFor="phone">
+                        Phone Number{" "}
+                        <span className="text-red-600" aria-label="required">
+                          *
+                        </span>
+                      </Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -160,13 +188,19 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
+                        aria-required="true"
                         className="mt-1"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email">
+                      Email Address{" "}
+                      <span className="text-red-600" aria-label="required">
+                        *
+                      </span>
+                    </Label>
                     <Input
                       id="email"
                       name="email"
@@ -174,6 +208,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
+                      aria-required="true"
                       className="mt-1"
                     />
                   </div>
@@ -192,26 +227,24 @@ export default function ContactPage() {
 
                   <div>
                     <Label htmlFor="service">Service Interested In</Label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-kelly-500 focus:border-kelly-500"
-                    >
-                      <option value="">Select a service...</option>
-                      <option value="patios-walkways">Patios & Walkways</option>
-                      <option value="retaining-walls">Retaining Walls</option>
-                      <option value="fire-features">Fire Features</option>
-                      <option value="outdoor-kitchens">Outdoor Kitchens</option>
-                      <option value="water-features">Water Features</option>
-                      <option value="lawn-care">Lawn Care & Maintenance</option>
-                      <option value="garden-design">Garden Design & Planting</option>
-                      <option value="tree-services">Tree Services</option>
-                      <option value="irrigation">Irrigation Systems</option>
-                      <option value="lighting">Landscape Lighting</option>
-                      <option value="other">Other / Multiple Services</option>
-                    </select>
+                    <Select value={formData.service} onValueChange={handleSelectChange}>
+                      <SelectTrigger id="service" className="mt-1" aria-label="Select a service">
+                        <SelectValue placeholder="Select a service..." />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="patios-walkways">Patios & Walkways</SelectItem>
+                        <SelectItem value="retaining-walls">Retaining Walls</SelectItem>
+                        <SelectItem value="fire-features">Fire Features</SelectItem>
+                        <SelectItem value="outdoor-kitchens">Outdoor Kitchens</SelectItem>
+                        <SelectItem value="water-features">Water Features</SelectItem>
+                        <SelectItem value="lawn-care">Lawn Care & Maintenance</SelectItem>
+                        <SelectItem value="garden-design">Garden Design & Planting</SelectItem>
+                        <SelectItem value="tree-services">Tree Services</SelectItem>
+                        <SelectItem value="irrigation">Irrigation Systems</SelectItem>
+                        <SelectItem value="lighting">Landscape Lighting</SelectItem>
+                        <SelectItem value="other">Other / Multiple Services</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   <div>
@@ -224,13 +257,19 @@ export default function ContactPage() {
                       rows={4}
                       className="mt-1"
                       placeholder="Tell us about your project, timeline, budget range, and any specific ideas you have in mind..."
+                      aria-describedby="message-description"
                     />
+                    <p id="message-description" className="sr-only">
+                      Provide details about your landscaping project including timeline, budget, and specific
+                      requirements
+                    </p>
                   </div>
 
                   <Button
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-kelly-500 hover:bg-kelly-600 text-white"
+                    aria-busy={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Get My Free Quote"}
                   </Button>
@@ -248,7 +287,7 @@ export default function ContactPage() {
                 <CardContent className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="bg-kelly-100 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-kelly-600" />
+                      <Phone className="h-6 w-6 text-kelly-600" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-navy-800">Phone</h3>
@@ -259,7 +298,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start space-x-4">
                     <div className="bg-kelly-100 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-kelly-600" />
+                      <Mail className="h-6 w-6 text-kelly-600" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-navy-800">Email</h3>
@@ -270,7 +309,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start space-x-4">
                     <div className="bg-kelly-100 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-kelly-600" />
+                      <MapPin className="h-6 w-6 text-kelly-600" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-navy-800">Service Area</h3>
@@ -281,7 +320,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start space-x-4">
                     <div className="bg-kelly-100 p-3 rounded-full">
-                      <Clock className="h-6 w-6 text-kelly-600" />
+                      <Clock className="h-6 w-6 text-kelly-600" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-navy-800">Business Hours</h3>
@@ -300,19 +339,19 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Award className="h-5 w-5 text-kelly-500" />
+                    <Award className="h-5 w-5 text-kelly-500" aria-hidden="true" />
                     <span className="text-gray-700">20+ years of experience</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-kelly-500" />
+                    <CheckCircle className="h-5 w-5 text-kelly-500" aria-hidden="true" />
                     <span className="text-gray-700">Licensed and fully insured</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Star className="h-5 w-5 text-kelly-500" />
+                    <Star className="h-5 w-5 text-kelly-500" aria-hidden="true" />
                     <span className="text-gray-700">5-star customer satisfaction</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Calendar className="h-5 w-5 text-kelly-500" />
+                    <Calendar className="h-5 w-5 text-kelly-500" aria-hidden="true" />
                     <span className="text-gray-700">Free consultations and quotes</span>
                   </div>
                 </CardContent>
@@ -329,7 +368,7 @@ export default function ContactPage() {
                     situations.
                   </p>
                   <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
-                    <Phone className="mr-2 h-4 w-4" />
+                    <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
                     Call Emergency Line: (704) 989-4839
                   </Button>
                 </CardContent>
