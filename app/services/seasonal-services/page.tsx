@@ -13,7 +13,7 @@ export default function SeasonalServicesPage() {
       category="landscaping"
       title="Seasonal Services"
       description="Keep your property looking its best year-round with our comprehensive seasonal services including spring cleanup, fall leaf removal, and winter snow management."
-      heroImage="/seasonal-services/hero.png"
+      heroImage="/seasonal-services/hero.jpg"
       benefits={[
         "Maintain a well-groomed property throughout all four seasons",
         "Prevent damage to your landscape from seasonal debris and weather conditions",

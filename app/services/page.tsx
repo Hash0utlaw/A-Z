@@ -144,7 +144,7 @@ const landscapingServices = [
     description:
       "Spring/fall cleanups, leaf removal, snow removal, and land grading for optimal landscape health and site preparation.",
     icon: SunSnow,
-    image: "/seasonal-services/hero.png", // Updated
+    image: "/seasonal-services/hero.jpg",
     slug: "seasonal-services",
     details: "Comprehensive care throughout the year, adapting to every season's needs.",
   },
