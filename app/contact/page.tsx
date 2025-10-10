@@ -318,19 +318,19 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              {/* Emergency Services */}
+              {/* Rapid Response Services */}
               <Card className="shadow-lg border-orange-200">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-orange-800">Emergency Services</CardTitle>
+                  <CardTitle className="text-2xl text-orange-800">Rapid Response Services</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700 mb-4">
-                    Need emergency tree removal or storm damage cleanup? We offer 24/7 emergency services for urgent
+                    Need urgent tree removal or storm damage cleanup? We offer 24/7 rapid response services for urgent
                     situations.
                   </p>
                   <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
                     <Phone className="mr-2 h-4 w-4" />
-                    Call Emergency Line: (704) 989-4839
+                    Call Rapid Response Line: (704) 989-4839
                   </Button>
                 </CardContent>
               </Card>
