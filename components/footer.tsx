@@ -116,15 +116,10 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-kelly-400 mt-0.5" />
-                <span>
-                  11525 Reames Rd, Suite 112
-                  <br />
-                  Charlotte, NC 28269
-                </span>
+                <span>Main Office Charlotte NC</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-kelly-400" />
-                {/* Updated phone number to (704) 989-4839 */}
                 <span>(704) 989-4839</span>
               </li>
               <li className="flex items-center space-x-3">
