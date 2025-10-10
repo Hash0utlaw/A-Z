@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { CheckCircle, Star } from "lucide-react"
 import Link from "next/link"
-import GalleryGrid from "./gallery-grid"
 
 interface ServicePageProps {
   category: "hardscape" | "landscaping"
@@ -129,18 +128,22 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-16 bg-white">
+      {/* Portfolio CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-navy-700 to-navy-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Our Work</Badge>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recent {title} Projects</h2>
-            <p className="text-lg text-gray-600">
-              Browse our portfolio of completed {title.toLowerCase()} projects to see our quality craftsmanship.
+          <div className="max-w-3xl mx-auto text-center">
+            <Badge className="bg-white/20 text-white hover:bg-white/30 mb-4">Our Portfolio</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">See Our {title} Projects in Action</h2>
+            <p className="text-xl text-white/90 mb-8">
+              Browse our complete portfolio to see the quality craftsmanship and attention to detail we bring to every
+              project. Get inspired by our completed {title.toLowerCase()} transformations.
             </p>
+            <Link href="/portfolio">
+              <Button size="lg" className="bg-kelly-500 hover:bg-kelly-600 text-white text-lg px-8 py-6 h-auto">
+                View Our Portfolio
+              </Button>
+            </Link>
           </div>
-
-          <GalleryGrid items={gallery} />
         </div>
       </section>
 
