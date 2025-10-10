@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import GalleryGrid from "@/components/gallery-grid"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -22,45 +21,23 @@ export const metadata: Metadata = {
   ],
 }
 
-const portfolioCategories = [
-  {
-    name: "Fire Pits & Patios",
-    images: [
-      "/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg",
-      "/user-uploads/backyard-fire-pit-patio-residential.jpeg",
-      "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
-      "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
-      "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
-    ],
-  },
-  {
-    name: "Outdoor Kitchens",
-    images: [
-      "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
-      "/user-uploads/outdoor-kitchen-island-grill-stone-countertop-side-view.jpeg",
-      "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
-      "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
-    ],
-  },
-  {
-    name: "Walkways & Hardscaping",
-    images: [
-      "/user-uploads/stone-walkway-residential.jpeg",
-      "/user-uploads/concrete-pad-stone-walkway-residential.jpeg",
-      "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
-      "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
-    ],
-  },
-  {
-    name: "Specialized Projects",
-    images: [
-      "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
-      "/user-uploads/butterfly-garden-flower-residential.jpeg",
-    ],
-  },
+const projectImages = [
+  "/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg",
+  "/user-uploads/backyard-fire-pit-patio-residential.jpeg",
+  "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+  "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
+  "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
+  "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
+  "/user-uploads/outdoor-kitchen-island-grill-stone-countertop-side-view.jpeg",
+  "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
+  "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
+  "/user-uploads/stone-walkway-residential.jpeg",
+  "/user-uploads/concrete-pad-stone-walkway-residential.jpeg",
+  "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
+  "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
+  "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
+  "/user-uploads/butterfly-garden-flower-residential.jpeg",
 ]
-
-const allImages = Array.from(new Set(portfolioCategories.flatMap((category) => category.images)))
 
 export default function PortfolioPage() {
   return (
@@ -98,42 +75,13 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <Tabs defaultValue="all" className="w-full">
-            <div className="flex justify-center mb-8">
-              <TabsList className="grid w-full max-w-3xl grid-cols-2 md:grid-cols-5 h-auto">
-                <TabsTrigger value="all" className="whitespace-nowrap">
-                  All Projects
-                </TabsTrigger>
-                {portfolioCategories.map((category) => (
-                  <TabsTrigger key={category.name} value={category.name} className="whitespace-nowrap">
-                    {category.name}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </div>
-
-            <TabsContent value="all">
-              <GalleryGrid
-                items={allImages.map((src) => ({
-                  image: src,
-                  title: "A-Z Landscapes Project",
-                  description: "Professional landscaping work",
-                }))}
-              />
-            </TabsContent>
-
-            {portfolioCategories.map((category) => (
-              <TabsContent key={category.name} value={category.name}>
-                <GalleryGrid
-                  items={category.images.map((src) => ({
-                    image: src,
-                    title: category.name,
-                    description: "Professional landscaping project",
-                  }))}
-                />
-              </TabsContent>
-            ))}
-          </Tabs>
+          <GalleryGrid
+            items={projectImages.map((src) => ({
+              image: src,
+              title: "A-Z Landscapes Project",
+              description: "Professional landscaping work",
+            }))}
+          />
         </div>
       </section>
 
