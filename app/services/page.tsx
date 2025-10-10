@@ -99,7 +99,7 @@ const landscapingServices = [
     description:
       "Comprehensive weekly/bi-weekly maintenance: mowing, edging, weed control, fertilization programs (7-step), pruning, mulching, and seasonal cleanups.",
     icon: Scissors,
-    image: "/lawn-care-maintenance/hero.png", // Updated
+    image: "/lawn-care-maintenance/hero.jpg", // Updated to use new lawn care hero image
     slug: "lawn-care-maintenance",
     details: "Keeping your property pristine year-round with our dedicated maintenance crews.",
   },

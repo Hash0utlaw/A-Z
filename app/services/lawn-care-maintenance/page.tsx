@@ -13,7 +13,7 @@ export default function LawnCareMaintenancePage() {
       category="landscaping"
       title="Lawn Care & Full-Service Maintenance"
       description="Comprehensive year-round care to keep your lawn and landscape healthy, green, and immaculate. We offer tailored maintenance packages, from weekly mowing and fertilization to seasonal cleanups and proactive property care."
-      heroImage="/lawn-care-maintenance/hero.png"
+      heroImage="/lawn-care-maintenance/hero.jpg"
       benefits={[
         "Enjoy a consistently beautiful and healthy lawn without the hassle.",
         "Save time and energy with our reliable, professional services.",
