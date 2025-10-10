@@ -126,7 +126,7 @@ const landscapingServices = [
     description:
       "Efficient sprinkler and drip irrigation system installation & maintenance. Expert drainage solutions (French drains, culverts) to protect your property.",
     icon: Wrench, // Changed icon
-    image: "/irrigation-systems/hero.png", // Updated
+    image: "/irrigation-systems/hero.jpg", // Updated to use new irrigation hero image with sprinklers
     slug: "irrigation-systems",
     details: "Smart water management for healthy landscapes and property protection.",
   },

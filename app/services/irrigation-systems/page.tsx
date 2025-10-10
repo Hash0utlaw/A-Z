@@ -13,7 +13,7 @@ export default function IrrigationSystemsPage() {
       category="landscaping"
       title="Irrigation & Drainage Solutions"
       description="A-Z Landscapes provides expert irrigation system installation and maintenance, alongside comprehensive drainage solutions like French drains and culverts, to ensure a healthy landscape and protect your property from water damage."
-      heroImage="/irrigation-systems/hero.png"
+      heroImage="/irrigation-systems/hero.jpg"
       benefits={[
         "Maintain a lush, healthy lawn and garden with efficient, automated watering.",
         "Conserve water and reduce utility bills with smart irrigation technology.",

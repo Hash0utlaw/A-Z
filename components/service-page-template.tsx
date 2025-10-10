@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { CheckCircle, Star } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface ServicePageProps {
   category: "hardscape" | "landscaping"
@@ -54,7 +55,15 @@ export default function ServicePageTemplate({
       <section className="relative">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative h-[400px] md:h-[500px]">
-          <img src={heroImage || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
+          <Image
+            src={heroImage || "/placeholder.svg"}
+            alt={title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+            quality={90}
+          />
         </div>
         <div className="absolute inset-0 z-20 flex items-center">
           <div className="container mx-auto px-4">
