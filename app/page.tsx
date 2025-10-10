@@ -31,28 +31,28 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": ["HomeAndConstructionBusiness", "Landscaper"],
     name: "A-Z Landscapes",
-    image: "https://www.a-z-landscaping.com/logo.png",
-    url: "https://www.a-z-landscaping.com",
-    telephone: "+1-704-989-4839",
+    image: "https://www.a-z-landscaping.com/logo.png", // IMPORTANT: Update domain
+    url: "https://www.a-z-landscaping.com", // IMPORTANT: Update domain
+    telephone: "+1-704-989-4839", // IMPORTANT: Update phone
     address: {
       "@type": "PostalAddress",
-      streetAddress: "11525 Reames Rd, Suite 112",
-      addressLocality: "Charlotte",
-      addressRegion: "NC",
-      postalCode: "28269",
+      streetAddress: "123 Main Street", // IMPORTANT: Update
+      addressLocality: "Your City", // IMPORTANT: Update
+      addressRegion: "YS", // IMPORTANT: Update
+      postalCode: "00000", // IMPORTANT: Update
       addressCountry: "US",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "35.2271", // IMPORTANT: Update
-      longitude: "-80.8433", // IMPORTANT: Update
+      latitude: "YOUR_LATITUDE", // IMPORTANT: Update
+      longitude: "YOUR_LONGITUDE", // IMPORTANT: Update
     },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:00",
+        opens: "09:00", // IMPORTANT: Update
+        closes: "17:00", // IMPORTANT: Update
       },
       {
         "@type": "OpeningHoursSpecification",
@@ -62,19 +62,19 @@ export default function HomePage() {
       },
     ],
     description:
-      "A-Z Landscapes offers comprehensive landscaping and hardscaping services in Charlotte and surrounding areas. With over 20 years of experience, we transform outdoor dreams into reality, from patios and retaining walls to garden design and lawn care.",
+      "A-Z Landscapes offers comprehensive landscaping and hardscaping services in [Your City] and surrounding areas. With over 20 years of experience, we transform outdoor dreams into reality, from patios and retaining walls to garden design and lawn care.", // IMPORTANT: Update service area
     priceRange: "$$",
-    sameAs: ["https://www.facebook.com/a-z-landscapes-profile", "https://www.instagram.com/a-z-landscapes-profile"],
+    sameAs: [
+      "https://www.facebook.com/your-az-landscapes-profile", // IMPORTANT: Update
+      "https://www.instagram.com/your-az-landscapes-profile", // IMPORTANT: Update
+    ],
   }
 
   return (
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       {/* Hero Section */}
-      <section
-        aria-label="Hero introduction"
-        className="relative bg-gradient-to-br from-kelly-50 to-kelly-100 py-20 lg:py-32"
-      >
+      <section id="home" className="relative bg-gradient-to-br from-kelly-50 to-kelly-100 py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -108,15 +108,15 @@ export default function HomePage() {
               </div>
               <div className="flex items-center space-x-8 pt-4">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-5 w-5 text-navy-600" aria-hidden="true" />
+                  <CheckCircle className="h-5 w-5 text-navy-600" />
                   <span className="text-gray-700">Licensed & Insured</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-navy-600" aria-hidden="true" />
+                  <Award className="h-5 w-5 text-navy-600" />
                   <span className="text-gray-700">20+ Years Experience</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Heart className="h-5 w-5 text-navy-600" aria-hidden="true" />
+                  <Heart className="h-5 w-5 text-navy-600" />
                   <span className="text-gray-700">Passion-Driven Work</span>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function HomePage() {
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-kelly-100 p-3 rounded-full" aria-hidden="true">
+                  <div className="bg-kelly-100 p-3 rounded-full">
                     <Users className="h-6 w-6 text-kelly-500" />
                   </div>
                   <div>
@@ -147,13 +147,11 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section aria-labelledby="services-heading" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-kelly-100 text-kelly-700 hover:bg-kelly-200 mb-4">Our Services</Badge>
-            <h2 id="services-heading" className="text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive Landscape & Hardscape Solutions
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive Landscape & Hardscape Solutions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From meticulous maintenance to stunning design-build projects, we offer a full spectrum of services to
               create and maintain your perfect outdoor environment.
@@ -163,7 +161,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="bg-gray-50 p-8 rounded-2xl">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-navy-100 p-2 rounded-lg" aria-hidden="true">
+                <div className="bg-navy-100 p-2 rounded-lg">
                   <Hammer className="h-6 w-6 text-navy-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Hardscape Design & Construction</h3>
@@ -184,9 +182,9 @@ export default function HomePage() {
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-kelly-500"
+                    className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
                   >
-                    <service.icon className="h-5 w-5 text-navy-600 flex-shrink-0" aria-hidden="true" />
+                    <service.icon className="h-5 w-5 text-navy-600 flex-shrink-0" />
                     <span>{service.name}</span>
                   </Link>
                 ))}
@@ -203,7 +201,7 @@ export default function HomePage() {
 
             <div className="bg-gray-50 p-8 rounded-2xl">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-navy-100 p-2 rounded-lg" aria-hidden="true">
+                <div className="bg-navy-100 p-2 rounded-lg">
                   <Leaf className="h-6 w-6 text-navy-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Landscape Design & Maintenance</h3>
@@ -225,9 +223,9 @@ export default function HomePage() {
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-kelly-500"
+                    className="flex items-center gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
                   >
-                    <service.icon className="h-5 w-5 text-navy-600 flex-shrink-0" aria-hidden="true" />
+                    <service.icon className="h-5 w-5 text-navy-600 flex-shrink-0" />
                     <span>{service.name}</span>
                   </Link>
                 ))}
@@ -254,15 +252,13 @@ export default function HomePage() {
       </section>
 
       {/* About Section Snippet */}
-      <section aria-labelledby="about-heading" className="py-20 bg-kelly-50">
+      <section id="about-snippet" className="py-20 bg-kelly-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200">Why Choose A-Z Landscapes?</Badge>
-                <h2 id="about-heading" className="text-4xl font-bold text-gray-900">
-                  Your Passionate & Experienced Landscape Partner
-                </h2>
+                <h2 className="text-4xl font-bold text-gray-900">Your Passionate & Experienced Landscape Partner</h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Founded on a love for transforming spaces and a commitment to quality, A-Z Landscapes brings over 20
                   years of industry experience to your project. We started with a simple goal: to do great work and
@@ -298,13 +294,11 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Snippet Section */}
-      <section aria-labelledby="portfolio-heading" className="py-20 bg-white">
+      <section id="portfolio-snippet" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Our Work</Badge>
-            <h2 id="portfolio-heading" className="text-4xl font-bold text-gray-900 mb-4">
-              Transformations We're Proud Of
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Transformations We're Proud Of</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Seeing is believing. Explore a selection of our recent projects and imagine the possibilities for your own
               outdoor space.
@@ -328,10 +322,7 @@ export default function HomePage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
-                    aria-hidden="true"
-                  ></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <h3 className="absolute bottom-4 left-4 text-white text-lg font-semibold">{project.title}</h3>
                 </div>
               </Card>
@@ -348,13 +339,11 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Snippet Section */}
-      <section aria-labelledby="testimonials-heading" className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Client Love</Badge>
-            <h2 id="testimonials-heading" className="text-4xl font-bold text-gray-900 mb-4">
-              Hear From Our Happy Customers
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Hear From Our Happy Customers</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -373,9 +362,9 @@ export default function HomePage() {
             ].map((testimonial, index) => (
               <Card key={index} className="bg-white border-navy-100">
                 <CardContent className="p-6">
-                  <div className="flex items-center space-x-1 mb-4" role="img" aria-label="5 star rating">
+                  <div className="flex items-center space-x-1 mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                   <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
@@ -399,13 +388,11 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section aria-labelledby="contact-heading" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Get In Touch</Badge>
-            <h2 id="contact-heading" className="text-4xl font-bold text-gray-900 mb-4">
-              Ready to Start Your Project?
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Let's discuss how A-Z Landscapes can bring your outdoor vision to life. Contact us today for a free,
               no-obligation consultation and estimate.
@@ -417,16 +404,7 @@ export default function HomePage() {
                 Request Your Free Consultation
               </Button>
             </Link>
-            <p className="text-md text-gray-600 mt-6">
-              Or call us at{" "}
-              <a
-                href="tel:+17049894839"
-                className="text-kelly-600 hover:underline focus:outline-none focus:ring-2 focus:ring-kelly-500 rounded"
-              >
-                (704) 989-4839
-              </a>{" "}
-              to speak with our team directly.
-            </p>
+            <p className="text-md text-gray-600 mt-6">Or call us at (704) 989-4839 to speak with our team directly.</p>
           </div>
         </div>
       </section>
