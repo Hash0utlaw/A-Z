@@ -39,6 +39,9 @@ const projectImages = [
   "/user-uploads/butterfly-garden-flower-residential.jpeg",
   "/user-uploads/stone-driveway-resident-lake.jpeg",
   "/user-uploads/lake-driveway-stone-resident.jpeg",
+  "/user-uploads/Patio-walkway-landscape-resident.jpg",
+  "/user-uploads/residental-backyard-water-fountain.jpeg",
+  "/user-uploads/backyard-pool-waterfall-resident.jpeg",
 ]
 
 export default function PortfolioPage() {
