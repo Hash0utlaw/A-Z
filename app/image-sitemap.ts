@@ -115,13 +115,13 @@ export default function imageSitemap(): MetadataRoute.Sitemap {
 
     // Service Category Images - Patios & Walkways
     {
-      url: `${BASE_URL}/patios-walkways/hero.png`,
+      url: `${BASE_URL}/patios-walkways/Patio-walkway-landscape-resident.jpg`,
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
         {
-          url: `${BASE_URL}/patios-walkways/hero.png`,
+          url: `${BASE_URL}/patios-walkways/Patio-walkway-landscape-resident.jpg`,
           title: "Professional Patio and Walkway Installation Services",
           caption: "Expert hardscape construction for patios, walkways, and outdoor living spaces",
         },

@@ -13,7 +13,7 @@ export default function PatiosWalkwaysPage() {
       category="hardscape"
       title="Patios & Walkways"
       description="Transform your outdoor space with expertly designed and installed patios and walkways. From intimate garden paths to expansive entertainment areas, we create beautiful, functional hardscapes that enhance your property's value and your quality of life."
-      heroImage="/patios-walkways/hero.png"
+      heroImage="/patios-walkways/Patio-walkway-landscape-resident.jpg"
       benefits={[
         "Expand your living space with beautiful outdoor areas perfect for entertaining",
         "Increase property value with professionally installed hardscaping",
