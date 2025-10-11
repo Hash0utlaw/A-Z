@@ -84,7 +84,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl order-2 lg:order-1">
               <Image
-                src="/zach-owner-headshot.jpeg"
+                src="/zach-owner-headshot.jpg"
                 alt="Zach Wardell, Founder of A-Z Landscapes"
                 fill
                 className="object-cover"

@@ -12,7 +12,6 @@ import {
   Scissors,
   Footprints,
   CheckCircle,
-  Users,
   Award,
   Building,
   Car,
@@ -123,24 +122,12 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <Image
-                src="/hero-landscape.png"
-                alt="Beautifully landscaped property by A-Z Landscapes"
-                width={800}
+                src="/zach-owner-headshot.jpg"
+                alt="Zach Wardell, Founder of A-Z Landscapes"
+                width={600}
                 height={600}
-                className="rounded-2xl shadow-2xl"
-                priority
+                className="rounded-2xl shadow-xl"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-kelly-100 p-3 rounded-full">
-                    <Users className="h-6 w-6 text-kelly-500" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">500+</div>
-                    <div className="text-gray-600">Happy Customers</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -282,8 +269,8 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <Image
-                src="/zach-owner-headshot.jpeg"
-                alt="Zach Wardell, Founder of A-Z Landscapes"
+                src="/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg"
+                alt="Professional landscaping work by A-Z Landscapes team"
                 width={600}
                 height={600}
                 className="rounded-2xl shadow-xl"
@@ -383,6 +370,7 @@ export default function HomePage() {
                 Share Your Experience
               </Button>
             </Link>
+            <p className="text-md text-gray-600 mt-6">Or call us at (704) 989-4839 to speak with our team directly.</p>
           </div>
         </div>
       </section>

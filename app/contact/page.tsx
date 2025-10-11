@@ -92,8 +92,8 @@ export default function ContactPage() {
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/zach-owner-headshot.jpeg"
-                alt="Zach Wardell, Founder of A-Z Landscapes, ready to help with your project"
+                src="/zach-owner-headshot.jpg"
+                alt="Zach Wardell, Owner of A-Z Landscapes"
                 fill
                 className="object-cover"
                 priority
