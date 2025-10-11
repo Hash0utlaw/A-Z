@@ -35,7 +35,7 @@ const hardscapeServices = [
     description:
       "Custom designed patios and walkways using pavers, natural stone, flagstone, brick, river rock, or pea gravel.",
     icon: Footprints,
-    image: "/patios-walkways/hero.jpg", // Updated to use new hero image with stone walkway and steps
+    image: "/patios-walkways/hero.png", // Updated to more relevant hero
     slug: "patios-walkways",
     details: "Crafting beautiful and durable surfaces for outdoor living and easy navigation.",
   },
