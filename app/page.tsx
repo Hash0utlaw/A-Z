@@ -122,8 +122,8 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <Image
-                src="/zach-owner-headshot.jpg"
-                alt="Zach Wardell, Founder of A-Z Landscapes"
+                src="/hero-landscape.png"
+                alt="Beautiful landscape design by A-Z Landscapes"
                 width={600}
                 height={600}
                 className="rounded-2xl shadow-xl"
@@ -269,8 +269,8 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <Image
-                src="/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg"
-                alt="Professional landscaping work by A-Z Landscapes team"
+                src="/zach-owner-headshot.jpg"
+                alt="Zach Wardell, Founder of A-Z Landscapes"
                 width={600}
                 height={600}
                 className="rounded-2xl shadow-xl"
