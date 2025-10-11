@@ -13,11 +13,11 @@ export default function DrivewaysPage() {
       category="hardscape"
       title="Driveways"
       description="Create a lasting first impression with a professionally installed driveway from A-Z Landscapes. We specialize in concrete, asphalt, paver, and decorative driveway solutions that combine durability, functionality, and aesthetic appeal to enhance your property's value and curb appeal."
-      heroImage="/driveways/hero.png"
+      heroImage="/driveways/stone-driveway-landscape-lake-resident.jpeg"
       benefits={[
         "Enhance your home's curb appeal and create a strong first impression",
         "Increase property value with professional driveway installation",
-        "Choose from multiple materials including concrete, pavers, and asphalt",
+        "Choose from multiple materials including concrete, pavers, asphalt, and gravel",
         "Ensure proper drainage and long-lasting durability",
         "Custom designs that complement your home's architecture",
         "Low-maintenance solutions built to withstand weather and traffic",

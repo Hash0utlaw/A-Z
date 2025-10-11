@@ -37,6 +37,8 @@ const projectImages = [
   "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
   "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
   "/user-uploads/butterfly-garden-flower-residential.jpeg",
+  "/user-uploads/stone-driveway-resident-lake.jpeg",
+  "/user-uploads/lake-driveway-stone-resident.jpeg",
 ]
 
 export default function PortfolioPage() {

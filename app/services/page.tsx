@@ -52,7 +52,7 @@ const hardscapeServices = [
     title: "Driveways",
     description: "Durable and attractive driveways using asphalt, concrete, or pavers, enhancing curb appeal.",
     icon: Car,
-    image: "/driveways/hero.png", // Updated
+    image: "/driveways/stone-driveway-landscape-lake-resident.jpeg", // Updated driveways service card to use new stone driveway image
     slug: "driveways",
     details: "Professional driveway installation designed to last and impress.",
   },

@@ -218,13 +218,13 @@ export default function imageSitemap(): MetadataRoute.Sitemap {
 
     // Service Category Images - Driveways
     {
-      url: `${BASE_URL}/driveways/hero.png`,
+      url: `${BASE_URL}/driveways/stone-driveway-landscape-lake-resident.jpeg`,
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
         {
-          url: `${BASE_URL}/driveways/hero.png`,
+          url: `${BASE_URL}/driveways/stone-driveway-landscape-lake-resident.jpeg`,
           title: "Professional Driveway Installation and Repair",
           caption: "Expert driveway construction using concrete, asphalt, and paver materials",
         },
