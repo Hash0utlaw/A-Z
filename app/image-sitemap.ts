@@ -173,13 +173,13 @@ export default function imageSitemap(): MetadataRoute.Sitemap {
 
     // Service Category Images - Water Features
     {
-      url: `${BASE_URL}/water-features/hero.png`,
+      url: `${BASE_URL}/water-features/backyard-pool-waterfall-resident.jpeg`,
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
         {
-          url: `${BASE_URL}/water-features/hero.png`,
+          url: `${BASE_URL}/water-features/backyard-pool-waterfall-resident.jpeg`,
           title: "Custom Water Feature Design and Installation",
           caption: "Professional water feature construction including fountains, ponds, and waterfalls",
         },

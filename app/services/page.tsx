@@ -9,7 +9,6 @@ import {
   Car,
   Flame,
   Droplet,
-  Tent,
   Scissors,
   TreePine,
   SunSnow,
@@ -69,18 +68,9 @@ const hardscapeServices = [
     title: "Water Features",
     description: "Designing and integrating beautiful fountains, ponds, and waterfalls. (Service offering expanding)",
     icon: Droplet,
-    image: "/water-features/hero.png", // Updated
+    image: "/water-features/backyard-pool-waterfall-resident.jpeg",
     slug: "water-features",
     details: "Add tranquility and visual interest with custom water elements.",
-  },
-  {
-    title: "Pergolas & Gazebos",
-    description:
-      "Elegant outdoor structures providing shade, defining living spaces, and enhancing your landscape's architecture.",
-    icon: Tent,
-    image: "/pergolas-gazebos/hero.png", // Updated
-    slug: "pergolas-gazebos",
-    details: "Custom-built pergolas, arbors, and gazebos to complement your outdoor lifestyle.",
   },
 ]
 

@@ -20,7 +20,7 @@ const waterFeatureData = {
   title: "Water Feature Design & Installation",
   description:
     "Transform your outdoor space into a tranquil oasis with our custom water feature design and installation services. From elegant fountains and natural ponds to breathtaking waterfalls, we create stunning focal points that enhance serenity and beauty.",
-  heroImage: "/water-features/hero.png",
+  heroImage: "/water-features/backyard-pool-waterfall-resident.jpeg",
   benefits: [
     "Creates a calming and relaxing atmosphere in your yard.",
     "Increases property value and aesthetic appeal.",
