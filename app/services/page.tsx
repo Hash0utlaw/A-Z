@@ -90,7 +90,7 @@ const landscapingServices = [
     description:
       "Collaborative design process focusing on your style (modern, southern, etc.), site conditions, and plant preferences for a unique outdoor space.",
     icon: Paintbrush,
-    image: "/garden-design-planting/hero.jpg", // Updated to use new garden design hero image
+    image: "/garden-design-planting/hero.png", // Updated
     slug: "garden-design-planting", // Existing slug, good fit
     details: "From initial concept and plant selection to 3D visualization and final plan.",
   },
