@@ -117,7 +117,7 @@ const landscapingServices = [
     description:
       "Premium artificial turf solutions for putting greens, pet areas, low-maintenance lawns, and problem (e.g. shady) areas.",
     icon: ShieldCheck, // Changed icon
-    image: "/turf-installation/hero.png", // Updated
+    image: "/turf-installation/hero.jpg",
     slug: "turf-installation",
     details: "Durable, realistic-looking turf options for a perfect lawn without the upkeep.",
   },

@@ -18,7 +18,7 @@ const turfInstallationData = {
   title: "Professional Turf Installation",
   description:
     "Achieve a perfect, lush green lawn year-round without the constant maintenance. Our professional artificial turf installation is ideal for busy homeowners, pet owners, and for creating specialized spaces like personal putting greens.",
-  heroImage: "/turf-installation/hero.png",
+  heroImage: "/turf-installation/hero.jpg",
   benefits: [
     "Virtually zero maintenance: no mowing, watering, or fertilizing.",
     "Pet-friendly: durable, easy to clean, and resistant to digging and stains.",
