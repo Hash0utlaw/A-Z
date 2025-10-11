@@ -13,7 +13,7 @@ export default function GardenDesignPlantingPage() {
       category="softscape"
       title="Garden Design & Planting"
       description="Transform your outdoor space with thoughtfully designed gardens that reflect your style and thrive in your environment. From native plant gardens to formal landscapes, we create beautiful, sustainable plantings that provide year-round interest and support local ecosystems."
-      heroImage="/garden-design-planting/hero.png"
+      heroImage="/garden-design-planting/hero.jpg"
       benefits={[
         "Create stunning visual interest with carefully selected plant combinations",
         "Support local wildlife and pollinators with native and beneficial plants",
