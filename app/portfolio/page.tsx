@@ -42,6 +42,7 @@ const projectImages = [
   "/user-uploads/Patio-walkway-landscape-resident.jpg",
   "/user-uploads/residental-backyard-water-fountain.jpeg",
   "/user-uploads/backyard-pool-waterfall-resident.jpeg",
+  "/user-uploads/residential-backyard-gazebo-landscaping.jpeg",
 ]
 
 export default function PortfolioPage() {
