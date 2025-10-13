@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import SimpleLightbox from "./simple-lightbox"
 
 interface GalleryItem {
@@ -40,12 +41,14 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
             className="group relative overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
             onClick={() => openLightbox(index)}
           >
-            <div className="aspect-[4/3] w-full overflow-hidden">
-              <img
+            <div className="aspect-[4/3] w-full overflow-hidden relative">
+              <Image
                 src={item.image || "/placeholder.svg"}
                 alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading={index < 6 ? "eager" : "lazy"}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                priority={index < 6}
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

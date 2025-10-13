@@ -7,6 +7,8 @@ interface OptimizedImageProps {
   priority?: boolean
   width?: number
   height?: number
+  sizes?: string
+  fill?: boolean
 }
 
 export default function OptimizedImage({
@@ -16,33 +18,31 @@ export default function OptimizedImage({
   priority = false,
   width,
   height,
+  sizes,
+  fill = false,
 }: OptimizedImageProps) {
-  // Check if the src is a placeholder URL
-  const isPlaceholder = src.includes("/placeholder.svg")
-
-  // For placeholder images, use the Image component with the full URL
-  if (isPlaceholder) {
+  if (fill) {
     return (
       <Image
         src={src || "/placeholder.svg"}
         alt={alt}
-        width={width ?? 800}
-        height={height ?? 600}
+        fill
         className={className}
         priority={priority}
+        sizes={sizes || "100vw"}
       />
     )
   }
 
-  // For regular images, use a regular img tag for simplicity
   return (
-    <img
+    <Image
       src={src || "/placeholder.svg"}
       alt={alt}
-      width={width}
-      height={height}
+      width={width ?? 800}
+      height={height ?? 600}
       className={className}
-      loading={priority ? "eager" : "lazy"}
+      priority={priority}
+      sizes={sizes}
     />
   )
 }

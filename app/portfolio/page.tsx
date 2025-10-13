@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import GalleryGrid from "@/components/gallery-grid"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -51,10 +52,13 @@ export default function PortfolioPage() {
       {/* Hero Section */}
       <section className="relative bg-gray-900 text-white py-24 md:py-32">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/hero-landscape.png"
             alt="Beautifully landscaped property showcase"
-            className="w-full h-full object-cover opacity-80"
+            fill
+            className="object-cover opacity-80"
+            priority
+            sizes="100vw"
           />
           {/* Subtle dark overlay for text readability */}
           <div className="absolute inset-0 bg-black/40"></div>
