@@ -73,7 +73,7 @@ export default function ServicePageTemplate({
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{title}</h1>
               <p className="text-xl text-white/90 mb-8">{description}</p>
-              <Link href="/#contact">
+              <Link href="/contact">
                 <Button size="lg" className="bg-kelly-500 hover:bg-kelly-600 text-white">
                   Get a Free Quote
                 </Button>
@@ -246,7 +246,7 @@ export default function ServicePageTemplate({
               to life.
             </p>
             <Link
-              href="/#contact"
+              href="/contact"
               className="inline-block bg-white text-kelly-500 hover:bg-kelly-50 px-8 py-3 rounded-md font-semibold transition-colors"
             >
               Get Your Free Estimate
