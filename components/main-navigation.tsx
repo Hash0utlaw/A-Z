@@ -11,7 +11,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { ChevronDown, Leaf, Hammer, Menu, X, Grid } from "lucide-react"
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+import { ChevronDown, Leaf, Hammer, Menu, Grid, Home, User, Briefcase, Phone } from "lucide-react"
 import OptimizedImage from "@/components/optimized-image"
 
 export function MainNavigation() {
@@ -138,95 +139,132 @@ export function MainNavigation() {
             variant="ghost"
             size="icon"
             className="text-primary-foreground/80 hover:text-primary-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
           >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Menu className="h-6 w-6" aria-hidden="true" />
-            )}
+            <Menu className="h-6 w-6" aria-hidden="true" />
           </Button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden fixed inset-0 z-40 bg-card text-card-foreground pt-20 px-4 overflow-auto top-[68px]"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation menu"
-        >
-          <nav className="flex flex-col space-y-1" aria-label="Mobile navigation">
-            <Link
-              href="/"
-              className="text-lg py-3 border-b border-border text-primary hover:bg-muted"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-current={pathname === "/" ? "page" : undefined}
-            >
-              Home
+      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0 flex flex-col">
+          <SheetHeader className="px-6 py-6 border-b bg-gradient-to-br from-primary to-primary/90">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center">
+              <OptimizedImage
+                src="/logo-white.png"
+                alt="A-Z Landscapes Logo"
+                width={160}
+                height={45}
+                className="object-contain"
+              />
             </Link>
+          </SheetHeader>
 
-            <div className="py-2 border-b border-border">
-              <span className="text-lg font-medium text-primary">Services</span>
-              <div className="ml-4 mt-2 space-y-1" role="group" aria-label="Services submenu">
-                <Link
-                  href="/services"
-                  className="flex items-center gap-2 text-foreground py-3 hover:bg-muted font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Hammer className="h-4 w-4 text-primary/70" aria-hidden="true" /> Hardscape Services
-                </Link>
-                <Link
-                  href="/services"
-                  className="flex items-center gap-2 text-foreground py-3 hover:bg-muted font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Leaf className="h-4 w-4 text-primary/70" aria-hidden="true" /> Landscaping Services
-                </Link>
+          <nav className="flex-1 overflow-y-auto py-6 px-4" aria-label="Mobile navigation">
+            <div className="space-y-1">
+              {/* Home */}
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  pathname === "/" ? "bg-primary/10 text-primary font-semibold" : "text-foreground hover:bg-muted"
+                }`}
+                aria-current={pathname === "/" ? "page" : undefined}
+              >
+                <Home className="h-5 w-5" aria-hidden="true" />
+                <span className="text-base">Home</span>
+              </Link>
+
+              {/* Services Section */}
+              <div className="pt-2">
+                <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                  Services
+                </div>
+                <div className="space-y-1">
+                  <Link
+                    href="/services"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                      isActive("/services")
+                        ? "bg-primary/10 text-primary font-semibold"
+                        : "text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    <Hammer className="h-5 w-5" aria-hidden="true" />
+                    <span className="text-base">Hardscape Design</span>
+                  </Link>
+                  <Link
+                    href="/services"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                      isActive("/services")
+                        ? "bg-primary/10 text-primary font-semibold"
+                        : "text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    <Leaf className="h-5 w-5" aria-hidden="true" />
+                    <span className="text-base">Landscape Design</span>
+                  </Link>
+                </div>
               </div>
-            </div>
 
-            <Link
-              href="/about"
-              className="text-lg py-3 border-b border-border text-primary hover:bg-muted"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-current={isActive("/about") ? "page" : undefined}
-            >
-              About
-            </Link>
+              {/* About */}
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  isActive("/about") ? "bg-primary/10 text-primary font-semibold" : "text-foreground hover:bg-muted"
+                }`}
+                aria-current={isActive("/about") ? "page" : undefined}
+              >
+                <User className="h-5 w-5" aria-hidden="true" />
+                <span className="text-base">About</span>
+              </Link>
 
-            <div className="py-2 border-b border-border">
-              <span className="text-lg font-medium text-primary">Portfolio</span>
-              <div className="ml-4 mt-2 space-y-1" role="group" aria-label="Portfolio submenu">
-                <Link
-                  href="/portfolio"
-                  className="block text-foreground py-2 hover:bg-muted"
-                  onClick={() => setMobileMenuOpen(false)}
-                  aria-current={isActive("/portfolio") ? "page" : undefined}
-                >
-                  All Projects
-                </Link>
-              </div>
-            </div>
+              {/* Portfolio */}
+              <Link
+                href="/portfolio"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  isActive("/portfolio") ? "bg-primary/10 text-primary font-semibold" : "text-foreground hover:bg-muted"
+                }`}
+                aria-current={isActive("/portfolio") ? "page" : undefined}
+              >
+                <Grid className="h-5 w-5" aria-hidden="true" />
+                <span className="text-base">Portfolio</span>
+              </Link>
 
-            <div className="pt-4">
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                <Button
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-4 text-lg shadow-lg"
-                  size="lg"
-                >
-                  Get a Free Quote
-                </Button>
+              {/* FAQ */}
+              <Link
+                href="/faq"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  isActive("/faq") ? "bg-primary/10 text-primary font-semibold" : "text-foreground hover:bg-muted"
+                }`}
+                aria-current={isActive("/faq") ? "page" : undefined}
+              >
+                <Briefcase className="h-5 w-5" aria-hidden="true" />
+                <span className="text-base">FAQ</span>
               </Link>
             </div>
           </nav>
-        </div>
-      )}
+
+          {/* CTA Button */}
+          <div className="p-6 border-t bg-muted/30">
+            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+              <Button
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-6 text-base shadow-lg"
+                size="lg"
+              >
+                <Phone className="h-5 w-5 mr-2" aria-hidden="true" />
+                Get a Free Quote
+              </Button>
+            </Link>
+          </div>
+        </SheetContent>
+      </Sheet>
     </>
   )
 }
