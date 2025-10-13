@@ -10,13 +10,13 @@ import {
   Flame,
   Droplet,
   Scissors,
-  TreePine,
   SunSnow,
   Paintbrush,
   Layers,
   Wrench,
   Sparkles,
   ShieldCheck,
+  Tent,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -72,6 +72,15 @@ const hardscapeServices = [
     slug: "water-features",
     details: "Add tranquility and visual interest with custom water elements.",
   },
+  {
+    title: "Pergolas & Gazebos",
+    description:
+      "Custom pergolas, gazebos, and shade structures that combine beauty and functionality for your outdoor living space.",
+    icon: Tent,
+    image: "/pergolas-gazebos/Commerical-gazebo-hero.jpeg",
+    slug: "pergolas-gazebos",
+    details: "Create defined outdoor spaces with architectural interest and shade protection.",
+  },
 ]
 
 const landscapingServices = [
@@ -92,15 +101,6 @@ const landscapingServices = [
     image: "/lawn-care-maintenance/hero.jpg", // Updated to use new lawn care hero image
     slug: "lawn-care-maintenance",
     details: "Keeping your property pristine year-round with our dedicated maintenance crews.",
-  },
-  {
-    title: "Tree Services",
-    description:
-      "Professional tree pruning, removal, planting, and health assessments to maintain the safety and beauty of your mature trees.",
-    icon: TreePine,
-    image: "/tree-services/hero.png", // Updated
-    slug: "tree-services",
-    details: "Expert care for one of your landscape's most valuable assets.",
   },
   {
     title: "Artificial Turf Installation",

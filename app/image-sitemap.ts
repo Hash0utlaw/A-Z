@@ -231,32 +231,17 @@ export default function imageSitemap(): MetadataRoute.Sitemap {
       ],
     },
 
-    // Service Category Images - Landscape Lighting
+    // Service Category Images - Pergolas & Gazebos
     {
-      url: `${BASE_URL}/landscape-lighting/hero.png`,
+      url: `${BASE_URL}/pergolas-gazebos/Commerical-gazebo-hero.jpeg`,
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
         {
-          url: `${BASE_URL}/landscape-lighting/hero.png`,
-          title: "Professional Landscape Lighting Installation",
-          caption: "Expert outdoor lighting design for safety, security, and aesthetic enhancement",
-        },
-      ],
-    },
-
-    // Service Category Images - Tree Services
-    {
-      url: `${BASE_URL}/tree-services/hero.png`,
-      lastModified: currentDate,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      images: [
-        {
-          url: `${BASE_URL}/tree-services/hero.png`,
-          title: "Professional Tree Services and Arboriculture",
-          caption: "Expert tree pruning, removal, planting, and health care services",
+          url: `${BASE_URL}/pergolas-gazebos/Commerical-gazebo-hero.jpeg`,
+          title: "Custom Pergola and Gazebo Construction Services",
+          caption: "Professional pergola and gazebo installation for outdoor living spaces and shade structures",
         },
       ],
     },

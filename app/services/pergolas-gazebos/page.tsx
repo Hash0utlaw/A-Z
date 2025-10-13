@@ -13,7 +13,7 @@ export default function PergolasGazebosPage() {
       category="hardscape"
       title="Pergolas & Gazebos"
       description="Define your outdoor living space with custom pergolas, gazebos, and shade structures that combine beauty and functionality."
-      heroImage="/pergolas-gazebos/hero.png"
+      heroImage="/pergolas-gazebos/Commerical-gazebo-hero.jpeg"
       benefits={[
         "Create defined outdoor living and entertaining spaces",
         "Add architectural interest and vertical elements to your landscape",
