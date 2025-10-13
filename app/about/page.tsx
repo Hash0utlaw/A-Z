@@ -44,8 +44,8 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg"
-                alt="A-Z Landscapes aerial view of completed fire pit and patio project"
+                src="/about/residential-stone-steps-retaining-wall-landscaping.jpg"
+                alt="Modern residential home with professional stone steps, natural boulder retaining walls, and terraced landscaping by A-Z Landscapes"
                 fill
                 className="object-cover"
                 priority
