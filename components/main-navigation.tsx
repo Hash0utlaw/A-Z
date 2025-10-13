@@ -11,7 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { ChevronDown, Leaf, Hammer, Menu, Grid, Home, User, Briefcase, Phone } from "lucide-react"
 import OptimizedImage from "@/components/optimized-image"
 
@@ -151,6 +151,7 @@ export function MainNavigation() {
         <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0 flex flex-col">
           <SheetHeader className="px-6 py-6 border-b bg-gradient-to-br from-primary to-primary/90">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <SheetDescription className="sr-only">Main navigation menu for A-Z Landscapes website</SheetDescription>
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center">
               <OptimizedImage
                 src="/logo-white.png"
