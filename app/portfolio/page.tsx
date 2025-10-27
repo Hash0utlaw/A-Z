@@ -44,6 +44,10 @@ const projectImages = [
   "/user-uploads/residental-backyard-water-fountain.jpeg",
   "/user-uploads/backyard-pool-waterfall-resident.jpeg",
   "/user-uploads/residential-backyard-gazebo-landscaping.jpeg",
+  "/user-uploads/retaining-wall-terraced-residential-front-yard.jpeg",
+  "/user-uploads/curved-retaining-wall-paver-patio-landscape-lighting.jpeg",
+  "/user-uploads/stacked-stone-retaining-wall-curved-residential.jpeg",
+  "/user-uploads/natural-stone-retaining-wall-dry-creek-bed-transformation.jpg",
 ]
 
 export default function PortfolioPage() {
