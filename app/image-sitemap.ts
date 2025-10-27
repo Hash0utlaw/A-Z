@@ -203,13 +203,13 @@ export default function imageSitemap(): MetadataRoute.Sitemap {
 
     // Service Category Images - Retaining Walls
     {
-      url: `${BASE_URL}/retaining-walls/hero.png`,
+      url: `${BASE_URL}/retaining-walls/retaining-wall-residential-image.jpeg`,
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
         {
-          url: `${BASE_URL}/retaining-walls/hero.png`,
+          url: `${BASE_URL}/retaining-walls/retaining-wall-residential-image.jpeg`,
           title: "Professional Retaining Wall Construction",
           caption: "Durable retaining wall installation for erosion control and landscape terracing",
         },

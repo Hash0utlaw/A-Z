@@ -12,7 +12,7 @@ const retainingWallsData = {
   title: "Durable & Decorative Retaining Walls",
   description:
     "A-Z Landscapes designs and builds structurally sound and aesthetically pleasing retaining walls. We specialize in using natural stone, boulders, and manufactured block systems to manage slopes, prevent erosion, and create more usable space.",
-  heroImage: "/retaining-walls/hero.png",
+  heroImage: "/retaining-walls/retaining-wall-residential-image.jpeg",
   benefits: [
     "Effectively manage sloped terrain and prevent costly soil erosion.",
     "Create more usable flat areas for patios, gardens, or lawns.",

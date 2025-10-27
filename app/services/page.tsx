@@ -43,7 +43,7 @@ const hardscapeServices = [
     description:
       "Functional and decorative walls using natural stone, boulders, or manufactured blocks to manage slopes and create usable space.",
     icon: Building,
-    image: "/retaining-walls/hero.png", // Updated
+    image: "/retaining-walls/retaining-wall-residential-image.jpeg", // Updated retaining walls service card image to new residential photo
     slug: "retaining-walls",
     details: "Expertly built retaining walls for structural integrity and aesthetic appeal.",
   },
@@ -263,6 +263,7 @@ function ServiceCard({
           width={400}
           height={300}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
       <CardContent className="p-6 flex flex-col flex-grow">
