@@ -37,6 +37,7 @@ export default function ContactPage() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [isGoogleLoaded, setIsGoogleLoaded] = useState(false)
   const [addressValidation, setAddressValidation] = useState<"valid" | "invalid" | "idle">("idle")
+  const [isOutOfServiceArea, setIsOutOfServiceArea] = useState(false)
   const [placeholderText, setPlaceholderText] = useState("Enter the address where work will be performed")
   const addressInputRef = useRef<HTMLInputElement>(null)
   const autocompleteRef = useRef<any>(null)
@@ -47,6 +48,7 @@ export default function ContactPage() {
         const autocomplete = new window.google.maps.places.Autocomplete(addressInputRef.current, {
           types: ["address"],
           componentRestrictions: { country: "us" },
+          fields: ["address_components", "formatted_address"],
         })
 
         autocomplete.addListener("place_changed", () => {
@@ -54,6 +56,7 @@ export default function ContactPage() {
 
           if (!place.address_components) {
             setAddressValidation("invalid")
+            setIsOutOfServiceArea(false)
             return
           }
 
@@ -82,6 +85,20 @@ export default function ContactPage() {
             }
           }
 
+          if (state && state !== "NC") {
+            setIsOutOfServiceArea(true)
+            setAddressValidation("invalid")
+            setFormData((prev) => ({
+              ...prev,
+              address: place.formatted_address || "",
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+            }))
+            return
+          }
+
           if (street && city && state && zipCode) {
             setFormData((prev) => ({
               ...prev,
@@ -92,16 +109,18 @@ export default function ContactPage() {
               zipCode,
             }))
             setAddressValidation("valid")
+            setIsOutOfServiceArea(false)
           } else {
             setAddressValidation("invalid")
+            setIsOutOfServiceArea(false)
           }
         })
 
         autocompleteRef.current = autocomplete
-        setPlaceholderText("Start typing your address...")
+        setPlaceholderText("Start typing your NC address...")
       } catch (error) {
         console.error("Error initializing Google Places:", error)
-        setPlaceholderText("Enter your full address with zip code")
+        setPlaceholderText("Enter your full North Carolina address with zip code")
       }
     }
   }, [isGoogleLoaded])
@@ -110,6 +129,7 @@ export default function ContactPage() {
     const { value } = e.target
     setFormData((prev) => ({ ...prev, address: value }))
     setAddressValidation("idle")
+    setIsOutOfServiceArea(false)
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -119,6 +139,11 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (isOutOfServiceArea) {
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
@@ -164,7 +189,7 @@ export default function ContactPage() {
         onLoad={() => setIsGoogleLoaded(true)}
         onError={() => {
           console.error("Failed to load Google Maps API")
-          setPlaceholderText("Enter your full address with zip code")
+          setPlaceholderText("Enter your full North Carolina address with zip code")
         }}
       />
 
@@ -288,20 +313,30 @@ export default function ContactPage() {
                         className={`mt-1 ${
                           addressValidation === "valid"
                             ? "border-green-500 focus:border-green-500 focus:ring-green-500"
-                            : addressValidation === "invalid"
+                            : addressValidation === "invalid" || isOutOfServiceArea
                               ? "border-red-500 focus:border-red-500 focus:ring-red-500"
                               : ""
                         }`}
                         placeholder={placeholderText}
                       />
-                      {addressValidation === "invalid" && (
+                      {isOutOfServiceArea && (
+                        <Alert className="mt-2 border-orange-300 bg-orange-50">
+                          <Phone className="h-4 w-4 text-orange-600" />
+                          <AlertDescription className="text-orange-800">
+                            <strong>Out of Service Area:</strong> We currently only serve North Carolina addresses.
+                            Please call us at <strong>(704) 989-4839</strong> to discuss your project and see if we can
+                            accommodate your location.
+                          </AlertDescription>
+                        </Alert>
+                      )}
+                      {addressValidation === "invalid" && !isOutOfServiceArea && (
                         <p className="text-sm text-red-600 mt-1">
-                          Please select a complete address from the suggestions or enter a valid US address with street,
-                          city, state, and zip code.
+                          Please select a complete North Carolina address from the suggestions or enter a valid NC
+                          address with street, city, state, and zip code.
                         </p>
                       )}
                       {addressValidation === "valid" && (
-                        <p className="text-sm text-green-600 mt-1">Address validated</p>
+                        <p className="text-sm text-green-600 mt-1">Address validated ✓</p>
                       )}
                       <input type="hidden" name="street" value={formData.street} />
                       <input type="hidden" name="city" value={formData.city} />
@@ -348,8 +383,8 @@ export default function ContactPage() {
 
                     <Button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-kelly-500 hover:bg-kelly-600 text-white"
+                      disabled={isSubmitting || isOutOfServiceArea}
+                      className="w-full bg-kelly-500 hover:bg-kelly-600 text-white disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? "Sending..." : "Get My Free Quote"}
                     </Button>
