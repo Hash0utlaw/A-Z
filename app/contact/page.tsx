@@ -39,6 +39,8 @@ export default function ContactPage() {
   const [addressValidation, setAddressValidation] = useState<"valid" | "invalid" | "idle">("idle")
   const [isOutOfServiceArea, setIsOutOfServiceArea] = useState(false)
   const [placeholderText, setPlaceholderText] = useState("Enter the address where work will be performed")
+  const [phoneError, setPhoneError] = useState("")
+  const [emailError, setEmailError] = useState("")
   const addressInputRef = useRef<HTMLInputElement>(null)
   const autocompleteRef = useRef<any>(null)
 
@@ -125,15 +127,64 @@ export default function ContactPage() {
     }
   }, [isGoogleLoaded])
 
-  const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target
-    setFormData((prev) => ({ ...prev, address: value }))
-    setAddressValidation("idle")
-    setIsOutOfServiceArea(false)
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-digit characters
+    const phoneNumber = value.replace(/\D/g, "")
+
+    // Format as (XXX) XXX-XXXX
+    if (phoneNumber.length <= 3) {
+      return phoneNumber
+    } else if (phoneNumber.length <= 6) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`
+    } else {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`
+    }
+  }
+
+  const validatePhone = (phone: string) => {
+    const phoneDigits = phone.replace(/\D/g, "")
+    if (phoneDigits.length === 0) {
+      setPhoneError("")
+      return true
+    }
+    if (phoneDigits.length !== 10) {
+      setPhoneError("Phone number must be 10 digits")
+      return false
+    }
+    setPhoneError("")
+    return true
+  }
+
+  const validateEmail = (email: string) => {
+    if (email.length === 0) {
+      setEmailError("")
+      return true
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      setEmailError("Please enter a valid email address")
+      return false
+    }
+    setEmailError("")
+    return true
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
+
+    if (name === "phone") {
+      const formatted = formatPhoneNumber(value)
+      setFormData((prev) => ({ ...prev, [name]: formatted }))
+      validatePhone(formatted)
+      return
+    }
+
+    if (name === "email") {
+      setFormData((prev) => ({ ...prev, [name]: value }))
+      validateEmail(value)
+      return
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
@@ -141,6 +192,13 @@ export default function ContactPage() {
     e.preventDefault()
 
     if (isOutOfServiceArea) {
+      return
+    }
+
+    const isPhoneValid = validatePhone(formData.phone)
+    const isEmailValid = validateEmail(formData.email)
+
+    if (!isPhoneValid || !isEmailValid) {
       return
     }
 
@@ -284,8 +342,11 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
-                          className="mt-1"
+                          className={`mt-1 ${phoneError ? "border-red-500" : ""}`}
+                          placeholder="(555) 555-5555"
+                          maxLength={14}
                         />
+                        {phoneError && <p className="mt-1 text-sm text-red-600">{phoneError}</p>}
                       </div>
                     </div>
 
@@ -298,8 +359,10 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="mt-1"
+                        className={`mt-1 ${emailError ? "border-red-500" : ""}`}
+                        placeholder="john@example.com"
                       />
+                      {emailError && <p className="mt-1 text-sm text-red-600">{emailError}</p>}
                     </div>
 
                     <div>
@@ -309,7 +372,7 @@ export default function ContactPage() {
                         id="address"
                         name="address"
                         value={formData.address}
-                        onChange={handleAddressChange}
+                        onChange={handleInputChange}
                         className={`mt-1 ${
                           addressValidation === "valid"
                             ? "border-green-500 focus:border-green-500 focus:ring-green-500"
