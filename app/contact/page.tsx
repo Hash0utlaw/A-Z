@@ -26,7 +26,6 @@ export default function ContactPage() {
     email: "",
     phone: "",
     address: "",
-    service: "",
     message: "",
     street: "",
     city: "",
@@ -169,7 +168,7 @@ export default function ContactPage() {
     return true
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
 
     if (name === "phone") {
@@ -221,7 +220,6 @@ export default function ContactPage() {
           email: "",
           phone: "",
           address: "",
-          service: "",
           message: "",
           street: "",
           city: "",
@@ -321,33 +319,33 @@ export default function ContactPage() {
                   )}
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="mt-1"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="phone">Phone Number *</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          required
-                          className={`mt-1 ${phoneError ? "border-red-500" : ""}`}
-                          placeholder="(555) 555-5555"
-                          maxLength={14}
-                        />
-                        {phoneError && <p className="mt-1 text-sm text-red-600">{phoneError}</p>}
-                      </div>
+                    <div>
+                      <Label htmlFor="name">Full Name *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="mt-1"
+                        placeholder="John Smith"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        required
+                        className={`mt-1 ${phoneError ? "border-red-500" : ""}`}
+                        placeholder="(555) 555-5555"
+                        maxLength={14}
+                      />
+                      {phoneError && <p className="mt-1 text-sm text-red-600">{phoneError}</p>}
                     </div>
 
                     <div>
@@ -366,13 +364,14 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="address">Project Address</Label>
+                      <Label htmlFor="address">Project Address *</Label>
                       <Input
                         ref={addressInputRef}
                         id="address"
                         name="address"
                         value={formData.address}
                         onChange={handleInputChange}
+                        required
                         className={`mt-1 ${
                           addressValidation === "valid"
                             ? "border-green-500 focus:border-green-500 focus:ring-green-500"
@@ -394,12 +393,11 @@ export default function ContactPage() {
                       )}
                       {addressValidation === "invalid" && !isOutOfServiceArea && (
                         <p className="text-sm text-red-600 mt-1">
-                          Please select a complete North Carolina address from the suggestions or enter a valid NC
-                          address with street, city, state, and zip code.
+                          Please select a complete North Carolina address from the suggestions.
                         </p>
                       )}
                       {addressValidation === "valid" && (
-                        <p className="text-sm text-green-600 mt-1">Address validated ✓</p>
+                        <p className="text-sm text-green-600 mt-1">Address validated</p>
                       )}
                       <input type="hidden" name="street" value={formData.street} />
                       <input type="hidden" name="city" value={formData.city} />
@@ -408,31 +406,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="service">Service Interested In</Label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleInputChange}
-                        className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-kelly-500 focus:border-kelly-500"
-                      >
-                        <option value="">Select a service...</option>
-                        <option value="patios-walkways">Patios & Walkways</option>
-                        <option value="retaining-walls">Retaining Walls</option>
-                        <option value="fire-features">Fire Features</option>
-                        <option value="outdoor-kitchens">Outdoor Kitchens</option>
-                        <option value="water-features">Water Features</option>
-                        <option value="lawn-care">Lawn Care & Maintenance</option>
-                        <option value="garden-design">Garden Design & Planting</option>
-                        <option value="tree-services">Tree Services</option>
-                        <option value="irrigation">Irrigation Systems</option>
-                        <option value="lighting">Landscape Lighting</option>
-                        <option value="other">Other / Multiple Services</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message">Project Details</Label>
+                      <Label htmlFor="message">Project Details (Optional)</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -440,7 +414,7 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         rows={4}
                         className="mt-1"
-                        placeholder="Tell us about your project, timeline, budget range, and any specific ideas you have in mind..."
+                        placeholder="Tell us about your project ideas, timeline, or any questions you have..."
                       />
                     </div>
 
