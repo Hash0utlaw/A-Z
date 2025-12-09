@@ -23,31 +23,131 @@ export const metadata: Metadata = {
 }
 
 const projectImages = [
-  "/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg",
-  "/user-uploads/backyard-fire-pit-patio-residential.jpeg",
-  "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
-  "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
-  "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
-  "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
-  "/user-uploads/outdoor-kitchen-island-grill-stone-countertop-side-view.jpeg",
-  "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
-  "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
-  "/user-uploads/stone-walkway-residential.jpeg",
-  "/user-uploads/concrete-pad-stone-walkway-residential.jpeg",
-  "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
-  "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
-  "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
-  "/user-uploads/butterfly-garden-flower-residential.jpeg",
-  "/user-uploads/stone-driveway-resident-lake.jpeg",
-  "/user-uploads/lake-driveway-stone-resident.jpeg",
-  "/user-uploads/Patio-walkway-landscape-resident.jpg",
-  "/user-uploads/residental-backyard-water-fountain.jpeg",
-  "/user-uploads/backyard-pool-waterfall-resident.jpeg",
-  "/user-uploads/residential-backyard-gazebo-landscaping.jpeg",
-  "/user-uploads/retaining-wall-terraced-residential-front-yard.jpeg",
-  "/user-uploads/curved-retaining-wall-paver-patio-landscape-lighting.jpeg",
-  "/user-uploads/stacked-stone-retaining-wall-curved-residential.jpeg",
-  "/user-uploads/natural-stone-retaining-wall-dry-creek-bed-transformation.jpg",
+  {
+    src: "/user-uploads/aerial-backyard-fire-pit-patio-hardscape.jpeg",
+    title: "Aerial View Fire Pit Patio",
+    description: "Custom hardscape design with circular fire pit and stone patio",
+  },
+  {
+    src: "/user-uploads/backyard-fire-pit-patio-residential.jpeg",
+    title: "Residential Fire Pit Retreat",
+    description: "Cozy backyard gathering space with built-in seating",
+  },
+  {
+    src: "/user-uploads/backyard-patio-fire-pit-outdoor-kitchen-evening.jpeg",
+    title: "Evening Outdoor Living Space",
+    description: "Complete patio with fire pit and outdoor kitchen at dusk",
+  },
+  {
+    src: "/user-uploads/backyard-pool-linear-fire-pit-night-ambiance.jpeg",
+    title: "Pool & Linear Fire Feature",
+    description: "Modern linear fire pit with poolside ambiance lighting",
+  },
+  {
+    src: "/user-uploads/luxury-pool-fire-feature-evening-lighting.jpeg",
+    title: "Luxury Pool Fire Display",
+    description: "Elegant evening fire feature integrated with pool design",
+  },
+  {
+    src: "/user-uploads/complete-outdoor-kitchen-grill-smoker-storage-cabinets.jpeg",
+    title: "Complete Outdoor Kitchen",
+    description: "Full kitchen with grill, smoker, and custom storage cabinets",
+  },
+  {
+    src: "/user-uploads/outdoor-kitchen-island-grill-stone-countertop-side-view.jpeg",
+    title: "Stone Countertop Kitchen Island",
+    description: "Built-in grill island with natural stone countertops",
+  },
+  {
+    src: "/user-uploads/outdoor-kitchen-night-lighting-stainless-steel-appliances.jpeg",
+    title: "Night-Lit Outdoor Kitchen",
+    description: "Professional stainless steel appliances with ambient lighting",
+  },
+  {
+    src: "/user-uploads/outdoor-kitchen-patio-dining-area-stone-pavers.jpeg",
+    title: "Patio Dining & Kitchen Area",
+    description: "Outdoor entertaining space with stone paver flooring",
+  },
+  {
+    src: "/user-uploads/stone-walkway-residential.jpeg",
+    title: "Natural Stone Walkway",
+    description: "Elegant stone pathway leading through residential landscape",
+  },
+  {
+    src: "/user-uploads/concrete-pad-stone-walkway-residential.jpeg",
+    title: "Concrete & Stone Pathway",
+    description: "Modern concrete pad with decorative stone walkway accents",
+  },
+  {
+    src: "/user-uploads/decorative-concrete-outdoor-living-space.jpeg",
+    title: "Decorative Concrete Patio",
+    description: "Stamped decorative concrete outdoor living area",
+  },
+  {
+    src: "/user-uploads/natural-stone-steps-retaining-wall-landscaping.jpeg",
+    title: "Stone Steps & Retaining Wall",
+    description: "Natural stone stairway with integrated retaining wall",
+  },
+  {
+    src: "/user-uploads/completed-artificial-turf-pool-landscape-design.jpeg",
+    title: "Artificial Turf Pool Landscape",
+    description: "Low-maintenance turf installation around pool area",
+  },
+  {
+    src: "/user-uploads/butterfly-garden-flower-residential.jpeg",
+    title: "Butterfly Garden Installation",
+    description: "Colorful pollinator-friendly flower garden design",
+  },
+  {
+    src: "/user-uploads/stone-driveway-resident-lake.jpeg",
+    title: "Lakefront Stone Driveway",
+    description: "Premium stone driveway with scenic lake views",
+  },
+  {
+    src: "/user-uploads/lake-driveway-stone-resident.jpeg",
+    title: "Lake Residence Entry Drive",
+    description: "Custom stone driveway for waterfront property",
+  },
+  {
+    src: "/user-uploads/Patio-walkway-landscape-resident.jpg",
+    title: "Patio & Walkway Design",
+    description: "Integrated patio and walkway landscape installation",
+  },
+  {
+    src: "/user-uploads/residental-backyard-water-fountain.jpeg",
+    title: "Backyard Water Fountain",
+    description: "Tranquil water fountain feature in residential setting",
+  },
+  {
+    src: "/user-uploads/backyard-pool-waterfall-resident.jpeg",
+    title: "Pool Waterfall Feature",
+    description: "Custom waterfall cascading into backyard pool",
+  },
+  {
+    src: "/user-uploads/residential-backyard-gazebo-landscaping.jpeg",
+    title: "Gazebo & Garden Landscape",
+    description: "Elegant gazebo surrounded by professional landscaping",
+  },
+  {
+    src: "/user-uploads/retaining-wall-terraced-residential-front-yard.jpeg",
+    title: "Terraced Front Yard Wall",
+    description: "Multi-level retaining wall with fresh plantings",
+  },
+  {
+    src: "/user-uploads/curved-retaining-wall-paver-patio-landscape-lighting.jpeg",
+    title: "Curved Wall & Paver Patio",
+    description: "Elegant curved retaining wall with landscape lighting",
+  },
+  {
+    src: "/user-uploads/stacked-stone-retaining-wall-curved-residential.jpeg",
+    title: "Stacked Stone Curved Wall",
+    description: "Natural stacked stone retaining wall design",
+  },
+  {
+    src: "/user-uploads/natural-stone-retaining-wall-dry-creek-bed-transformation.jpg",
+    title: "Dry Creek Bed Transformation",
+    description: "Natural stone wall with decorative dry creek bed",
+  },
 ]
 
 export default function PortfolioPage() {
@@ -90,10 +190,10 @@ export default function PortfolioPage() {
           </div>
 
           <GalleryGrid
-            items={projectImages.map((src) => ({
-              image: src,
-              title: "A-Z Landscapes Project",
-              description: "Professional landscaping work",
+            items={projectImages.map((project) => ({
+              image: project.src,
+              title: project.title,
+              description: project.description,
             }))}
           />
         </div>

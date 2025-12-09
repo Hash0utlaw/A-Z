@@ -104,7 +104,7 @@ export default function HomePage() {
             </div>
             <div className="relative mt-8 lg:mt-0">
               <Image
-                src="/hero-landscape.png"
+                src="/user-uploads/Patio-walkway-landscape-resident.jpg"
                 alt="Beautifully landscaped property by A-Z Landscapes"
                 width={800}
                 height={600}
