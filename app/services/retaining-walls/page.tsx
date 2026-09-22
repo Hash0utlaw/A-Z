@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import ServicePageTemplate from "@/components/service-page-template"
 
 export const metadata: Metadata = {
-  title: "Retaining Wall Construction & Design | A-Z Landscapes",
+  title: "Retaining Walls in Huntersville, NC",
   description:
     "A-Z Landscapes builds beautiful, durable retaining walls from natural stone, boulders, and blocks. We solve slope issues and enhance your landscape's usability and appeal.",
 }

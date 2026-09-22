@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import ServicePageTemplate from "@/components/service-page-template"
 
 export const metadata: Metadata = {
-  title: "Water Feature Design & Installation | A-Z Landscapes",
+  title: "Water Features in Huntersville, NC",
   description:
     "A-Z Landscapes creates beautiful custom water features: ponds, waterfalls, and fountains to add tranquility and elegance to your outdoor space.",
   keywords: [

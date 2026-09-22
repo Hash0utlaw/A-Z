@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Pergolas & Gazebos Design & Construction | A-Z Landscapes",
+  title: "Pergolas & Gazebos in Huntersville, NC",
   description:
     "Custom pergolas, gazebos, and shade structures by A-Z Landscapes. Enhance your outdoor living space with beautiful and functional designs.",
 }

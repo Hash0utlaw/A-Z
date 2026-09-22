@@ -6,7 +6,7 @@ import { Award, Leaf, Recycle, Star, Trophy, Users, Heart, MessageSquare, Eye } 
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About A-Z Landscapes | Our Story & Values",
+  title: "Our Story & Values",
   description:
     "Learn about A-Z Landscapes, our founder Zach Wardell, our mission, and our 20+ years of experience in creating beautiful outdoor spaces.",
 }

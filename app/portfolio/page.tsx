@@ -6,7 +6,7 @@ import Link from "next/link"
 import { ArrowRight, Camera } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Our Portfolio | A-Z Landscapes",
+  title: "Landscaping Portfolio",
   description:
     "Explore the stunning landscape transformations by A-Z Landscapes. View our portfolio of completed projects, from patios and walkways to gardens and outdoor living spaces in Your City/Region.",
   keywords: [

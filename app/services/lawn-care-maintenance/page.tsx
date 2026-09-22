@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Lawn Care & Full-Service Maintenance | A-Z Landscapes",
+  title: "Lawn Care & Maintenance in Huntersville, NC",
   description:
     "A-Z Landscapes provides comprehensive lawn care and landscape maintenance. Mowing, fertilization, weed control, seasonal cleanups. Reliable service.",
 }

@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Outdoor Kitchens & Fire Features | A-Z Landscapes",
+  title: "Outdoor Kitchens & Firepits in Huntersville",
   description:
     "Design and build services for custom outdoor kitchens, fire pits, and fireplaces. Create your perfect outdoor entertainment space with A-Z Landscapes.",
 }

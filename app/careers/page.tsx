@@ -2,7 +2,7 @@ import CareersPageClient from "./CareersPageClient" // Default import
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Join Our Team | Careers at A-Z Landscapes",
+  title: "Landscaping Careers",
   description:
     "Looking for a rewarding career in landscaping? A-Z Landscapes is hiring passionate individuals. Apply today and grow with us!",
   keywords:

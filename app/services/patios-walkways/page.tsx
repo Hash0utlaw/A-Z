@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Patios & Walkways | A-Z Landscapes",
+  title: "Patios & Walkways in Huntersville, NC",
   description:
     "Create beautiful outdoor living spaces with custom patios and walkways by A-Z Landscapes. Expert design and installation of stone, concrete, and paver surfaces.",
 }

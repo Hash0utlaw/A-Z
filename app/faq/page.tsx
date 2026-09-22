@@ -4,7 +4,7 @@ import { Mail, Phone, HelpCircle, Wrench, Clock, DollarSign, Leaf } from "lucide
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "FAQ | A-Z Landscapes Landscaping & Hardscaping",
+  title: "Frequently Asked Questions",
   description:
     "Find answers to frequently asked questions about A-Z Landscapes' services, processes, service areas, and how to get started with your project.",
 }

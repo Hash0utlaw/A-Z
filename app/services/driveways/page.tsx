@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Driveways | A-Z Landscapes",
+  title: "Driveways in Huntersville & Lake Norman",
   description:
     "Professional driveway installation and repair services by A-Z Landscapes. Concrete, asphalt, paver, and gravel driveways designed for durability and curb appeal.",
 }

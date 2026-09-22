@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Landscape Lighting Design & Installation | A-Z Landscapes",
+  title: "Landscape Lighting in Huntersville, NC",
   description:
     "Custom LED landscape lighting by A-Z Landscapes. Enhance beauty, safety, and ambiance with uplighting, path lights, and more. Energy-efficient and professionally installed.",
 }

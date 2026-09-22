@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Garden Design & Planting | A-Z Landscapes",
+  title: "Garden Design & Planting in Huntersville",
   description:
     "Professional garden design and planting services by A-Z Landscapes. Create beautiful, sustainable gardens with native plants, perennials, and custom landscape designs.",
 }

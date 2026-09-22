@@ -8,7 +8,7 @@ import Image from "next/image"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Artificial Turf Installation Services | A-Z Landscapes",
+  title: "Turf Installation in Huntersville, NC",
   description:
     "Expert artificial turf installation for pristine, low-maintenance lawns, pet areas, and putting greens. Durable, realistic, and professionally installed by A-Z Landscapes.",
 }

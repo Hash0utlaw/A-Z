@@ -2,7 +2,7 @@ import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Irrigation & Drainage Solutions | A-Z Landscapes",
+  title: "Irrigation & Drainage in Huntersville, NC",
   description:
     "A-Z Landscapes offers expert irrigation system installation, maintenance, and drainage solutions (French drains, culverts) for healthy landscapes.",
 }
