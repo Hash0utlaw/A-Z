@@ -12,6 +12,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin, Clock, CheckCircle, Star, MessageSquare, Calendar, Award } from "lucide-react"
 import Script from "next/script"
+import { BUSINESS } from "@/lib/business"
 
 declare global {
   interface Window {
@@ -264,7 +265,7 @@ export default function ContactPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-kelly-400 mr-2" />
-                    <span className="text-lg">(704) 989-4839</span>
+                    <span className="text-lg">{BUSINESS.phoneDisplay}</span>
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-kelly-400 mr-2" />
@@ -386,7 +387,7 @@ export default function ContactPage() {
                           <Phone className="h-4 w-4 text-orange-600" />
                           <AlertDescription className="text-orange-800">
                             <strong>Out of Service Area:</strong> We currently only serve North Carolina addresses.
-                            Please call us at <strong>(704) 989-4839</strong> to discuss your project and see if we can
+                            Please call us at <strong>{BUSINESS.phoneDisplay}</strong> to discuss your project and see if we can
                             accommodate your location.
                           </AlertDescription>
                         </Alert>
@@ -441,7 +442,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-navy-800">Phone</h3>
-                        <p className="text-gray-600">(704) 989-4839</p>
+                        <p className="text-gray-600">{BUSINESS.phoneDisplay}</p>
                         <p className="text-sm text-gray-500">Call or text for fastest response</p>
                       </div>
                     </div>
@@ -463,8 +464,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-navy-800">Service Area</h3>
-                        <p className="text-gray-600">Charlotte, NC and surrounding areas</p>
-                        <p className="text-sm text-gray-500">50-mile radius from Charlotte</p>
+                        <p className="text-gray-600">
+                          {BUSINESS.locality}, {BUSINESS.region} and surrounding areas
+                        </p>
+                        <p className="text-sm text-gray-500">Serving the greater Lake Norman region</p>
                       </div>
                     </div>
 
@@ -517,7 +520,7 @@ export default function ContactPage() {
                     </p>
                     <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
                       <Phone className="mr-2 h-4 w-4" />
-                      Call Rapid Response Line: (704) 989-4839
+                      Call Rapid Response Line: {BUSINESS.phoneDisplay}
                     </Button>
                   </CardContent>
                 </Card>
@@ -531,29 +534,13 @@ export default function ContactPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-navy-900 mb-4">Areas We Serve</h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                A-Z Landscapes proudly serves Charlotte, NC and the surrounding communities within a 50-mile radius.
+                {BUSINESS.name} proudly serves {BUSINESS.locality}, {BUSINESS.region} and the surrounding Lake Norman
+                communities.
               </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
-              {[
-                "Charlotte",
-                "Gastonia",
-                "Concord",
-                "Huntersville",
-                "Matthews",
-                "Mint Hill",
-                "Pineville",
-                "Cornelius",
-                "Davidson",
-                "Mooresville",
-                "Kannapolis",
-                "Monroe",
-                "Indian Trail",
-                "Waxhaw",
-                "Belmont",
-                "Mount Holly",
-              ].map((city) => (
+              {BUSINESS.areaServed.map((city) => (
                 <div key={city} className="bg-gray-50 p-4 rounded-lg">
                   <p className="font-medium text-navy-800">{city}</p>
                 </div>

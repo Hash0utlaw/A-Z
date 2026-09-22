@@ -7,17 +7,47 @@ import { MainNavigation } from "@/components/main-navigation"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { SkipNavigation } from "@/components/skip-navigation"
+import { BUSINESS } from "@/lib/business"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BUSINESS.domain),
   title: {
     default: "A-Z Landscapes | Top Landscaping & Hardscaping Services",
     template: "%s | A-Z Landscapes",
   },
   description:
     "A-Z Landscapes offers expert landscaping, hardscaping, design, and maintenance services. Transform your outdoor space with our passionate team. Free estimates!",
-  generator: "v0.app",
+  alternates: {
+    canonical: "./",
+  },
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: BUSINESS.name,
+  url: BUSINESS.domain,
+  telephone: BUSINESS.phoneE164,
+  logo: `${BUSINESS.domain}/logo.png`,
+  image: `${BUSINESS.domain}/logo.png`,
+  founder: {
+    "@type": "Person",
+    name: BUSINESS.founder,
+  },
+  foundingDate: BUSINESS.foundingYear,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: BUSINESS.locality,
+    addressRegion: BUSINESS.region,
+    postalCode: BUSINESS.postalCode,
+    addressCountry: "US",
+  },
+  areaServed: BUSINESS.areaServed.map((city) => ({
+    "@type": "City",
+    name: city,
+  })),
 }
 
 export default function RootLayout({
@@ -28,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <SkipNavigation />
           <div className="flex min-h-screen flex-col">

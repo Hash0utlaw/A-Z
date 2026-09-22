@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Phone, Mail, MapPin } from "lucide-react"
 import OptimizedImage from "@/components/optimized-image"
+import { BUSINESS } from "@/lib/business"
 
 export function Footer() {
   return (
@@ -12,14 +13,15 @@ export function Footer() {
             <Link href="/" className="block mb-4">
               <OptimizedImage
                 src="/logo-white.png"
-                alt="A-Z Landscapes Logo"
+                alt={`${BUSINESS.name} Logo`}
                 width={180}
                 height={50}
                 className="object-contain"
               />
             </Link>
             <p className="mb-4">
-              Transforming outdoor spaces with professional landscaping and hardscaping services since 2008.
+              Transforming outdoor spaces with professional landscaping and hardscaping services since{" "}
+              {BUSINESS.foundingYear}.
             </p>
           </div>
 
@@ -98,11 +100,15 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-kelly-400 mt-0.5" />
-                <span>Main Office Charlotte NC</span>
+                <span>
+                  Serving {BUSINESS.locality}, {BUSINESS.region}
+                </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-kelly-400" />
-                <span>(704) 989-4839</span>
+                <a href={`tel:${BUSINESS.phoneE164}`} className="hover:text-white transition-colors">
+                  {BUSINESS.phoneDisplay}
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-kelly-400" />
@@ -115,7 +121,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-navy-800 mt-12 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} A-Z Landscapes. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
+          </p>
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
