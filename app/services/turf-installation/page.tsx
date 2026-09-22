@@ -6,6 +6,7 @@ import { CheckCircle, Star, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Turf Installation in Huntersville, NC",
@@ -54,20 +55,7 @@ const turfInstallationData = {
         "A final power brushing makes the turf blades stand up for a perfect, natural look. We ensure your property is left clean and your new lawn is ready to enjoy.",
     },
   ],
-  testimonials: [
-    {
-      name: "Sarah Williams",
-      location: "Chatham, IL",
-      rating: 5,
-      text: "We opted for artificial turf in our backyard due to shade issues and our dogs, and we couldn't be happier. It looks incredibly realistic, drains perfectly, and has eliminated mud and brown spots. Worth every penny!",
-    },
-    {
-      name: "The Davis Family",
-      location: "Springfield, IL",
-      rating: 5,
-      text: "The putting green A-Z installed is amazing! The quality is top-notch and the installation was fast and professional. It's the highlight of our backyard.",
-    },
-  ],
+  testimonials: getVerifiedTestimonials("turf-installation"),
   faqs: [
     {
       question: "How much maintenance does artificial turf require?",
@@ -269,36 +257,38 @@ export default function TurfInstallationPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Testimonials</Badge>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
-            <p className="text-lg text-gray-600">
-              Read reviews from satisfied customers who have experienced professional turf installation services.
-            </p>
-          </div>
+      {turfInstallationData.testimonials.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Testimonials</Badge>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
+              <p className="text-lg text-gray-600">
+                Read reviews from satisfied customers who have experienced professional turf installation services.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {turfInstallationData.testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white border-navy-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {turfInstallationData.testimonials.map((testimonial, index) => (
+                <Card key={index} className="bg-white border-navy-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+                    <div>
+                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600">{testimonial.location}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">

@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Driveways in Huntersville & Lake Norman",
@@ -82,32 +83,7 @@ export default function DrivewaysPage() {
           description: "Eco-friendly permeable pavers that manage stormwater runoff",
         },
       ]}
-      testimonials={[
-        {
-          name: "John & Mary Peterson",
-          location: "Residential Clients",
-          rating: 5,
-          text: "A-Z Landscapes installed our concrete driveway with such precision and attention to detail. The drainage is perfect and it looks fantastic. Excellent workmanship!",
-        },
-        {
-          name: "Robert Thompson",
-          location: "Residential Client",
-          rating: 5,
-          text: "Our new paver driveway has completely transformed our home's curb appeal. The quality of installation and materials is outstanding. Highly recommend A-Z Landscapes.",
-        },
-        {
-          name: "Lisa & David Chen",
-          location: "Residential Clients",
-          rating: 5,
-          text: "The team at A-Z handled our circular driveway project professionally from start to finish. The design is beautiful and the installation was completed on time and on budget.",
-        },
-        {
-          name: "Michael Rodriguez",
-          location: "Residential Client",
-          rating: 5,
-          text: "A-Z installed a concrete pad and walkway system for us that perfectly balances functionality with aesthetic appeal. The craftsmanship is evident in every detail.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("driveways")}
       faqs={[
         {
           question: "What's the difference between concrete, asphalt, and paver driveways?",

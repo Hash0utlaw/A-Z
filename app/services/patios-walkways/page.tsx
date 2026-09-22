@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Patios & Walkways in Huntersville, NC",
@@ -88,32 +89,7 @@ export default function PatiosWalkwaysPage() {
           description: "Decorative stamped concrete with natural stone appearance",
         },
       ]}
-      testimonials={[
-        {
-          name: "Jennifer & Mark Stevens",
-          location: "Residential Clients",
-          rating: 5,
-          text: "Our new paver patio has become the heart of our outdoor entertaining. A-Z Landscapes created exactly what we envisioned - a beautiful space that flows perfectly with our home and garden.",
-        },
-        {
-          name: "Patricia Williams",
-          location: "Residential Client",
-          rating: 5,
-          text: "The flagstone walkway A-Z installed has completely transformed our front yard. The craftsmanship is exceptional, and the design perfectly complements our home's architecture.",
-        },
-        {
-          name: "Michael Chen",
-          location: "Residential Client",
-          rating: 5,
-          text: "We're thrilled with our new stamped concrete patio. It looks like expensive natural stone but was much more budget-friendly. The team was professional and the quality is outstanding.",
-        },
-        {
-          name: "David & Lisa Thompson",
-          location: "Residential Clients",
-          rating: 5,
-          text: "The aerial view of our completed patio project really shows the incredible scope of work A-Z accomplished. The different paver patterns and integration with our landscape is masterful.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("patios-walkways")}
       faqs={[
         {
           question: "What's the difference between pavers, flagstone, and stamped concrete?",

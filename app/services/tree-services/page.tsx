@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Tree Services in Huntersville & Lake Norman",
@@ -86,26 +87,7 @@ export default function TreeServicesPage() {
           description: "Rapid response to storm damage and hazardous tree situations",
         },
       ]}
-      testimonials={[
-        {
-          name: "Richard & Karen Davis",
-          location: "Residential Clients",
-          rating: 5,
-          text: "A-Z Landscapes did an amazing job pruning our large oak trees. Their arborists were knowledgeable, careful with our property, and the trees look healthier than ever.",
-        },
-        {
-          name: "Linda Martinez",
-          location: "Residential Client",
-          rating: 5,
-          text: "When a storm damaged several trees on our property, A-Z responded quickly and professionally. They removed the hazardous limbs and helped save trees we thought were lost.",
-        },
-        {
-          name: "Community Association Board",
-          location: "HOA Client",
-          rating: 5,
-          text: "We've used A-Z for all our tree care needs for years. Their comprehensive tree management program has improved the health and appearance of all the trees in our community.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("tree-services")}
       faqs={[
         {
           question: "When is the best time to prune trees?",

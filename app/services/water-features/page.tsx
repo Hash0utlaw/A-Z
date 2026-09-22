@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import ServicePageTemplate from "@/components/service-page-template"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Water Features in Huntersville, NC",
@@ -97,26 +98,7 @@ const waterFeatureData = {
         "A beautifully designed, clear koi pond providing a peaceful home for colorful fish, complete with proper filtration.",
     },
   ],
-  testimonials: [
-    {
-      name: "Jennifer S.",
-      location: "Maplewood, NJ",
-      rating: 5,
-      text: "A-Z Landscapes transformed our backyard with a stunning waterfall and pond. It's now our favorite place to relax. The team was incredibly professional and attentive to detail.",
-    },
-    {
-      name: "David R.",
-      location: "Summit, NJ",
-      rating: 5,
-      text: "We wanted a unique fountain for our courtyard, and A-Z delivered beyond our expectations. The craftsmanship is superb, and it's become a real centerpiece.",
-    },
-    {
-      name: "Maria G.",
-      location: "Chatham, NJ",
-      rating: 4,
-      text: "Our pondless waterfall is beautiful and so easy to maintain. The installation was quick and efficient. We get so many compliments!",
-    },
-  ],
+  testimonials: getVerifiedTestimonials("water-features"),
   faqs: [
     {
       question: "How much maintenance does a water feature typically require?",

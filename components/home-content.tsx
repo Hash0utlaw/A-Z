@@ -7,6 +7,9 @@ import { Star, Leaf, Hammer, CheckCircle, Users, Award, Heart, ArrowRight } from
 import Image from "next/image"
 import Link from "next/link"
 import { BUSINESS } from "@/lib/business"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
+
+const homeTestimonials = getVerifiedTestimonials("home")
 
 export default function HomeContent() {
   return (
@@ -271,53 +274,42 @@ export default function HomeContent() {
       </section>
 
       {/* Testimonials Snippet Section */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Client Love</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Hear From Our Happy Customers</h2>
+      {homeTestimonials.length > 0 && (
+        <section className="py-16 sm:py-20 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-12 sm:mb-16">
+              <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Client Love</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Hear From Our Happy Customers</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {homeTestimonials.map((testimonial, index) => (
+                <Card key={index} className="bg-white border-navy-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-sm sm:text-base text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center mt-8 sm:mt-12">
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-navy-500 text-navy-700 hover:bg-kelly-50 bg-transparent"
+                >
+                  Share Your Experience
+                </Button>
+              </Link>
+            </div>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                name: "Sarah J.",
-                text: "A-Z Landscapes turned our backyard vision into a stunning reality. Professional, creative, and a joy to work with!",
-              },
-              {
-                name: "Mike C.",
-                text: "The best landscaping company we've ever hired. Their attention to detail is unmatched.",
-              },
-              {
-                name: "Emily R.",
-                text: "Our new patio and garden are incredible. Thank you, A-Z Landscapes, for your amazing work!",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="bg-white border-navy-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-sm sm:text-base text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8 sm:mt-12">
-            <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-navy-500 text-navy-700 hover:bg-kelly-50 bg-transparent"
-              >
-                Share Your Experience
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Contact Section */}
       <section id="contact" className="py-16 sm:py-20 bg-white">

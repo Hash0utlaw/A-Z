@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Outdoor Kitchens & Firepits in Huntersville",
@@ -82,32 +83,7 @@ const outdoorKitchensData = {
       description: "Integrated lighting showcases the beauty of this outdoor kitchen after dark.",
     },
   ],
-  testimonials: [
-    {
-      name: "The Thompsons",
-      location: "Springfield, IL",
-      rating: 5,
-      text: "Our A-Z Landscapes outdoor kitchen is a game-changer! We entertain constantly now. The quality is outstanding.",
-    },
-    {
-      name: "Daniel W.",
-      location: "Chatham, IL",
-      rating: 5,
-      text: "The fire pit area A-Z built is our family's favorite spot. Beautiful stonework and perfectly integrated with our patio.",
-    },
-    {
-      name: "Rebecca & Tom Martinez",
-      location: "Residential Clients",
-      rating: 5,
-      text: "The circular fire pit with curved seating that A-Z designed has become the heart of our backyard. The aerial view really shows how well it integrates with our entire landscape - it's absolutely stunning.",
-    },
-    {
-      name: "Sarah Johnson",
-      location: "Residential Client",
-      rating: 5,
-      text: "A-Z Landscapes transformed our wooded backyard into an incredible entertainment space. The fire pit design with the decorative drainage and boulder placement is pure artistry.",
-    },
-  ],
+  testimonials: getVerifiedTestimonials("outdoor-kitchens-fire-features"),
   faqs: [
     {
       question: "What's the difference between a wood-burning and gas fire feature?",

@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Pergolas & Gazebos in Huntersville, NC",
@@ -85,26 +86,7 @@ export default function PergolasGazebosPage() {
           description: "Home-attached pergola creating an outdoor room extension",
         },
       ]}
-      testimonials={[
-        {
-          name: "Christopher & Lisa Hamilton",
-          location: "Residential Clients",
-          rating: 5,
-          text: "Our cedar pergola from A-Z has transformed our backyard into an outdoor living room. It provides just the right amount of shade while looking absolutely beautiful with the climbing vines we planted.",
-        },
-        {
-          name: "Riverside Community Center",
-          location: "Commercial Client",
-          rating: 5,
-          text: "A-Z built a series of gazebos throughout our community park that have become favorite gathering spots. The quality of construction is exceptional, and they worked closely with us on every design detail.",
-        },
-        {
-          name: "The Rodriguez Family",
-          location: "Residential Clients",
-          rating: 5,
-          text: "We love our new poolside cabana! A-Z designed it to match our home perfectly, and the added shade has made our pool area usable even on the hottest days. The built-in lighting lets us enjoy the space well into the evening.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("pergolas-gazebos")}
       faqs={[
         {
           question: "What's the difference between a pergola and a gazebo?",

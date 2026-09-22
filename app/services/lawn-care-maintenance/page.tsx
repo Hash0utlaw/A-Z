@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Lawn Care & Maintenance in Huntersville, NC",
@@ -87,23 +88,7 @@ export default function LawnCareMaintenancePage() {
           description: "Core aeration service to improve soil health and grass growth",
         },
       ]}
-      testimonials={[
-        {
-          name: "David & Lisa T.",
-          rating: 5,
-          text: "A-Z Landscapes has kept our lawn looking its best for years. Reliable, thorough, and always professional. We've had them for twelve years and wouldn't trust anyone else!",
-        },
-        {
-          name: "Amanda R., HOA Manager",
-          rating: 5,
-          text: "A-Z Landscapes maintains all common areas in our community impeccably. They are responsive and the quality is outstanding.",
-        },
-        {
-          name: "James W.",
-          rating: 5,
-          text: "My lawn was a disaster. A-Z Landscapes developed a restoration plan, and now it's the best on the block! Their proactive approach makes a huge difference.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("lawn-care-maintenance")}
       faqs={[
         {
           question: "What's included in your full-service maintenance?",

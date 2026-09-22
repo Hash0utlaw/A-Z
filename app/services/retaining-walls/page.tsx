@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import ServicePageTemplate from "@/components/service-page-template"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Retaining Walls in Huntersville, NC",
@@ -80,20 +81,7 @@ const retainingWallsData = {
       description: "A more rustic option, suitable for certain aesthetics and smaller walls.",
     },
   ],
-  testimonials: [
-    {
-      name: "The Jacksons",
-      location: "Springfield, IL",
-      rating: 5,
-      text: "A-Z Landscapes built a beautiful and sturdy retaining wall that solved our erosion problem and gave us more garden space. Highly recommend!",
-    },
-    {
-      name: "Maria B.",
-      location: "Chatham, IL",
-      rating: 5,
-      text: "The boulder wall is a work of art! It completely transformed our difficult slope. The team was professional and efficient.",
-    },
-  ],
+  testimonials: getVerifiedTestimonials("retaining-walls"),
   faqs: [
     {
       question: "What is the best material for my retaining wall?",

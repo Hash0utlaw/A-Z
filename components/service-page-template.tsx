@@ -23,7 +23,7 @@ interface ServicePageProps {
   }[]
   testimonials: {
     name: string
-    location: string
+    location?: string
     rating: number
     text: string
   }[]
@@ -157,36 +157,38 @@ export default function ServicePageTemplate({
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Testimonials</Badge>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
-            <p className="text-lg text-gray-600">
-              Read reviews from satisfied customers who have experienced our {title.toLowerCase()} services.
-            </p>
-          </div>
+      {testimonials.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Testimonials</Badge>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
+              <p className="text-lg text-gray-600">
+                Read reviews from satisfied customers who have experienced our {title.toLowerCase()} services.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white border-navy-100">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="bg-white border-navy-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+                    <div>
+                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600">{testimonial.location}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">

@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Garden Design & Planting in Huntersville",
@@ -82,32 +83,7 @@ export default function GardenDesignPlantingPage() {
           description: "Professional foundation plantings that complement home architecture",
         },
       ]}
-      testimonials={[
-        {
-          name: "Margaret Wilson",
-          location: "Residential Client",
-          rating: 5,
-          text: "A-Z Landscapes created the most beautiful butterfly garden for us. We now have monarchs, swallowtails, and hummingbirds visiting daily. It's like having our own nature preserve!",
-        },
-        {
-          name: "Robert & Susan Davis",
-          location: "Residential Clients",
-          rating: 5,
-          text: "The perennial garden A-Z designed has something blooming from spring through fall. The plant combinations are stunning and the maintenance is much easier than we expected.",
-        },
-        {
-          name: "Jennifer Martinez",
-          location: "Residential Client",
-          rating: 5,
-          text: "Our native plant garden is not only beautiful but has significantly reduced our water usage. A-Z's knowledge of local plants and growing conditions is exceptional.",
-        },
-        {
-          name: "Thomas Anderson",
-          location: "Residential Client",
-          rating: 5,
-          text: "The shade garden A-Z created under our mature trees has transformed a previously unused area into our favorite peaceful retreat. The plant selection is perfect for the conditions.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("garden-design-planting")}
       faqs={[
         {
           question: "What's the difference between native plants and non-native plants?",

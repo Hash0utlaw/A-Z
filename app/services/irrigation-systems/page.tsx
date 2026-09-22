@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Irrigation & Drainage in Huntersville, NC",
@@ -87,23 +88,7 @@ export default function IrrigationSystemsPage() {
           description: "Professional seasonal checks and adjustments for optimal performance.",
         },
       ]}
-      testimonials={[
-        {
-          name: "Jason & Emily W.",
-          rating: 5,
-          text: "A-Z Landscapes installed our irrigation, and it's been flawless. Our lawn is green, and we're using less water!",
-        },
-        {
-          name: "Westside HOA",
-          rating: 5,
-          text: "The smart irrigation system has significantly cut our water bills while keeping our community landscaping beautiful.",
-        },
-        {
-          name: "Sandra P.",
-          rating: 5,
-          text: "The French drain they installed solved our soggy backyard problem completely. Very professional and effective.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("irrigation-systems")}
       faqs={[
         {
           question: "What types of drainage solutions do you offer?",

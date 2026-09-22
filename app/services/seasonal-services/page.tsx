@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Seasonal Services & Grading in Huntersville",
@@ -85,26 +86,7 @@ export default function SeasonalServicesPage() {
           description: "Seasonal flower bed updates for year-round color",
         },
       ]}
-      testimonials={[
-        {
-          name: "The Harrison Family",
-          location: "Residential Clients",
-          rating: 5,
-          text: "A-Z's seasonal services keep our property looking immaculate year-round. Their spring cleanup is particularly impressive - our gardens look perfectly manicured and ready for the growing season.",
-        },
-        {
-          name: "Oakwood Office Park",
-          location: "Commercial Client",
-          rating: 5,
-          text: "We rely on A-Z for all our seasonal property maintenance. Their snow removal service is exceptional - always prompt and thorough, keeping our parking lots and walkways safe for employees and visitors.",
-        },
-        {
-          name: "James & Victoria Elliott",
-          location: "Residential Clients",
-          rating: 5,
-          text: "Fall leaf cleanup used to take us entire weekends. Now A-Z handles it efficiently and thoroughly. They're respectful of our property and always leave everything looking better than we could have done ourselves.",
-        },
-      ]}
+      testimonials={getVerifiedTestimonials("seasonal-services")}
       faqs={[
         {
           question: "What does spring cleanup include?",

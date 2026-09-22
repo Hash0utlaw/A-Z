@@ -1,5 +1,6 @@
 import ServicePageTemplate from "@/components/service-page-template"
 import type { Metadata } from "next"
+import { getVerifiedTestimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
   title: "Landscape Lighting in Huntersville, NC",
@@ -80,20 +81,7 @@ const landscapeLightingData = {
       description: "Strategically placed lights to deter intruders and enhance visibility.",
     },
   ],
-  testimonials: [
-    {
-      name: "The Bennetts",
-      location: "Springfield, IL",
-      rating: 5,
-      text: "A-Z Landscapes' lighting design transformed our home! We enjoy our patio so much more in the evenings, and it looks spectacular.",
-    },
-    {
-      name: "Riverside Restaurant",
-      location: "Chatham, IL",
-      rating: 5,
-      text: "The lighting in our outdoor dining area is perfect. Customers love the ambiance, and it's boosted our evening business.",
-    },
-  ],
+  testimonials: getVerifiedTestimonials("landscape-lighting"),
   faqs: [
     {
       question: "What types of landscape lighting fixtures do you use?",
