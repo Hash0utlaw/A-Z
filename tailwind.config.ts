@@ -27,7 +27,6 @@ const config = {
         foreground: "hsl(var(--foreground))",
         primary: {
           // Navy Blue
-          DEFAULT: "hsl(var(--primary))", // #1e3a8a
           foreground: "hsl(var(--primary-foreground))", // white
           50: "#e8edf5",
           100: "#d1d9eb",
@@ -56,7 +55,6 @@ const config = {
         },
         accent: {
           // Kelly Green
-          DEFAULT: "hsl(var(--accent))", // #22c55e
           foreground: "hsl(var(--accent-foreground))", // white
           50: "#e9f9ef",
           100: "#d3f4df",

@@ -55,7 +55,6 @@ export default function IrrigationSystemsPage() {
             "We show you how to operate your new system(s) and provide recommendations for ongoing maintenance to ensure long-term performance. We also offer full-service irrigation maintenance.",
         },
       ]}
-      galleryTitle="Irrigation & Drainage Examples"
       gallery={[
         {
           image: "/irrigation-systems/lawn-sprinklers.png",

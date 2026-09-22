@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function GardenDesignPlantingPage() {
   return (
     <ServicePageTemplate
-      category="softscape"
+      category="landscaping"
       title="Garden Design & Planting"
       description="Transform your outdoor space with thoughtfully designed gardens that reflect your style and thrive in your environment. From native plant gardens to formal landscapes, we create beautiful, sustainable plantings that provide year-round interest and support local ecosystems."
       heroImage="/garden-design-planting/hero.jpg"

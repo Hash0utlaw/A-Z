@@ -33,8 +33,8 @@ const careerFormSchema = z.object({
   whyJoin: z.string().min(10, { message: "Please tell us why you want to join (min 10 characters)." }),
   country: z.string().optional(),
   resume: z.any().optional(), // For react-hook-form; actual file handling via 'selectedFile' state
-  agreeToTerms: z.literal(true, {
-    errorMap: () => ({ message: "You must agree to the privacy policy." }),
+  agreeToTerms: z.boolean().refine((value) => value === true, {
+    message: "You must agree to the privacy policy.",
   }),
 })
 
