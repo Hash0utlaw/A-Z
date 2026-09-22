@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Phone, Mail, MapPin, Clock, CheckCircle, Star, MessageSquare, Calendar, Award } from "lucide-react"
 import Script from "next/script"
 import { BUSINESS } from "@/lib/business"
@@ -18,8 +19,19 @@ declare global {
   interface Window {
     google: any
     initAutocomplete: () => void
+    gtag?: (...args: any[]) => void
   }
 }
+
+const PROJECT_TYPES = [
+  "Patio/Walkways",
+  "Retaining Wall",
+  "Driveway",
+  "Outdoor Kitchen/Fire Pit",
+  "Landscape Design/Planting",
+  "Lawn Care/Maintenance",
+  "Other",
+]
 
 export default function ContactContent() {
   const [formData, setFormData] = useState({
@@ -27,6 +39,7 @@ export default function ContactContent() {
     email: "",
     phone: "",
     address: "",
+    service: "",
     message: "",
     street: "",
     city: "",
@@ -216,11 +229,14 @@ export default function ContactContent() {
 
       if (response.ok) {
         setSubmitStatus("success")
+        window.gtag?.("event", "conversion", { send_to: process.env.NEXT_PUBLIC_GADS_FORM_LABEL })
+        window.gtag?.("event", "generate_lead")
         setFormData({
           name: "",
           email: "",
           phone: "",
           address: "",
+          service: "",
           message: "",
           street: "",
           city: "",
@@ -404,6 +420,25 @@ export default function ContactContent() {
                       <input type="hidden" name="city" value={formData.city} />
                       <input type="hidden" name="state" value={formData.state} />
                       <input type="hidden" name="zipCode" value={formData.zipCode} />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="service">Project Type (Optional)</Label>
+                      <Select
+                        value={formData.service}
+                        onValueChange={(value) => setFormData((prev) => ({ ...prev, service: value }))}
+                      >
+                        <SelectTrigger id="service" className="mt-1">
+                          <SelectValue placeholder="Select a project type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {PROJECT_TYPES.map((type) => (
+                            <SelectItem key={type} value={type}>
+                              {type}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     <div>
