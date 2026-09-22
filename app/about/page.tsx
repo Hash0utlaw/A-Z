@@ -257,7 +257,7 @@ export default function AboutPage() {
           <div className="mb-8">
             <p className="text-lg text-navy-100 mb-2">Call us today:</p>
             <a
-              href="tel:7040-989-4839"
+              href="tel:+17049894839"
               className="text-2xl font-bold text-kelly-400 hover:text-kelly-300 transition-colors"
             >
               (704) 989-4839

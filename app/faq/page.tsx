@@ -221,7 +221,7 @@ export default function FAQPage() {
                   <Mail className="mr-2 h-5 w-5" /> Send Us a Message
                 </Link>
                 <a
-                  href="tel:7049894839"
+                  href="tel:+17049894839"
                   className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-base font-semibold rounded-lg text-kelly-600 bg-white hover:bg-kelly-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200 w-full sm:w-auto"
                 >
                   <Phone className="mr-2 h-5 w-5" /> Call (704) 989-4839
