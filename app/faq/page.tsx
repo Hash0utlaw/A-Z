@@ -152,9 +152,28 @@ const faqCategories = [
   },
 ]
 
+const faqPageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqCategories.flatMap((category) =>
+    category.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  ),
+}
+
 export default function FAQPage() {
   return (
     <div className="bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageStructuredData) }}
+      />
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-kelly-50 to-kelly-100">
         <div className="container mx-auto px-4">
@@ -195,7 +214,10 @@ export default function FAQPage() {
                       <AccordionTrigger className="p-5 md:p-6 text-left font-semibold text-base md:text-lg hover:no-underline text-gray-900 hover:text-kelly-600 transition-colors">
                         {item.question}
                       </AccordionTrigger>
-                      <AccordionContent className="p-5 md:p-6 pt-0 text-base text-gray-700 leading-relaxed">
+                      <AccordionContent
+                        forceMount
+                        className="p-5 md:p-6 pt-0 text-base text-gray-700 leading-relaxed"
+                      >
                         {item.answer}
                       </AccordionContent>
                     </AccordionItem>
