@@ -91,7 +91,7 @@ export default function TreeServicesPage() {
           name: "Richard & Karen Davis",
           location: "Residential Clients",
           rating: 5,
-          text: "A-Z Landscaping did an amazing job pruning our large oak trees. Their arborists were knowledgeable, careful with our property, and the trees look healthier than ever.",
+          text: "A-Z Landscapes did an amazing job pruning our large oak trees. Their arborists were knowledgeable, careful with our property, and the trees look healthier than ever.",
         },
         {
           name: "Linda Martinez",

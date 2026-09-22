@@ -90,7 +90,7 @@ export default function ServicePageTemplate({
             <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">Benefits</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Our {title} Service</h2>
             <p className="text-lg text-gray-600">
-              Discover the advantages of working with A-Z Landscaping for your {title.toLowerCase()} project.
+              Discover the advantages of working with A-Z Landscapes for your {title.toLowerCase()} project.
             </p>
           </div>
 
