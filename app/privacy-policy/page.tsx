@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
 
           <article className="prose prose-lg max-w-none prose-h2:text-navy-800 prose-a:text-kelly-600 hover:prose-a:text-kelly-700">
             <p>
-              A-Z Landscapes ("us", "we", or "our") operates the https://azlandscaping.com website (the "Service"). This
+              A-Z Landscapes ("us", "we", or "our") operates the https://www.a-zlandscapes.com website (the "Service"). This
               page informs you of our policies regarding the collection, use, and disclosure of personal data when you
               use our Service and the choices you have associated with that data. We use your data to provide and
               improve the Service. By using the Service, you agree to the collection and use of information in
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
                 By email: <Link href="mailto:Azlandscapesllc@gmail.com">Azlandscapesllc@gmail.com</Link>
               </li>
               <li>
-                By visiting this page on our website: <Link href="/contact">https://azlandscaping.com/contact</Link>
+                By visiting this page on our website: <Link href="/contact">https://www.a-zlandscapes.com/contact</Link>
               </li>
               <li>By phone number: (704) 989-4839</li>
             </ul>

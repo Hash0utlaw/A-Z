@@ -181,7 +181,7 @@ export default function CookiePolicyPage() {
                 By email: <Link href="mailto:Azlandscapesllc@gmail.com">Azlandscapesllc@gmail.com</Link>
               </li>
               <li>
-                By visiting: <Link href="/contact">https://azlandscaping.com/contact</Link>
+                By visiting: <Link href="/contact">https://www.a-zlandscapes.com/contact</Link>
               </li>
               <li>By phone: (704) 989-4839</li>
               <li>By mail: 11525 Reames Rd, Suite 112, Charlotte, NC 28269</li>
