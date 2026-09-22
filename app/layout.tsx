@@ -1,12 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { MainNavigation } from "@/components/main-navigation"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { SkipNavigation } from "@/components/skip-navigation"
+import { PhoneClickTracking } from "@/components/phone-click-tracking"
 import { BUSINESS } from "@/lib/business"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -55,10 +57,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const gadsId = process.env.NEXT_PUBLIC_GADS_ID
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        {gadsId && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gadsId}`} strategy="afterInteractive" />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gadsId}');
+              `}
+            </Script>
+          </>
+        )}
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <SkipNavigation />
           <div className="flex min-h-screen flex-col">
@@ -73,6 +90,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <CookieConsent />
+          <PhoneClickTracking />
         </ThemeProvider>
       </body>
     </html>
