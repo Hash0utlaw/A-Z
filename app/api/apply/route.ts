@@ -44,7 +44,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       const blobPath = `careers/resumes/${Date.now()}-${sanitizedFilename}`
 
       const blob = await put(blobPath, resumeFile, {
-        access: "public",
+        access: "private",
         contentType: resumeFile.type, // Pass content type for better handling
       })
       resumeUrl = blob.url

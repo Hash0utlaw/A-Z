@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Phone, Mail, MapPin } from "lucide-react"
 import OptimizedImage from "@/components/optimized-image"
 import { BUSINESS } from "@/lib/business"
+import { SERVICE_AREAS } from "@/lib/service-areas"
 
 export function Footer() {
   return (
@@ -120,7 +121,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-navy-800 mt-12 pt-8 text-center text-sm">
+        {SERVICE_AREAS.length > 0 && (
+          <div className="border-t border-navy-800 mt-12 pt-8 text-center">
+            <h3 className="text-sm font-semibold text-white mb-3">Service Areas</h3>
+            <div className="flex flex-wrap justify-center gap-x-2 gap-y-2 text-sm">
+              {SERVICE_AREAS.map((area, index) => (
+                <span key={area.slug} className="flex items-center gap-2">
+                  <Link href={`/service-areas/${area.slug}`} className="hover:text-white transition-colors">
+                    {area.city}
+                  </Link>
+                  {index < SERVICE_AREAS.length - 1 && <span className="text-gray-600">|</span>}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="border-t border-navy-800 mt-8 pt-8 text-center text-sm">
           <p>
             &copy; {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
           </p>

@@ -8,18 +8,7 @@ import { ArrowRight, Camera } from "lucide-react"
 export const metadata: Metadata = {
   title: "Landscaping Portfolio",
   description:
-    "Explore the stunning landscape transformations by A-Z Landscapes. View our portfolio of completed projects, from patios and walkways to gardens and outdoor living spaces in Your City/Region.",
-  keywords: [
-    "landscape portfolio",
-    "landscaping projects",
-    "A-Z Landscapes portfolio",
-    "patio design",
-    "garden installation",
-    "outdoor living spaces",
-    "Your City/Region landscaping",
-    "landscape design showcase",
-    "best landscaping work",
-  ],
+    "Explore the stunning landscape transformations by A-Z Landscapes. View our portfolio of completed projects, from patios and walkways to gardens and outdoor living spaces in Huntersville and the Lake Norman area.",
 }
 
 const projectImages = [

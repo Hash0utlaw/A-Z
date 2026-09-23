@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
-import { ChevronDown, Leaf, Hammer, Menu, Grid, Home, User, Briefcase, Phone } from "lucide-react"
+import { ChevronDown, Leaf, Hammer, Menu, Grid, Home, User, Briefcase, Phone, MapPin } from "lucide-react"
 import OptimizedImage from "@/components/optimized-image"
 
 export function MainNavigation() {
@@ -84,6 +84,14 @@ export function MainNavigation() {
             aria-current={isActive("/about") ? "page" : undefined}
           >
             About
+          </Link>
+
+          <Link
+            href="/service-areas"
+            className={`${navLinkBaseClasses} ${isActive("/service-areas") ? navLinkActiveClasses : ""}`}
+            aria-current={isActive("/service-areas") ? "page" : undefined}
+          >
+            Service Areas
           </Link>
 
           <DropdownMenu>
@@ -235,6 +243,21 @@ export function MainNavigation() {
               >
                 <Grid className="h-5 w-5" aria-hidden="true" />
                 <span className="text-base">Portfolio</span>
+              </Link>
+
+              {/* Service Areas */}
+              <Link
+                href="/service-areas"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  isActive("/service-areas")
+                    ? "bg-primary/10 text-primary font-semibold"
+                    : "text-foreground hover:bg-muted"
+                }`}
+                aria-current={isActive("/service-areas") ? "page" : undefined}
+              >
+                <MapPin className="h-5 w-5" aria-hidden="true" />
+                <span className="text-base">Service Areas</span>
               </Link>
 
               {/* FAQ */}

@@ -7,6 +7,7 @@ import Link from "next/link"
 import Image from "next/image"
 import type { Metadata } from "next"
 import { getVerifiedTestimonials } from "@/lib/testimonials"
+import { SERVICE_AREAS } from "@/lib/service-areas"
 
 export const metadata: Metadata = {
   title: "Turf Installation in Huntersville, NC",
@@ -353,6 +354,20 @@ export default function TurfInstallationPage() {
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-gray-50 border-t">
+        <div className="container mx-auto px-4 text-center text-sm text-gray-600">
+          Serving{" "}
+          {SERVICE_AREAS.map((area, index) => (
+            <span key={area.slug}>
+              <Link href={`/service-areas/${area.slug}`} className="text-kelly-700 hover:underline">
+                {area.city}
+              </Link>
+              {index < SERVICE_AREAS.length - 1 ? ", " : ""}
+            </span>
+          ))}
         </div>
       </section>
     </div>

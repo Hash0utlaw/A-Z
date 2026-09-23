@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next"
+import { getAllServiceAreaSlugs } from "@/lib/service-areas"
 
 const BASE_URL = "https://www.a-zlandscapes.com"
 
 // Fixed build date instead of `new Date()` so the sitemap doesn't
 // report every URL as modified on every request.
-const BUILD_DATE = new Date("2026-09-21")
+const BUILD_DATE = new Date("2026-09-22")
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -52,7 +53,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const allPages = [...staticPages, ...servicePages]
+  const areaSlugs = getAllServiceAreaSlugs()
+
+  const serviceAreaPages = areaSlugs.map((slug) => ({
+    url: `${BASE_URL}/service-areas/${slug}`,
+    lastModified: BUILD_DATE,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
+
+  const serviceAreaIndexPage = {
+    url: `${BASE_URL}/service-areas`,
+    lastModified: BUILD_DATE,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }
+
+  const allPages = [...staticPages, ...servicePages, ...serviceAreaPages, serviceAreaIndexPage]
 
   return allPages.sort((a, b) => b.priority - a.priority)
 }
