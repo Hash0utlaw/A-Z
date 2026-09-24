@@ -14,6 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Phone, Mail, MapPin, Clock, CheckCircle, Star, MessageSquare, Calendar, Award } from "lucide-react"
 import Script from "next/script"
 import { BUSINESS } from "@/lib/business"
+import { PROJECT_TYPES } from "@/lib/project-types"
 
 declare global {
   interface Window {
@@ -22,16 +23,6 @@ declare global {
     gtag?: (...args: any[]) => void
   }
 }
-
-const PROJECT_TYPES = [
-  "Patio/Walkways",
-  "Retaining Wall",
-  "Driveway",
-  "Outdoor Kitchen/Fire Pit",
-  "Landscape Design/Planting",
-  "Lawn Care/Maintenance",
-  "Other",
-]
 
 export default function ContactContent() {
   const [formData, setFormData] = useState({

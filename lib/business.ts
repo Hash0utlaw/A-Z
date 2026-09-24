@@ -11,6 +11,8 @@ export const BUSINESS = {
   postalCode: "28078",
   foundingYear: "2008",
   founder: "Zach Wardell",
+  // TODO: set real NC contractor license number once confirmed
+  licenseNumber: "",
   areaServed: [
     "Huntersville",
     "Cornelius",

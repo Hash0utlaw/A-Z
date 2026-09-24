@@ -91,6 +91,12 @@ export function Footer() {
                   Contact Us
                 </Link>
               </li>
+              {/* TODO: temporary testing link — remove before the Google Ads campaign goes live */}
+              <li>
+                <Link href="/free-estimate" className="hover:text-white transition-colors">
+                  Free Estimate (Testing)
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -4,10 +4,7 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { MainNavigation } from "@/components/main-navigation"
-import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
-import { SkipNavigation } from "@/components/skip-navigation"
 import { PhoneClickTracking } from "@/components/phone-click-tracking"
 import { BUSINESS } from "@/lib/business"
 
@@ -77,18 +74,7 @@ export default function RootLayout({
           </>
         )}
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <SkipNavigation />
-          <div className="flex min-h-screen flex-col">
-            <header className="bg-primary text-primary-foreground shadow-md sticky top-0 z-50">
-              <nav aria-label="Main navigation" className="container mx-auto px-4 py-4">
-                <MainNavigation />
-              </nav>
-            </header>
-            <main id="main-content" tabIndex={-1} className="flex-1 bg-background text-foreground focus:outline-none">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          {children}
           <CookieConsent />
           <PhoneClickTracking />
         </ThemeProvider>
