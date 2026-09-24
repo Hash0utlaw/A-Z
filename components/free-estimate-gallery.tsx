@@ -35,15 +35,21 @@ export function FreeEstimateGallery() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
           {PHOTOS.map((photo) => (
-            <div key={photo.image} className="rounded-lg overflow-hidden shadow-sm">
+            <div
+              key={photo.image}
+              className="group relative aspect-[4/3] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
               <OptimizedImage
                 src={photo.image}
                 alt={photo.caption}
-                width={400}
-                height={300}
-                className="object-cover w-full h-full aspect-[4/3]"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <p className="bg-white p-2 text-xs font-medium text-gray-700 text-center">{photo.caption}</p>
+              <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+              <p className="absolute inset-x-0 bottom-0 p-3 text-xs md:text-sm font-medium text-white">
+                {photo.caption}
+              </p>
             </div>
           ))}
         </div>

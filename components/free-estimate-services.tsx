@@ -22,7 +22,7 @@ export function FreeEstimateServices() {
         <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
           {SERVICES.map((service) => (
             <div key={service} className="flex items-center gap-3 bg-white p-4 rounded-lg border border-navy-100">
-              <CheckCircle className="h-5 w-5 text-kelly-600 flex-shrink-0" />
+              <CheckCircle className="h-5 w-5 text-navy-700 flex-shrink-0" />
               <span className="text-gray-700 font-medium">{service}</span>
             </div>
           ))}

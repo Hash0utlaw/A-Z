@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Phone, Upload } from "lucide-react"
 import { BUSINESS } from "@/lib/business"
 import { PROJECT_TYPES } from "@/lib/project-types"
@@ -118,77 +119,86 @@ export function FreeEstimateForm({ source }: FreeEstimateFormProps) {
         {phoneError && <p className="text-sm text-red-600 mt-1">{phoneError}</p>}
       </div>
 
-      <div>
-        <Label htmlFor="email">Email (optional)</Label>
-        <Input
-          id="email"
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-          className="mt-1"
-        />
-      </div>
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="more-details" className="border-none">
+          <AccordionTrigger className="justify-start gap-1.5 py-2 text-sm font-semibold text-navy-700 hover:no-underline hover:text-navy-800">
+            Add more details (optional)
+          </AccordionTrigger>
+          <AccordionContent className="space-y-4">
+            <div>
+              <Label htmlFor="email">Email (optional)</Label>
+              <Input
+                id="email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
+                className="mt-1"
+              />
+            </div>
 
-      <div>
-        <Label htmlFor="zip">Zip Code</Label>
-        <Input
-          id="zip"
-          value={formData.zip}
-          onChange={(e) => setFormData((prev) => ({ ...prev, zip: e.target.value }))}
-          className="mt-1"
-          placeholder="28078"
-        />
-      </div>
+            <div>
+              <Label htmlFor="zip">Zip Code</Label>
+              <Input
+                id="zip"
+                value={formData.zip}
+                onChange={(e) => setFormData((prev) => ({ ...prev, zip: e.target.value }))}
+                className="mt-1"
+                placeholder="28078"
+              />
+            </div>
 
-      <div>
-        <Label htmlFor="service">Project Type (Optional)</Label>
-        <Select
-          value={formData.service}
-          onValueChange={(value) => setFormData((prev) => ({ ...prev, service: value }))}
-        >
-          <SelectTrigger id="service" className="mt-1">
-            <SelectValue placeholder="Select a project type" />
-          </SelectTrigger>
-          <SelectContent>
-            {PROJECT_TYPES.map((type) => (
-              <SelectItem key={type} value={type}>
-                {type}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+            <div>
+              <Label htmlFor="service">Project Type (Optional)</Label>
+              <Select
+                value={formData.service}
+                onValueChange={(value) => setFormData((prev) => ({ ...prev, service: value }))}
+              >
+                <SelectTrigger id="service" className="mt-1">
+                  <SelectValue placeholder="Select a project type" />
+                </SelectTrigger>
+                <SelectContent>
+                  {PROJECT_TYPES.map((type) => (
+                    <SelectItem key={type} value={type}>
+                      {type}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
 
-      <div>
-        <Label htmlFor="photo">Photo of your project area (optional)</Label>
-        <div className="mt-1 flex items-center gap-2">
-          <Label
-            htmlFor="photo"
-            className="cursor-pointer inline-flex items-center gap-2 border border-input rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
-          >
-            <Upload className="h-4 w-4" />
-            {photo ? photo.name : "Choose a photo"}
-          </Label>
-          <input
-            id="photo"
-            type="file"
-            accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
-            className="hidden"
-            onChange={(e) => setPhoto(e.target.files?.[0] ?? null)}
-          />
-        </div>
-      </div>
+            <div>
+              <Label htmlFor="photo">Photo of your project area (optional)</Label>
+              <div className="mt-1 flex items-center gap-2">
+                <Label
+                  htmlFor="photo"
+                  className="cursor-pointer inline-flex items-center gap-2 border border-input rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
+                >
+                  <Upload className="h-4 w-4" />
+                  {photo ? photo.name : "Choose a photo"}
+                </Label>
+                <input
+                  id="photo"
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+                  className="hidden"
+                  onChange={(e) => setPhoto(e.target.files?.[0] ?? null)}
+                />
+              </div>
+            </div>
 
-      <div>
-        <Label htmlFor="message">Message (optional)</Label>
-        <Textarea
-          id="message"
-          rows={3}
-          value={formData.message}
-          onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-          className="mt-1"
-        />
-      </div>
+            <div>
+              <Label htmlFor="message">Message (optional)</Label>
+              <Textarea
+                id="message"
+                rows={3}
+                value={formData.message}
+                onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
+                className="mt-1"
+              />
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
       <Button
         type="submit"

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const FAQS = [
@@ -28,7 +27,7 @@ const FAQS = [
 
 export function FreeEstimateFaq() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -47,10 +46,7 @@ export function FreeEstimateFaq() {
         }}
       />
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <Badge className="bg-navy-100 text-navy-700 hover:bg-navy-200 mb-4">FAQ</Badge>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">Frequently Asked Questions</h2>
 
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="w-full">

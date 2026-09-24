@@ -9,6 +9,7 @@ import { FreeEstimateHowItWorks } from "@/components/free-estimate-how-it-works"
 import { FreeEstimateServices } from "@/components/free-estimate-services"
 import { FreeEstimateReviews } from "@/components/free-estimate-reviews"
 import { FreeEstimateFaq } from "@/components/free-estimate-faq"
+import { FreeEstimateMobileCtaBar } from "@/components/free-estimate-mobile-cta-bar"
 
 export const metadata: Metadata = {
   title: "Free Estimate",
@@ -27,7 +28,7 @@ export default function FreeEstimatePage({ searchParams }: FreeEstimatePageProps
   const source = `google-ads-lp${searchParams.s ? ":" + searchParams.s : ""}`
 
   return (
-    <>
+    <div className="pb-20 md:pb-0">
       <FreeEstimateHero variant={variant} source={source} />
       <FreeEstimateTrustStrip />
       <FreeEstimateGallery />
@@ -61,6 +62,8 @@ export default function FreeEstimatePage({ searchParams }: FreeEstimatePageProps
           </div>
         </div>
       </section>
-    </>
+
+      <FreeEstimateMobileCtaBar />
+    </div>
   )
 }
